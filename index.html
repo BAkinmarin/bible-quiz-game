@@ -18,8 +18,9 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+    <header></header>
     <!--Game Introduction and Rules-->
-    <div class="quiz-rules">
+    <div id="quiz-rules">
         <div>
             <h1>Welcome to the Bible Quiz</h1>
             <br>
@@ -33,22 +34,53 @@
             </div>
             <br>
             <!--Game Start Button-->
-            <!--<div class="start-btn-div"><button class="start-btn">Start Quiz</button></div>-->
-            <a href="game.html">Start Quiz <i class="fa-solid fa-play"></i></a>
+            <div class="start-btn-div">
+                <button onclick="startQuiz()" class="start-btn">Start Quiz</button>
+            </div>
         </div>
     </div>
 
     <!--Quiz area-->
-    <div>
-        <header>
+    <main></main>
+        <div id="game-box">
+            <div class="heading">Bible Quiz</div>
+            <div class="question-section">
+                <!--JavaScript will be used to target this div to display Questions-->
+            </div>
+            <div class="answer-section">
+                <!--JavaScript will be used to target this div to display answer options-->
+            </div>
 
-        </header>
-    </div>
+            <!--Question tracker area-->
+            <div class="current-question">
+                <!--JavaScript will be used to target this div to display the current question count i.e. 1 of 5-->
+            </div>
+            <div class="next-btn-div">
+                <button class="next-btn">Next Question</button>
+            </div>
+        </div>
+
+        <!--Results box-->
+        <div class="results-box"></div>
+            <div class="quiz-complete">Congratulations, you have completed the Quiz!</div>
+            <div class=score-text>
+            <!--JavaScript will be used to target this div to display the score-->
+            </div>
+            <div class="buttons-div">
+            <button onclick="restartQuiz()" class="restart-btn">Restart Quiz</button>
+            <button onclick="exitQuiz()" class="exit-btn">Exit Quiz</button>
+        </div>
+    
+    <footer></footer>
 
     <!--Font Awesome-->
     <script src="https://kit.fontawesome.com/b4bb9144f2.js" crossorigin="anonymous"></script>
 
     <!--Link JavaScript file-->
     <script src="assets/js/index.js"></script>
+
+    <!--Link to JavaScript Questions and Options file-->
+    <script src="assets/js/questions.js"></script>
+
 </body>
 </html>

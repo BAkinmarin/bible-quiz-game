@@ -11,11 +11,11 @@
 /* General styles */
 body {
     font-family: "Lato", sans-serif;
-    background: whitesmoke;
+    background: wheat;
 }
 
 /* Styles for quiz rules */
-.quiz-rules {
+#quiz-rules {
     width: 80%;
     margin: auto;
     margin-top: 15%;
@@ -23,13 +23,13 @@ body {
     font-size: 1.25rem;
 }
 
-.quiz-rules h1 {
+#quiz-rules h1 {
     text-align: center;
     font-size: 2rem;
     font-weight: bold;
 }
 
-.quiz-rules p {
+#quiz-rules p {
     font-weight: bold;
 }
 
@@ -39,17 +39,34 @@ body {
     justify-content: center;
 }
 
-.start-btn {
+.start-btn,
+.next-btn,
+.restart-btn,
+.exit-btn {
    font-size: 1.25rem;
    letter-spacing: 1px;
    border-style: ridge;
    font-weight: bold;
+   background-color: antiquewhite;
 }
 
-.start-btn:hover {
+.buttons-div {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.next-btn-div {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 1rem;
+}
+
+.start-btn:hover,
+.next-btn:hover,
+.restart-btn:hover,
+.exit-btn:hover {
     transform: scale(1.15);
     transition: all 0.3s ease-in-out;
     cursor: pointer;
     opacity: 0.5;
-    background-color: wheat;
 }

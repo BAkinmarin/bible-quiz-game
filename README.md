@@ -257,6 +257,9 @@ The user can also see a record of the questions, images, correct answer and thei
 ### Pexels.com
 > Images used in this project.
 
+### NotSoBoringBible.com
+> Used to gather quiz questions used in project.
+
 ### w3 schools
 > Used for general lookup JS dom related queries and general styling css using js
 
