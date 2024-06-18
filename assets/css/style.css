@@ -33,7 +33,7 @@ body {
     font-weight: bold;
 }
 
-/* Style Start Button */
+/* Style Start, Restart, Exit and Next Buttons */
 .start-btn-div {
     display: flex;
     justify-content: center;
@@ -69,4 +69,14 @@ body {
     transition: all 0.3s ease-in-out;
     cursor: pointer;
     opacity: 0.5;
+}
+
+/* Hide Game Box until event*/
+#game-box {
+    display: none;
+}
+
+/* Hide Results Box until event */
+#results-box {
+    display: none;
 }
