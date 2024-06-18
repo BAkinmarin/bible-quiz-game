@@ -58,5 +58,5 @@ let questions = [
             'Figs and Wine',
             'Locusts and Wild Honey'
         ]
-    }
-]
+    },
+];

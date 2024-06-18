@@ -1,116 +1,331 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Bible Quiz Game
+## An interactive and educative quiz on the Bible
 
-Welcome Bola Akinmarin,
+![am I responsive screenshot]()
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+## **[Live site]()**
 
-You can safely delete this README.md file or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **June 14, 2024**
+------------------------------------------------------------------
 
-## Gitpod Reminders
+## **[Repository]()**
+------------------------------------------------------------------
+  
+## Table of contents
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+ 1. [ UX ](#ux)
+ 2. [ Features ](#features)  
+ 3. [ Features Left to Implement ](#left)  
+ 4. [ Technology used ](#tech) 
+ 5. [ Testing ](#testing)  
+ 6. [ Bugs ](#bugs)  
+ 7. [ Deployment](#deployment)
+ 8. [ Credits](#credits)
+ 9. [ Content](#content)  
+ 10. [ Acknowledgements](#acknowledgements)  
 
-`python3 -m http.server`
+## UX
 
-A blue button should appear to click: _Make Public_,
+<a name="ux"></a>
+### Pre-project Planning
 
-Another blue button should appear to click: _Open Browser_.
+# UX design
 
-To run a backend Python file, type `python3 app.py` if your Python file is named `app.py`, of course.
+## Strategy Plane
 
-A blue button should appear to click: _Make Public_,
+## User Stories
 
-Another blue button should appear to click: _Open Browser_.
+### User 
 
-By Default, Gitpod gives you superuser security privileges. Therefore, you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+## Scope Plane
 
-To log into the Heroku toolbelt CLI:
+## Structure Plane
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+**Home Page**
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, you can create a new one with _Regenerate API Key_.
+**About**
 
-------
+**Contact**
 
-## Release History
+## Skeleton Plane
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+### Home Page Desktop Wireframe
+![Home Page Desktop Wireframe]()
 
-**June 14, 2024,** Temporarily remove Mongo until key issue is resolved
+### Home Page mobile wireframe
+![Home page mobile responsive Wireframe]()
 
-**May 28 2024:** Fix Mongo and Links installs
+## Surface Plane
 
-**April 26 2024:** Update node version to 16
+### Color
 
-**September 20 2023:** Update Python version to 3.9.17.
+### Typography - 
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+>The font's chosen for this project were:
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+ - Lato
+ - Sans serif
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+> The rationale was that I wanted all of the information provided on the website to be clear, concise and without any unnecessary distractions. 
+> My focus was to also assist with users who may have visual impairments
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+## Features
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+<a name="features"></a>
+### index.html
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+#### Navigation Bar
+![Navigation Bar]()
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+>
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+#### Footer
+![Footer]()
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+> Flex footer used to showcase social media icons as well as physical address and opening times. I decided to include the opening times in a table as I felt it was aestetically pleasing compared to traditionally just the text content.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+### about.html
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+#### About
+![About Section]()
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+> The about section was initially intended to be a section about the garage history and then information about the bio of a few of the staff with image - text side by side. As the project progressed I decided to reduce this section for now.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+### portfolio.html
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+#### Portfolio
+![Portfolio Images](assets/images/features/feature-portfolio.png)
 
-------
+> The portfolio section was originally intended to be a services page and possibly include some click to expand content, however as I included the services in the home page I felt it was more appropriate to add a portfolio of work being done and of completed work.
 
-## FAQ about the uptime script
+### contact.html
 
-**Why have you added this script?**
+#### Contact Form
+![Contact Form](assets/images/features/feature-form.png)
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+> Initially when I was creating the form element I used the blue color as a background as a placeholder while I was working. The original thought was that I would display a background image with the content of the form sitting on top. In hindsight it probably would have been a more visually appealing solution but I felt I had already overlay content in the hero section of index.html and wanted to try different approaches in this project. 
 
-**How will this affect me?**
+> I also think the color works with the minimalistic design of the site and it flows well into the contact numbers and map section.
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+> Please note that while the contact form does collect and pass the requested data as tested with the code institute form dump link, this form take the user to a created html page that gives them a form submission message. As Javascript was not part of the brief for this project it was not possible to make this a fully functioning form.
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+> This decision to forward to a new page was taken to improve user experience when using this project.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+#### Map & Contact Numbers
+![Map Area](assets/images/features/feature-map.png)
 
-**So….?**
+> Instead of using a map from my own google developer account I used an i-frame from maps.ie as it was a convenient and quick solution. 
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
 
-**Can I opt out?**
+<a name="left"></a>
+# Features Left to implement
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+### Home page
+> In the future I would like to include a side element banner to promote special offers that the repair shop may want to offer from time to time.
 
-**Anything more?**
+> I would like to add pop up modals to the services section to explain what the typical faults might be, costs to fix and estimated timeframes.
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+>I would also like to make the service tiles as modals that onClick they would pop open with information about average issues, cost and duration it would take to fix. 
 
----
 
-Happy coding!
+>I would like to add a carousel section to the testimonial cards that would auto move in a rotational basis and consist of about 5-8 different testimonials.
+
+### About Page
+> In the future I would like to add profiles to the about page with a breakdown of all the staff at the business. Including their name, image, what they specialize in and brief bio about themselves.
+
+### Portfolio
+> I would like to add a lightbox type gallery for these photos so that when a user clicks on them it will pop up and allow them to scroll through them as their leisure.
+> I would also like to add side by side before and after photos. Ideally with a scroll option for the user to see the work done.
+
+### Contact Us
+>I have not developed a back end for the contact form and this would be high on my priority list to ensure that e-mails with booking requests are being sent both to the business & confirmation to the customer of what they requested.
+
+
+>I would like to add a WhatsApp option or similar style contact method for business to allow customers to message the business for a more real-time response, whether that be for 24/7 breakdown or general queries
+
+
+>I would also like to add call from browser to save the user having to copy and paste the phone number.
+
+### Additional Page ideas
+>I would add a careers page for potential young adults who would be interested in apprentices to submit their info.
+
+>I would add a facility for users to actually book in, in a realtime booking system.
+
+<a name="tech"></a>
+# Technology Used
+### Html
+> Used to structure my webpages and the bones of any web project
+
+### CSS
+> Used to style and add layout to my project.
+
+### Font Awesome
+> Used for all the icons in this project
+
+### GoogleFonts
+> Used for all the fonts used in this project and to compare potential fonts.
+
+### Googlemap API
+> Used to embed I-frame on the contact page of a fictional business based in a real location in Belfast, Norther Ireland.
+
+### Canva
+> Used to create the favicon logo
+
+### Online-Convert.com
+> Used to convert files from png to webp to reduce size and improve web loading speed.
+
+<a name="testing"></a>
+# Testing
+> Testing on this project was mainly done manually by myself and a few friends to determine site usability, responsiveness and ensure it is intuitive to a completely new user.
+
+### Testing Phase
+
+**Testing for links and Form**
+| Test |Outcome  |
+|--|--|
+|All links on Navigation lead to their correct pages| Pass  |
+|Contact us button leads to contact form on contact us page| Pass
+|Footer social links all lead to their respective social media sites |Pass|
+|Contact form submits when all criteria is filled correctly| Pass  |
+|User prevented from submitting form without correct elements| Pass|
+|Form Validation presents when incorrect input type is entered |Pass|
+
+**Testing for responsiveness**
+| Test |Outcome  |
+|--|--|
+|Home page, about, portfolio, contact us displays correctly on screens larger than 950px|Pass |
+|Home page, about, portfolio, contact us displays correctly on screens smaller than 950px |Pass  
+
+### User testing
+
+**User testing Challenge**
+
+> 5 users are given some basic tasks prior to visiting web page and the results totaled to give result (20% per successful user result.)
+
+| Test | Result |
+|--|--|
+|Upon arrival to website please navigate to where you would expect to find a contact form| 100%|
+|Please navigate to the Facebook social of this business|100%  |
+|Please fill in contact form with your information and preference in the marketing button| 100%|
+|Please provide me with a contact number of 24/7 breakdown| 100%  |
+|Please navigate to the Portfolio page and count how many images there are | 100%  |
+
+**User responsive testing**
+
+> 5 users were asked to view the website on their mobile devices and/or tablets to provide any feedback on errors or page overlapping issues.
+
+| Test | Result |
+|--|--|
+|Issues Reported| None|
+
+## Google Lighthouse Testing
+
+### index.html
+
+![Google Lighthouse index.html](assets/images/testing-scans/lighthouse-index.png)
+
+### about.html
+
+![Google Lighthouse about.html](assets/images/testing-scans/lighthouse-about.png)
+
+### portfolio.html
+![Google Lighthouse portfolio.html](assets/images/testing-scans/lighthouse-portfolio.png)
+
+### contact.html
+![Google Lighthouse contact.html](assets/images/testing-scans/lighthouse-contact.png)
+
+
+## HTML Validation
+
+### index.html
+![W3 index.html Check](assets/images/testing-scans/index-w3-check.png)
+#### Result: No Errors
+
+### about.html
+![W3 about.html Check](assets/images/testing-scans/about-w3-check.png)
+#### Result: No Errors
+
+### portfolio.html
+![W3 about.html Check](assets/images/testing-scans/gallery-w3-check.png)
+#### Result: No Errors, 1 warning about the section missing a heading. Page heading appears for the portfolio above and requires no additional content.
+
+### contact.html
+![W3 about.html Check](assets/images/testing-scans/contact-w3-check.png)
+#### Result: No Errors
+
+### contact-complete.html
+![W3 about.html Check](assets/images/testing-scans/form-complete-w3-check.png)
+#### Result: No Errors
+
+## CSS Validation
+
+### contact-complete.html
+![W3 about.html Check](assets/images/testing-scans/css-w3jigsaw-check.png)
+#### Result: No Errors
+
+<a name="bugs"></a>
+## **Bugs**
+> Issues with centering content on the hero overlay. **fixed**
+
+> Decided to improve the flow of the page that the parralax would be better between the two content sections. **fixed**
+
+> Original image just didnt fit the flow of the page nor the style of the page **fixed**
+
+> Font awesome social media icons showing as squares even though the script link is in the head and icon tags are correct. **fixed**
+
+> Issue with footer content overlapping and not centering. **fixed**
+
+> issue with services overlapping on mobile. (fixed, was targetting wrong element container) **fixed**
+
+> Contrast issue noted on lighthouse for the tag elements on the testimonials.(fixed, made colour darker and increased font size and weight). **fixed**
+
+> Images not in correct aspect ratio. (removed placeholder images and downloaded them in the size needed.) **fixed**
+
+> Bug appeared which some images did not show when deployed. Issue resolved as some images were using absolute file paths and not relative. **fixed**
+
+<a name="deployment"></a>
+## Deployment
+
+> To deploy the project I followed these steps starting from the main project repository [here](https://github.com/Alan-Bushell/belfast-auto-repairs).
+
+ 1. Clicked on `Settings` on the navigation menu in the repository
+ 2. I then selected the `Pages` menu on the side bar.
+ 3. In the first dropdown menu labeled `Source` I selected the branch of the name `main` from the dropdown.
+ 4. In the next dropdown labeled `/root` I left as the default option.
+ 5. Selected Save
+ 
+> I then received a notification from GitHub that my project is being deployed and after about 1 minute & a couple of refreshes of the page it was ready and live.
+
+<a name="credits"></a>
+## Credits
+
+### All images sourced from pexels.com. Links for images included below
+
+> 
+
+<a name="content"></a>
+## Content & Resources
+
+### NotSoBoringBible.com
+> Used for quiz questions.
+
+### Pexels.com
+> Images used in this project.
+
+### w3 schools
+> Used for general lookup for HTML and CSS synthax queries.
+
+### Stack Overflow
+> Used to query issues relating to overlapping CSS issues.
+
+### csstricks.com
+> Used for help with flex box and alignment.
+
+### Code Institute
+> Project created in line with course content and within project 2 scope.
+
+<a name="acknowlegements"></a>
+## Acknowledgements
+
+### Alan Bushell
+> My mentor who provided me with constructive feedback and positive reinforcement where applicable.
