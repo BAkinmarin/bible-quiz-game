@@ -1,15 +1,55 @@
 /* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playwrite+DE+Grund:wght@100..400&display=swap');
 
-/* General styles */
-body {
-    font-family: "Lato", sans-serif;
-    background: yellow;
-}
-
 /* Override default browser styles */
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+}
+
+/* General styles */
+body {
+    font-family: "Lato", sans-serif;
+    background: whitesmoke;
+}
+
+/* Styles for quiz rules */
+.quiz-rules {
+    width: 80%;
+    margin: auto;
+    margin-top: 10%;
+    text-align: start;
+    font-size: 1.25rem;
+}
+
+.quiz-rules h1 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.quiz-rules p {
+    font-weight: bold;
+}
+
+/* Style Start Button */
+.start-btn-div {
+    display: flex;
+    justify-content: center;
+}
+
+.start-btn {
+   font-size: 1.25rem;
+   letter-spacing: 1px;
+   border-style: ridge;
+   font-weight: bold;
+}
+
+.start-btn:hover {
+    transform: scale(1.15);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    opacity: 0.5;
+    background-color: wheat;
 }
