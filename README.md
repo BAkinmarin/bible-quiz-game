@@ -1,7 +1,15 @@
-# Bible Quiz Game
-## An interactive and educative quiz on the Bible
+# Bible Quiz
 
 ![am I responsive screenshot]()
+
+## A Bible Quiz based Website
+> Bible Quiz is an interactive knowledge based quiz game that centers around the Bible. 
+
+> The user is given an opportunity to play against a clock to select the correct answer from 4 options and earn more points.
+
+>The user is shown a list of instructions to better understand the rules of the game prior to starting the game.
+
+### - By Bola Akinmarin
 
 ## **[Live site]()**
 
@@ -23,270 +31,211 @@
  9. [ Content](#content)  
  10. [ Acknowledgements](#acknowledgements)  
 
+
 ## UX
 
 <a name="ux"></a>
 ### Pre-project Planning
 
+> For project 2 I decided early on I wanted to create a quiz game that I would like to play. I have a love of travelling and find Geography incredibly interesting so I decided on this as my theme.
+
+> Rather than just making a generic quiz site I wanted to add some extra elements that I felt would have given the typical quiz site a fun spin.
+
+>I decided I wanted to give the user a couple of options on which game they would like to play. I wanted to keep the overarching theme the same while giving clear differences to the types of questions that would be asked.
+
+> From here I decided on:
+
+ - Interesting Facts
+ - Flags
+
+> I also wanted to add a countdown timer to create urgency and a scoring system that was more relative to how quickly you answered the question rather than if you just got it correct or not.
+
+
 # UX design
 
-## Strategy Plane
+##### Color
+As my first project was a minimalistic black & white themed site I decided this project should have plenty of color.
+To start I decided on a nice vibrant linear gradient background ranging from a nice Pink(rgba(233, 30, 99, .8)) to Blue (rgba(33, 150, 243, .8))
+
+As this is a single page game the background is constant across the experience except for pop up modals which are the above Blue and the final score modal which covers the entirety of the screen in the same Blue.
+
+##### Font
+As the goal of the site was to provide users with clear instructions and questions, I decided I wanted a clear legible font that would not distort or delay the readability. The base font selected Courier New.
+
+##### Images
+The images on this site are used to convey logic to the users when they select the quiz type they might want to try or even the questions themselves. 
+**All the images selected for this project came from pixabay.com and pexels.com.**
+
 
 ## User Stories
 
-### User 
+### User
+> As a user I want to be able to play a fun and interesting game  
+> As a user I want have a choice of what type of game I would like to play
+> As a user I want to get a score from the quiz to mark my progress 
+> As a user I want to be able to see the rules for the quiz before I start  
+> As a user I want to play again when I complete the quiz
 
-## Scope Plane
 
-## Structure Plane
+## Wireframes
 
-**Home Page**
-
-**About**
-
-**Contact**
-
-## Skeleton Plane
-
-### Home Page Desktop Wireframe
-![Home Page Desktop Wireframe]()
-
-### Home Page mobile wireframe
-![Home page mobile responsive Wireframe]()
-
-## Surface Plane
-
-### Color
-
-### Typography - 
-
->The font's chosen for this project were:
-
- - Lato
- - Sans serif
-
-> The rationale was that I wanted all of the information provided on the website to be clear, concise and without any unnecessary distractions. 
-> My focus was to also assist with users who may have visual impairments
+### Desktop & Mobile Wireframe
+![Wireframe]()
 
 ## Features
 
 <a name="features"></a>
 ### index.html
 
-#### Navigation Bar
-![Navigation Bar]()
+#### Welcome Area
+![Welcome Message]()
 
->
+#### Game Category Area
+![Game Category]()
 
-#### Footer
-![Footer]()
+#### Rules Modal
+![Rules Modal]()
 
-> Flex footer used to showcase social media icons as well as physical address and opening times. I decided to include the opening times in a table as I felt it was aestetically pleasing compared to traditionally just the text content.
+Throughout the design process my initial approach was to have a landing page where the user would select their quiz type and be taken to the Quiz Dashboard.
 
-### about.html
+However because this project was going to include Javascript I felt like I could manipulate the DOM to create a single page quiz game app which is what I have done.
 
-#### About
-![About Section]()
+By utilizing display properties effectively I was able to reduce the two / three page site down to one and create a seamless experience for my users.
 
-> The about section was initially intended to be a section about the garage history and then information about the bio of a few of the staff with image - text side by side. As the project progressed I decided to reduce this section for now.
+ 1. From page load the user will be presented with the welcome message, game choices and the rules modal button.
+ 2. Once they select a game the main page dashboard is hidden & the user is presented with a start game button and the rules again to go over.
+ 3. Once the user clicks start game button the quiz dashboard is then presented with questions, answers and a countdown clock.
+ 4. Once the final question has been answered, the end game modal will cover the screen and the quiz dashboard will be hidden. This endgame modal will display the users rank, their final score and show them the questions they were asked, the correct answer and their answer.
 
-### portfolio.html
+#### Pregame lobby
+![Pre-Game Lobby]()
 
-#### Portfolio
-![Portfolio Images](assets/images/features/feature-portfolio.png)
+#### Quiz Dashboard
+![Quiz Dashboard]()
 
-> The portfolio section was originally intended to be a services page and possibly include some click to expand content, however as I included the services in the home page I felt it was more appropriate to add a portfolio of work being done and of completed work.
+#### Countdown Clock
+> The countdown clock was an essential part of my pre-project planning. I wanted to make dynamic and it actually plays a big part in my quiz.
 
-### contact.html
+ - The countdown clock Starts when a question is presented to the user to display how long they have left to answer the question.
+ - If the user does not answer in time the clock will state "Times Up" to the user briefly before moving on to the next question.
+ - As the clock counts down it changes color.
+	 - From 15 seconds to 10 seconds it is a nice safe Green Color
+	 - From 10 seconds to 5 seconds it is a warning orange / amber color
+	 - From 5 seconds to 1 second it is a danger red color and includes a shaking motion to add urgency to the user
+	 - When it reaches 0 the clock then changes to "Times Up" and either pulls the next question or calls the end game function which brings up the end game modal.
+ - The clock also is part of the scoring system in the quiz games. If your answer is correct we check and see how much time you have left and it is factored into your score. 
+	 - If you have over 10 seconds left you score 100 points.
+	 - If you have between 6-10 seconds left you score 75 points.
+	 - If you have less than 10 seconds left you score 50 points.
+	 - If you answer incorrectly or if you run out of time then you score 0 points.
 
-#### Contact Form
-![Contact Form](assets/images/features/feature-form.png)
+#### End Game Function
 
-> Initially when I was creating the form element I used the blue color as a background as a placeholder while I was working. The original thought was that I would display a background image with the content of the form sitting on top. In hindsight it probably would have been a more visually appealing solution but I felt I had already overlay content in the hero section of index.html and wanted to try different approaches in this project. 
-
-> I also think the color works with the minimalistic design of the site and it flows well into the contact numbers and map section.
-
-> Please note that while the contact form does collect and pass the requested data as tested with the code institute form dump link, this form take the user to a created html page that gives them a form submission message. As Javascript was not part of the brief for this project it was not possible to make this a fully functioning form.
-
-> This decision to forward to a new page was taken to improve user experience when using this project.
-
-#### Map & Contact Numbers
-![Map Area](assets/images/features/feature-map.png)
-
-> Instead of using a map from my own google developer account I used an i-frame from maps.ie as it was a convenient and quick solution. 
+![End Game Modal]()
+The end game function is called when there are either no questions left in the list or if the user reaches the max-question count. 
+Once this happens the endGame function calls and it displays a final score modal that presents users with their score, ranking and a little message depending on how they did.
+The user can also see a record of the questions, images, correct answer and their answer so they can learn and get feedback from their experience.
 
 
 <a name="left"></a>
 # Features Left to implement
+> Add a high score tracker for the user
+> Add a highscores modal for each seperate game
+> Be able to input username to push to a leaderboard
 
+### Additional ideas
 
-### Home page
-> In the future I would like to include a side element banner to promote special offers that the repair shop may want to offer from time to time.
-
-> I would like to add pop up modals to the services section to explain what the typical faults might be, costs to fix and estimated timeframes.
-
->I would also like to make the service tiles as modals that onClick they would pop open with information about average issues, cost and duration it would take to fix. 
-
-
->I would like to add a carousel section to the testimonial cards that would auto move in a rotational basis and consist of about 5-8 different testimonials.
-
-### About Page
-> In the future I would like to add profiles to the about page with a breakdown of all the staff at the business. Including their name, image, what they specialize in and brief bio about themselves.
-
-### Portfolio
-> I would like to add a lightbox type gallery for these photos so that when a user clicks on them it will pop up and allow them to scroll through them as their leisure.
-> I would also like to add side by side before and after photos. Ideally with a scroll option for the user to see the work done.
-
-### Contact Us
->I have not developed a back end for the contact form and this would be high on my priority list to ensure that e-mails with booking requests are being sent both to the business & confirmation to the customer of what they requested.
-
-
->I would like to add a WhatsApp option or similar style contact method for business to allow customers to message the business for a more real-time response, whether that be for 24/7 breakdown or general queries
-
-
->I would also like to add call from browser to save the user having to copy and paste the phone number.
-
-### Additional Page ideas
->I would add a careers page for potential young adults who would be interested in apprentices to submit their info.
-
->I would add a facility for users to actually book in, in a realtime booking system.
+> 
 
 <a name="tech"></a>
 # Technology Used
-### Html
-> Used to structure my webpages and the bones of any web project
+### HTML
+> Used to structure my webpages and the bones of any web project.
 
 ### CSS
-> Used to style and add layout to my project.
+> Used to style the layout of my project.
+
+### Javascript
+> Used to make the site dynamic and to present, select and store the users answers and then provide a score based on the time it took them to answer.
 
 ### Font Awesome
-> Used for all the icons in this project
-
-### GoogleFonts
-> Used for all the fonts used in this project and to compare potential fonts.
-
-### Googlemap API
-> Used to embed I-frame on the contact page of a fictional business based in a real location in Belfast, Norther Ireland.
-
-### Canva
-> Used to create the favicon logo
-
-### Online-Convert.com
-> Used to convert files from png to webp to reduce size and improve web loading speed.
+> Used for the home icon and the github icon used in this project.
 
 <a name="testing"></a>
 # Testing
-> Testing on this project was mainly done manually by myself and a few friends to determine site usability, responsiveness and ensure it is intuitive to a completely new user.
+
 
 ### Testing Phase
 
-**Testing for links and Form**
-| Test |Outcome  |
-|--|--|
-|All links on Navigation lead to their correct pages| Pass  |
-|Contact us button leads to contact form on contact us page| Pass
-|Footer social links all lead to their respective social media sites |Pass|
-|Contact form submits when all criteria is filled correctly| Pass  |
-|User prevented from submitting form without correct elements| Pass|
-|Form Validation presents when incorrect input type is entered |Pass|
+#### Manual Testing
 
-**Testing for responsiveness**
-| Test |Outcome  |
+| Test | Result |
 |--|--|
-|Home page, about, portfolio, contact us displays correctly on screens larger than 950px|Pass |
-|Home page, about, portfolio, contact us displays correctly on screens smaller than 950px |Pass  
+|When flags game is selected correct game runs| Pass |
+|When random facts game is selected correct game runs|Pass|
+|When the rules button is clicked the modal pops up|Pass|
+|The rules modal closes when user clicks the close button|Pass|
+|The rules modal closes when the user clicks outside of the modal|Pass|
+|When game starts question, answers and images load correctly|Pass|
+|When game starts clock begins countdown|Pass|
+|When user selects answer, new question and answers are pulled|Pass|
+|When new question is called the clock restarts|Pass|
+|The correct answers appear with the correct questions|Pass|
+|The correct image appears for the correct question|Pass|
+|When the user answers a question the counter increases|Pass|
+|When the user answers the final question the game directs to the end game modal|Pass|
+|The end game modal displays the users final score & rank|Pass|
+|The end game modal displays the questions and answers the user provided and correct answer|Pass|
+|When the user clicks Play Again the page reloads back to the start|Pass|
 
 ### User testing
 
-**User testing Challenge**
+#### Peer Code Review
+> Project submitted for peer code review on Code Institute among other students.
 
-> 5 users are given some basic tasks prior to visiting web page and the results totaled to give result (20% per successful user result.)
+> Only noticable issue reported was a typo on one of the answers in the Quiz
 
-| Test | Result |
+#### User tests
+
+> 3 users were asked to attempt the following and their scores were averaged to give the below scores
+ 
+|Test|Result  |
 |--|--|
-|Upon arrival to website please navigate to where you would expect to find a contact form| 100%|
-|Please navigate to the Facebook social of this business|100%  |
-|Please fill in contact form with your information and preference in the marketing button| 100%|
-|Please provide me with a contact number of 24/7 breakdown| 100%  |
-|Please navigate to the Portfolio page and count how many images there are | 100%  |
-
-**User responsive testing**
-
-> 5 users were asked to view the website on their mobile devices and/or tablets to provide any feedback on errors or page overlapping issues.
-
-| Test | Result |
-|--|--|
-|Issues Reported| None|
+|Read the rules to understand the game|100%|
+| Navigate to the Flags Quiz and complete the game |100%  |
+|Navigate to the Random Facts Quiz and complete the game|100%|
+|Provide your rank and score to me after completing quiz|100%|
 
 ## Google Lighthouse Testing
 
-### index.html
+### Desktop
+![Lighthouse testing index.html]()
 
-![Google Lighthouse index.html](assets/images/testing-scans/lighthouse-index.png)
+### Mobile
+![Lighthouse testing index.html]()
 
-### about.html
-
-![Google Lighthouse about.html](assets/images/testing-scans/lighthouse-about.png)
-
-### portfolio.html
-![Google Lighthouse portfolio.html](assets/images/testing-scans/lighthouse-portfolio.png)
-
-### contact.html
-![Google Lighthouse contact.html](assets/images/testing-scans/lighthouse-contact.png)
-
-
-## HTML Validation
+## HTML W3 Validation
 
 ### index.html
-![W3 index.html Check](assets/images/testing-scans/index-w3-check.png)
+![W3 Validation index.html]()
 #### Result: No Errors
 
-### about.html
-![W3 about.html Check](assets/images/testing-scans/about-w3-check.png)
+### CSS Validation
+![W3 Validation index.html]()
 #### Result: No Errors
 
-### portfolio.html
-![W3 about.html Check](assets/images/testing-scans/gallery-w3-check.png)
-#### Result: No Errors, 1 warning about the section missing a heading. Page heading appears for the portfolio above and requires no additional content.
-
-### contact.html
-![W3 about.html Check](assets/images/testing-scans/contact-w3-check.png)
-#### Result: No Errors
-
-### contact-complete.html
-![W3 about.html Check](assets/images/testing-scans/form-complete-w3-check.png)
-#### Result: No Errors
-
-## CSS Validation
-
-### contact-complete.html
-![W3 about.html Check](assets/images/testing-scans/css-w3jigsaw-check.png)
-#### Result: No Errors
+### JS Hint Checker
+![JS hint Validator]()
+#### Result: No Warnings
 
 <a name="bugs"></a>
 ## **Bugs**
-> Issues with centering content on the hero overlay. **fixed**
-
-> Decided to improve the flow of the page that the parralax would be better between the two content sections. **fixed**
-
-> Original image just didnt fit the flow of the page nor the style of the page **fixed**
-
-> Font awesome social media icons showing as squares even though the script link is in the head and icon tags are correct. **fixed**
-
-> Issue with footer content overlapping and not centering. **fixed**
-
-> issue with services overlapping on mobile. (fixed, was targetting wrong element container) **fixed**
-
-> Contrast issue noted on lighthouse for the tag elements on the testimonials.(fixed, made colour darker and increased font size and weight). **fixed**
-
-> Images not in correct aspect ratio. (removed placeholder images and downloaded them in the size needed.) **fixed**
-
-> Bug appeared which some images did not show when deployed. Issue resolved as some images were using absolute file paths and not relative. **fixed**
+> 
 
 <a name="deployment"></a>
 ## Deployment
 
-> To deploy the project I followed these steps starting from the main project repository [here](https://github.com/Alan-Bushell/belfast-auto-repairs).
+> To deploy the project I followed these steps starting from the main project repository [here]().
 
  1. Clicked on `Settings` on the navigation menu in the repository
  2. I then selected the `Pages` menu on the side bar.
@@ -294,32 +243,32 @@
  4. In the next dropdown labeled `/root` I left as the default option.
  5. Selected Save
  
-> I then received a notification from GitHub that my project is being deployed and after about 1 minute & a couple of refreshes of the page it was ready and live.
+> I then received a notification from GitHub that my project is being deployed and after about 1 minute and a couple of refreshes of the page it was ready and live.
 
 <a name="credits"></a>
 ## Credits
 
-### All images sourced from pexels.com. Links for images included below
-
-> 
+### [Brian Design](https://www.youtube.com/watch?v=f4fB9Xg2JEY&t=352s) - Youtube
+> Interesting tutortial about creating a quiz and utilising local storage.
 
 <a name="content"></a>
 ## Content & Resources
-
-### NotSoBoringBible.com
-> Used for quiz questions.
 
 ### Pexels.com
 > Images used in this project.
 
 ### w3 schools
-> Used for general lookup for HTML and CSS synthax queries.
+> Used for general lookup JS dom related queries and general styling css using js
+
+> Also used for trying to clearInterval on countdown clock to make it reset.
 
 ### Stack Overflow
-> Used to query issues relating to overlapping CSS issues.
+> Used to query issues relating programming issues relating to injecting html with JS
 
-### csstricks.com
-> Used for help with flex box and alignment.
+### Youtube.com
+> Channels like **Coding Nepal** & **Brian Design** helped understand different JS concepts throughout this project
+
+> Also helped understand manipulating the DOM more effetively
 
 ### Code Institute
 > Project created in line with course content and within project 2 scope.
