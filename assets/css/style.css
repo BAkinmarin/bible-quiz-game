@@ -15,7 +15,8 @@ body {
 }
 
 /* Styles for quiz rules */
-#quiz-rules {
+#quiz-rules,
+#quiz-box {
     width: 80%;
     margin: auto;
     margin-top: 15%;
@@ -29,7 +30,8 @@ body {
     font-weight: bold;
 }
 
-#quiz-rules p {
+#quiz-rules p,
+#quiz-box p {
     font-weight: bold;
 }
 

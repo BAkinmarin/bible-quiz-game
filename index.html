@@ -43,18 +43,23 @@
     <!--Quiz area-->
     <main></main>
         <div id="quiz-box">
-            <h1>Bible Quiz Game Mode</h1>
-            <div class="question-section">
-                <!--JavaScript will be used to target this div to display Questions-->
-            </div>
-            <div class="answer-section">
-                <!--JavaScript will be used to target this div to display answer options-->
-            </div>
+            <h1>Bible Quiz</h1>
+             <!--Questions and options section-->
+             <p class="question-text" id="question">
+                <!--JavaScript will be used to target this element to display questions-->
+             </p>
+             <div class="answers-area">
+                 <div class="answer-div option-text" data-num="1">Option 1</div>
+                 <div class="answer-div option-text" data-num="2">Option 2</div>
+                 <div class="answer-div option-text" data-num="3">Option 3</div>
+                 <div class="answer-div option-text" data-num="4">Option 4</div>
+             </div>
 
             <!--Question tracker area-->
             <div class="current-question">
-                <!--JavaScript will be used to target this div to display the current question count i.e. 1 of 5-->
+                <!--JavaScript will be used to target this element to display the current question count i.e. 1 of 5-->
             </div>
+
             <div class="next-btn-div">
                 <button class="next-btn">Next Question</button>
                 <button onclick="exitQuiz()" class="exit-btn">Exit Quiz</button>
