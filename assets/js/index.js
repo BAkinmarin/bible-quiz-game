@@ -20,9 +20,4 @@ function exitQuiz() {
 }
 
 //Get questions and options values from array in questions.js file and display in new span and div
-function getQuestions() {
-   questionSection = '<span>'+ questions[index].num + "." + questions[index].question +'</span>';
-   answerSection = '<div class="options"><span>'+ questions[index].options[0] + '</span></div>' + '<div class="options"></div>'
-}
-
 

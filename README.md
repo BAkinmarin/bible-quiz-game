@@ -248,8 +248,11 @@ The user can also see a record of the questions, images, correct answer and thei
 <a name="credits"></a>
 ## Credits
 
-### [Brian Design](https://www.youtube.com/watch?v=f4fB9Xg2JEY&t=352s) - Youtube
-> Interesting tutortial about creating a quiz and utilising local storage.
+### [Brian Design](https://www.youtube.com/watch?v=f4fB9Xg2JEY&t=352s) - YouTube
+> Step-by-step tutorial on creating a quiz using HTML, CSS and JavaScript utilising local storage.
+
+### [PRAROZ](https://www.youtube.com/watch?v=1ydfKDwsYbU) - YouTube
+> Another step-by-step tutorial on creating a quiz using HTML, CSS and JavaScript.
 
 <a name="content"></a>
 ## Content & Resources
