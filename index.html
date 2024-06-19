@@ -26,8 +26,8 @@
             <br>
             <p>Instructions:</p>
             <div>
-            <div>1. You only get <span>15 seconds</span> to answer each question.</div>
-            <div>2. You will be asked questions from the Old and New Testaments.</div>
+            <div>1. You have <span>15 seconds</span> to answer each question.</div>
+            <div>2. You will be asked questions from both Old and New Testaments.</div>
             <div>3. You will not be able to change your answer once selected.</div>
             <div>4. You must select an answer before the timer runs out.</div>
             <div>5. You will not be able to exit the game once it is in progress.</div>
@@ -35,7 +35,7 @@
             <br>
             <!--Game Start Button-->
             <div class="start-btn-div">
-                <button onclick="startQuiz()" class="start-btn">Start Quiz</button>
+                <button onclick="startQuiz()" class="start-btn">Start Quiz <i class="fa-solid fa-play"></i></button>
             </div>
         </div>
     </div>
@@ -58,10 +58,10 @@
             <div class="current-question">
                 <!--JavaScript will be used to target this element to display the current question count i.e. 1 of 5-->
             </div>
-
+            <br>
             <div class="next-btn-div">
-                <button class="next-btn">Next Question</button>
-                <button onclick="exitQuiz()" class="exit-btn">Exit Quiz</button>
+                <button class="next-btn">Next Question <i class="fa-solid fa-forward-step"></i></button>
+                <button onclick="exitQuiz()" class="exit-btn">Exit Quiz <i class="fa-solid fa-circle-stop"></i></button>
             </div>
         </div>
 

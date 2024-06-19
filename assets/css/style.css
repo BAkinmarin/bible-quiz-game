@@ -11,10 +11,16 @@
 /* General styles */
 body {
     font-family: "Lato", sans-serif;
-    background: wheat;
+    background: whitesmoke;
 }
 
-/* Styles for quiz rules */
+/* Styles for Font Awesome Icons */
+.fa-solid,
+.fa-regular {
+    font-size: 1.25rem;
+}
+
+/* Styles for quiz rules area */
 #quiz-rules,
 #quiz-box {
     width: 80%;
@@ -49,7 +55,7 @@ body {
    letter-spacing: 1px;
    border-style: ridge;
    font-weight: bold;
-   background-color: antiquewhite;
+   padding: 10px;
 }
 
 .buttons-div {
@@ -73,12 +79,8 @@ body {
     opacity: 0.5;
 }
 
-/* Hide Game Box until event*/
-#quiz-box {
-    display: none;
-}
-
-/* Hide Results Box until event */
+/* Hide quiz and results boxes until user clicks start or exit */
+#quiz-box,
 #results-box {
     display: none;
 }
