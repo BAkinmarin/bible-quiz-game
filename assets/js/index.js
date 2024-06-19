@@ -4,6 +4,7 @@ const quizBox = document.getElementById('quiz-box');
 const startBtn = document.getElementById('start-btn');
 const exitBtn = document.getElementsByClassName('exit-btn');
 const questionText = document.getElementById('question');
+const optionText = Array.from(document.querySelectorAll('.option-text'));
 
 //Define startQuiz function to hide quiz rules and display quiz box
 function startQuiz() {
