@@ -1,7 +1,16 @@
 //Getting all relevant elements from the DOM
 const quizRules = document.getElementById('quiz-rules');
-const startButton = document.getElementById('start-btn');
+const quizBox = document.getElementById('quiz-box');
+const startBtn = document.getElementById('start-btn');
+const exitBtn = document.getElementsByClassName('exit-btn');
 
-//Add event listener to start game button display hidden game area and begin quiz
+function startQuiz() {
+    alert("Goodluck!");
+    document.getElementById('quiz-rules').style.display = "none";
+    document.getElementById('quiz-box').style.display = "block";
+}
+
+
+
 
 

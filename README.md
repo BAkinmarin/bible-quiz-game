@@ -258,20 +258,20 @@ The user can also see a record of the questions, images, correct answer and thei
 > Images used in this project.
 
 ### NotSoBoringBible.com
-> Used to gather quiz questions used in project.
+> Used for quiz questions used in project.
 
 ### w3 schools
-> Used for general lookup JS dom related queries and general styling css using js
+> Used for general lookup JS dom related queries and general styling css using js.
 
 > Also used for trying to clearInterval on countdown clock to make it reset.
 
 ### Stack Overflow
-> Used to query issues relating programming issues relating to injecting html with JS
+> Used to query issues relating programming issues relating to injecting html with JS.
 
 ### Youtube.com
-> Channels like **Coding Nepal** & **Brian Design** helped understand different JS concepts throughout this project
+> Channels like **Coding Nepal** & **Brian Design** helped understand different JS concepts throughout this project.
 
-> Also helped understand manipulating the DOM more effetively
+> Also helped understand manipulating the DOM more effetively.
 
 ### Code Institute
 > Project created in line with course content and within project 2 scope.
