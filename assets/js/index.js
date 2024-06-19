@@ -3,7 +3,7 @@ const quizRules = document.getElementById('quiz-rules');
 const quizBox = document.getElementById('quiz-box');
 const startBtn = document.getElementById('start-btn');
 const exitBtn = document.getElementsByClassName('exit-btn');
-const questionSection = document.getElementsByClassName('question-section');
+const questionText = document.getElementById('question');
 
 //Define startQuiz function to hide quiz rules and display quiz box
 function startQuiz() {
@@ -20,7 +20,7 @@ function exitQuiz() {
 }
 
 //Get questions and options values from array in questions.js file and display in new span and div
-function getQuestions(index) {
+function getQuestions() {
    questionSection = '<span>'+ questions[index].num + "." + questions[index].question +'</span>';
    answerSection = '<div class="options"><span>'+ questions[index].options[0] + '</span></div>' + '<div class="options"></div>'
 }
