@@ -65,15 +65,15 @@
         <!--JavaScript will be used to target these elements to display questions and options-->
         <p class="question-text" id="question">Question</p>
         <div class="answers-area">
-            <p class="answer-div choices-text" data-number="1">Option 1</p>
-            <p class="answer-div choices-text" data-number="2">Option 2</p>
-            <p class="answer-div choices-text" data-number="3">Option 3</p>
-            <p class="answer-div choices-text" data-number="4">Option 4</p>
+            <p class="answer-div choice-text" data-number="1">Option 1</p>
+            <p class="answer-div choice-text" data-number="2">Option 2</p>
+            <p class="answer-div choice-text" data-number="3">Option 3</p>
+            <p class="answer-div choice-text" data-number="4">Option 4</p>
         </div>
         <p class="hidden" id="hidden-verse">Full verse goes here</p>
 
         <div class="next-btn-div">
-            <button class="next-btn">Next Question <i class="fa-solid fa-forward-step"></i></button>
+            <button onclick="nextQuestion()" class="next-btn">Next Question <i class="fa-solid fa-forward-step"></i></button>
             <button onclick="exitQuiz()" class="exit-btn">Exit Quiz <i class="fa-solid fa-circle-xmark"></i></button>
         </div>
     </div>
@@ -88,7 +88,6 @@
 
         <div class="buttons-div">
             <button onclick="restartQuiz()" class="restart-btn">Restart Quiz <i class="fa-solid fa-repeat"></i></button>
-            <!--<button onclick="exitQuiz()" class="exit-btn">Exit Quiz <i class="fa-solid fa-circle-xmark"></i></button>-->
         </div>
     </div>
 
