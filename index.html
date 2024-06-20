@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!--Google Fonts-->
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playwrite+DE+Grund:wght@100..400&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playwrite+DE+Grund:wght@100..400&display=swap"
+        rel="stylesheet">
 
     <!--Favicon-->
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -17,6 +20,7 @@
     <!--Link CSS file-->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
     <header></header>
     <!--Game Introduction and Rules-->
@@ -40,53 +44,54 @@
 
     <!--Quiz area-->
     <main></main>
-        <div id="quiz-box">
-            <h1>Bible Quiz</h1>
-            <!--Question Tracker and Countdown area-->
-            <div class="countdown-tracker-div">
-                 <!--Question tracker area-->
-                 <!--JavaScript will be used to target this element to display the current question count i.e. 1 of 5-->
-                 <div id="questions-counter">
-                    <p class="questions-tracker-text" id="questions-tracker">Question Tracker</p>
-                 </div>
-                 <!--Countdown area-->
-                 <!--JavaScript will be used to target this element to display time left for each question-->
-                <div class="countdown-div">
-                    <p class="countdown-timer">Time Left: <span id="clock">15</span>s</p>
-                </div>
+    <div id="quiz-box">
+        <h1>Bible Quiz</h1>
+        <!--Question Tracker and Countdown area-->
+        <div class="countdown-tracker-div">
+            <!--Question tracker area-->
+            <!--JavaScript will be used to target this element to display the current question count i.e. 1 of 5-->
+            <div id="questions-counter">
+                <p class="questions-tracker-text" id="questions-tracker">Question Tracker</p>
             </div>
-        
-             <!--Questions and options section-->
-             <!--JavaScript will be used to target these elements to display questions and options-->
-             <p class="question-text" id="question">Question</p>
-             <div class="answers-area">
-                 <p class="answer-div option-text" data-num="1">Option 1</p>
-                 <p class="answer-div option-text" data-num="2">Option 2</p>
-                 <p class="answer-div option-text" data-num="3">Option 3</p>
-                 <p class="answer-div option-text" data-num="4">Option 4</p>
-             </div>
-             <p class="hidden" id="hidden-verse">Full verse goes here</p>
-            
-            <div class="next-btn-div">
-                <button class="next-btn">Next Question <i class="fa-solid fa-forward-step"></i></button>
-                <button onclick="exitQuiz()" class="exit-btn">Exit Quiz <i class="fa-solid fa-circle-xmark"></i></button>
+            <!--Countdown area-->
+            <!--JavaScript will be used to target this element to display time left for each question-->
+            <div class="countdown-div">
+                <p class="countdown-timer">Time Left: <span id="clock">15</span>s</p>
             </div>
         </div>
 
-        <!--Results box-->
-        <!--JavaScript will be used to target this div to display the score-->
-        <div id="results-box">
-            <h2>Congratulations!</h2>
-            <div class="quiz-complete">
-                <p class="score">Your score is: <span id="score-text">0</span></p>
-            </div>
-            
-            <div class="buttons-div">
-            <button onclick="restartQuiz()" class="restart-btn">Restart Quiz <i class="fa-solid fa-repeat"></i></button>
+        <!--Questions and options section-->
+        <!--Code inspired by Mentor, Alan Bushell-->
+        <!--JavaScript will be used to target these elements to display questions and options-->
+        <p class="question-text" id="question">Question</p>
+        <div class="answers-area">
+            <p class="answer-div choices-text" data-number="1">Option 1</p>
+            <p class="answer-div choices-text" data-number="2">Option 2</p>
+            <p class="answer-div choices-text" data-number="3">Option 3</p>
+            <p class="answer-div choices-text" data-number="4">Option 4</p>
+        </div>
+        <p class="hidden" id="hidden-verse">Full verse goes here</p>
+
+        <div class="next-btn-div">
+            <button class="next-btn">Next Question <i class="fa-solid fa-forward-step"></i></button>
             <button onclick="exitQuiz()" class="exit-btn">Exit Quiz <i class="fa-solid fa-circle-xmark"></i></button>
-            </div>
-        </div>    
-    
+        </div>
+    </div>
+
+    <!--Results box-->
+    <!--JavaScript will be used to target this div to display the score-->
+    <div id="results-box">
+        <h2>Congratulations!</h2>
+        <div class="quiz-complete">
+            <p class="score">Your score is: <span id="score-text">0</span></p>
+        </div>
+
+        <div class="buttons-div">
+            <button onclick="restartQuiz()" class="restart-btn">Restart Quiz <i class="fa-solid fa-repeat"></i></button>
+            <!--<button onclick="exitQuiz()" class="exit-btn">Exit Quiz <i class="fa-solid fa-circle-xmark"></i></button>-->
+        </div>
+    </div>
+
     <footer></footer>
 
     <!--Font Awesome-->
@@ -99,4 +104,5 @@
     <script src="assets/js/questions.js"></script>
 
 </body>
+
 </html>

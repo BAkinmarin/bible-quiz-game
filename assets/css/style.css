@@ -85,7 +85,8 @@ body {
    letter-spacing: 1px;
    border-style: ridge;
    font-weight: bold;
-   padding: 10px;
+   padding: 1.25rem;
+   margin-top: 1rem;
 }
 
 .buttons-div {

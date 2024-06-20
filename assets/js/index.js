@@ -7,7 +7,7 @@ const exitBtn = document.getElementsByClassName('exit-btn');
 const restartBtn = document.getElementsByClassName('restart-btn');
 const hiddenVerse = document.getElementById('hidden-verse');
 const question = document.getElementById('question');
-const optionText = Array.from(document.getElementsByClassName('option-text'));
+const choices = Array.from(document.getElementsByClassName('choices-text'));
 const questionsTracker = document.getElementById('questions-tracker');
 
 //Initialise score and question counter, create empty array for questions and empty object for current question
@@ -29,7 +29,7 @@ const MAX_QUESTIONS = 5;
  */
 
 //Define startQuiz function to hide quiz rules, display quiz box and initialise score and questions counter
-    startQuiz = () => {
+startQuiz = () => {
     quizRules.style.display = "none";
     resultsBox.style.display = "none";
     quizBox.style.display = "block";
@@ -43,7 +43,7 @@ const MAX_QUESTIONS = 5;
 /**
  * The getNewQuestion function retrieves and displays questions and answer options at random from the array in questions.js file.
  */
-    getNewQuestion = () => {
+getNewQuestion = () => {
     if (availableQuestions.length === 0 || questionsCounter >= MAX_QUESTIONS) {
         exitQuiz();
         quizBox.style.display = "none";
@@ -53,17 +53,34 @@ const MAX_QUESTIONS = 5;
     questionsCounter++;
     questionsTracker.innerText = `Question ${questionsCounter} of ${MAX_QUESTIONS}`;
 
-    //Select question at random from question array in questions.js file and display in corresponding HTML element
+    //Select question at random from questions array in questions.js file and display in corresponding HTML element
     const questionsIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = availableQuestions[questionsIndex];
-    //question.innerText = currentQuestion.question;
-    question.innerText = `Question ${questionsCounter}: ${currentQuestion.question}`;
+    question.innerText = currentQuestion.question;
+
+    //Select answer options from questions array in questions.js file and display in corresponding HTML element
+    choices.forEach(choice => {
+        //Assign number as dataset options defined in HTML file
+        const number = choice.dataset['number'];
+        choice.innerText = currentQuestion['choice' + number];
+    });
+
+    //Remove randomly displayed question from array and allow user to select answer
+    availableQuestions.splice(questionsIndex, 1);
+    acceptingAnswers = true;
 }
 
-//Define exitQuiz function to leave game and return to quiz rules page
-function exitQuiz() {
-    //alert("You are about to exit game!");
+//Define exitQuiz function to leave game and return to quiz rules page  
+exitQuiz = () => {
+    quizBox.style.display = "none";
+    quizRules.style.display = "none";
+    resultsBox.style.display = "block";
+}
+
+//Define restartQuiz function
+restartQuiz = () => {
     quizBox.style.display = "none";
     quizRules.style.display = "block";
     resultsBox.style.display = "none";
+    startQuiz();
 }
