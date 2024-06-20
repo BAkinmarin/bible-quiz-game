@@ -20,7 +20,7 @@ body {
     font-size: 1.25rem;
 }
 
-/* Styles for quiz rules area */
+/* Styles for quiz rules and quiz box area */
 #quiz-rules,
 #quiz-box {
     width: 80%;
@@ -28,6 +28,12 @@ body {
     margin-top: 15%;
     text-align: start;
     font-size: 1.25rem;
+    padding: 1rem;
+    line-height: 2.5rem;
+}
+
+#quiz-box {
+    cursor: pointer;
 }
 
 #quiz-rules h1 {
