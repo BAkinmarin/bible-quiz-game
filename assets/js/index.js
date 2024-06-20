@@ -97,6 +97,11 @@ getNewQuestion = () => {
     acceptingAnswers = true;
 }
 
+//Define nextQuestion function to allow user move to next question when ready
+nextQuestion = () => {
+    getNewQuestion();
+}
+
 //Define exitQuiz function to leave game and return to quiz rules page  
 exitQuiz = () => {
     quizBox.style.display = "none";
@@ -106,8 +111,5 @@ exitQuiz = () => {
 
 //Define restartQuiz function
 restartQuiz = () => {
-    quizBox.style.display = "none";
-    quizRules.style.display = "block";
-    resultsBox.style.display = "none";
-    getNewQuestion();
+    startQuiz();
 }
