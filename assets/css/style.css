@@ -22,7 +22,8 @@ body {
 
 /* Styles for quiz rules and quiz box area */
 #quiz-rules,
-#quiz-box {
+#quiz-box,
+#results-box {
     width: 80%;
     margin: auto;
     margin-top: 15%;
@@ -32,19 +33,24 @@ body {
     line-height: 2.5rem;
 }
 
-#quiz-box {
-    cursor: pointer;
-}
-
 #quiz-rules h1 {
     text-align: center;
-    font-size: 2rem;
     font-weight: bold;
 }
 
 #quiz-rules p,
 #quiz-box p {
     font-weight: bold;
+}
+
+.answers-area {
+    cursor: pointer;
+}
+
+/* Style count down timer */
+.countdown-div {
+    display: flex;
+    flex-direction: row-reverse;
 }
 
 /* Style Start, Restart, Exit and Next Buttons */
@@ -88,5 +94,5 @@ body {
 /* Hide quiz and results boxes until user clicks start or exit */
 #quiz-box,
 #results-box {
-    display: none;
+    /*display: none;*/
 }

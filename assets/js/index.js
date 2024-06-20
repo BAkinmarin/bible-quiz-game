@@ -12,6 +12,7 @@ let questionCounter = 0;
 let score = 0;
 let currentQuestion = {};
 let acceptingAnswers = true;
+let timeLeft = parseInt(clock.innerText);
 
 //Define fixed variables for max score and max number of questions
 const MAX_SCORE = 100;

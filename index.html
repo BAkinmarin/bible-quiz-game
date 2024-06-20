@@ -26,7 +26,7 @@
             <br>
             <p>Instructions:</p>
             <div>
-            <div>1. You have <span>15 seconds</span> to answer each question.</div>
+            <div>1. You have 15 seconds to answer each question.</div>
             <div>2. You will be asked questions from both Old and New Testaments.</div>
             <div>3. You will not be able to change your answer once selected.</div>
             <div>4. You must select an answer before the timer runs out.</div>
@@ -44,7 +44,10 @@
     <main></main>
         <div id="quiz-box">
             <h1>Bible Quiz</h1>
-            <div id="clock-timer">Time Left: </div>
+            <!--Countdown timer area-->
+            <div class="countdown-div">
+                <div class="countdown-timer">Time Left: <span id="clock">15</span>s</div>
+            </div>
              <!--Questions and options section-->
              <!--JavaScript will be used to target these elements to display questions and options-->
              <p class="question-text" id="question">Question</p>
@@ -54,6 +57,7 @@
                  <div class="answer-div option-text" data-num="3">Option 3</div>
                  <div class="answer-div option-text" data-num="4">Option 4</div>
              </div>
+             <p class="hidden">Full verse goes here</p>
 
             <!--Question tracker area-->
             <div class="current-question">
@@ -62,19 +66,20 @@
             <br>
             <div class="next-btn-div">
                 <button class="next-btn">Next Question <i class="fa-solid fa-forward-step"></i></button>
-                <button onclick="exitQuiz()" class="exit-btn">Exit Quiz <i class="fa-solid fa-circle-stop"></i></button>
+                <button onclick="exitQuiz()" class="exit-btn">Exit Quiz <i class="fa-solid fa-circle-xmark"></i></button>
             </div>
         </div>
 
         <!--Results box-->
+        <!--JavaScript will be used to target this div to display the score-->
         <div id="results-box">
-            <div class="quiz-complete">Congratulations, you have completed the Quiz!</div>
-            <div class=score-text>
-            <!--JavaScript will be used to target this div to display the score-->
-            </div>
+            <h2>Congratulations!</h2>
+            <div class="quiz-complete"></div>
+            <div>Your score is: <span id="score-text">0</span></div>
+            <br>
             <div class="buttons-div">
-            <button onclick="restartQuiz()" class="restart-btn">Restart Quiz</button>
-            <button onclick="exitQuiz()" class="exit-btn">Exit Quiz</button>
+            <button onclick="restartQuiz()" class="restart-btn">Restart Quiz <i class="fa-solid fa-repeat"></i></button>
+            <button onclick="exitQuiz()" class="exit-btn">Exit Quiz <i class="fa-solid fa-circle-xmark"></i></button>
             </div>
         </div>    
     
