@@ -11,6 +11,7 @@ const question = document.getElementById('question');
 const choices = Array.from(document.getElementsByClassName('choice-text'));
 const questionsTracker = document.getElementById('questions-tracker');
 const clock = document.getElementById('clock');
+const timerDisplay = document.getElementById('timer-display');
 
 //Initialise score and question counter, create empty array for questions and empty object for current question
 let availableQuestions = [];
@@ -23,7 +24,7 @@ let acceptingAnswers = true;
 const MAX_SCORE = 100;
 const MAX_QUESTIONS = 5;
 
-//Define timer variable - inspired by Live Blogger - YouTube tutorial
+//Define timer variable
 let timerInterval;
 
 /**
@@ -41,13 +42,35 @@ startQuiz = () => {
     score = 0;
     availableQuestions = [...questions];
     getNewQuestion();
-    startTimer(15);
 }
 
 /**
  * The getNewQuestion function retrieves and displays questions and answer options at random from the array in questions.js file.
+ * It also includes a timer feature inspired by Live Blogger - YouTube tutorial
  */
 getNewQuestion = () => {
+
+    //Code to initialise timer
+    clearInterval(timerInterval);
+
+    //Set timer value and innerText
+    let timeLeft = 15;
+    timerDisplay.innerText = `Time Left: 15s`;
+
+    //Set timer to run every 1000 milliseconds (1 second)
+    timerInterval = setInterval(() => {
+        timerDisplay.innerText = `Time Left: ${timeLeft}s`;
+        //Decrement seconds by 1
+        timeLeft--;
+
+        //Stop timer counting down when at 0 and move to next question
+        if (timeLeft < 0) {
+            clearInterval(timerInterval);
+            getNewQuestion();
+        }
+    }, 1000);
+
+    //Check if any questions available to display or if counter has reached max question limit set
     if (availableQuestions.length === 0 || questionsCounter >= MAX_QUESTIONS) {
         exitQuiz();
         quizBox.style.display = "none";
@@ -74,14 +97,6 @@ getNewQuestion = () => {
     acceptingAnswers = true;
 }
 
-/**
- * This is the countdown timer function.
- * It is passed a parameter of an integer which is the countdown value applied.
- */
-startTimer = (time) => {
-
-}
-
 //Define exitQuiz function to leave game and return to quiz rules page  
 exitQuiz = () => {
     quizBox.style.display = "none";
@@ -94,5 +109,5 @@ restartQuiz = () => {
     quizBox.style.display = "none";
     quizRules.style.display = "block";
     resultsBox.style.display = "none";
-    startQuiz();
+    getNewQuestion();
 }
