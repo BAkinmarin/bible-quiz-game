@@ -26,11 +26,11 @@
             <br>
             <p>Instructions:</p>
             <div>
-            <div>1. You have 15 seconds to answer each question.</div>
-            <div>2. You will be asked questions from both Old and New Testaments.</div>
-            <div>3. You will not be able to change your answer once selected.</div>
-            <div>4. You must select an answer before the timer runs out.</div>
-            <div>5. You will not be able to exit the game once it is in progress.</div>
+                <p>1. You have 15 seconds to answer each question.</p>
+                <p>2. You will be asked questions from both Old and New Testaments.</p>
+                <p>3. You will not be able to change your answer once selected.</p>
+                <p>4. You must select an answer before the timer runs out.</p>
+                <p>5. You will not be able to exit the game once it is in progress.</p>
             </div>
             <br>
             <!--Game Start Button-->
@@ -46,22 +46,23 @@
             <h1>Bible Quiz</h1>
             <!--Countdown timer area-->
             <div class="countdown-div">
-                <div class="countdown-timer">Time Left: <span id="clock">15</span>s</div>
+                <p class="countdown-timer">Time Left: <span id="clock">15</span>s</p>
             </div>
              <!--Questions and options section-->
              <!--JavaScript will be used to target these elements to display questions and options-->
              <p class="question-text" id="question">Question</p>
              <div class="answers-area">
-                 <div class="answer-div option-text" data-num="1">Option 1</div>
-                 <div class="answer-div option-text" data-num="2">Option 2</div>
-                 <div class="answer-div option-text" data-num="3">Option 3</div>
-                 <div class="answer-div option-text" data-num="4">Option 4</div>
+                 <p class="answer-div option-text" data-num="1">Option 1</p>
+                 <p class="answer-div option-text" data-num="2">Option 2</p>
+                 <p class="answer-div option-text" data-num="3">Option 3</p>
+                 <p class="answer-div option-text" data-num="4">Option 4</p>
              </div>
              <p class="hidden">Full verse goes here</p>
 
             <!--Question tracker area-->
-            <div class="current-question">
-                <!--JavaScript will be used to target this element to display the current question count i.e. 1 of 5-->
+            <!--JavaScript will be used to target this element to display the current question count i.e. 1 of 5-->
+            <div id="question-tracker">
+                <p class="question-tracker">Question Tracker</p>
             </div>
             <br>
             <div class="next-btn-div">
@@ -74,8 +75,9 @@
         <!--JavaScript will be used to target this div to display the score-->
         <div id="results-box">
             <h2>Congratulations!</h2>
-            <div class="quiz-complete"></div>
-            <div>Your score is: <span id="score-text">0</span></div>
+            <div class="quiz-complete">
+                <p class="score">Your score is: <span id="score-text">0</span></p>
+            </div>
             <br>
             <div class="buttons-div">
             <button onclick="restartQuiz()" class="restart-btn">Restart Quiz <i class="fa-solid fa-repeat"></i></button>

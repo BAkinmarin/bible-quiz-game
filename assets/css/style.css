@@ -38,13 +38,18 @@ body {
     font-weight: bold;
 }
 
-#quiz-rules p,
-#quiz-box p {
+#quiz-box .question-text {
     font-weight: bold;
 }
 
 .answers-area {
     cursor: pointer;
+}
+
+.hidden {
+    /*display: none;*/
+    font-style: oblique;
+    color: brown;
 }
 
 /* Style count down timer */
