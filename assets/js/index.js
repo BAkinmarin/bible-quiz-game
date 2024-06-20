@@ -10,8 +10,8 @@ const hiddenVerse = document.getElementById('hidden-verse');
 const question = document.getElementById('question');
 const choices = Array.from(document.getElementsByClassName('choice-text'));
 const questionsTracker = document.getElementById('questions-tracker');
-const clock = document.getElementById('clock');
 const timerDisplay = document.getElementById('timer-display');
+const scoreText = document.getElementsByClassName('score-text');
 
 //Initialise score and question counter, create empty array for questions and empty object for current question
 let availableQuestions = [];
@@ -96,6 +96,9 @@ getNewQuestion = () => {
     availableQuestions.splice(questionsIndex, 1);
     acceptingAnswers = true;
 }
+
+//Check if user answer is correct or incorrect and apply defined styles
+
 
 //Define nextQuestion function to allow user move to next question when ready
 nextQuestion = () => {
