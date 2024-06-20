@@ -30,7 +30,7 @@ body {
     text-align: start;
     font-size: 1.25rem;
     padding: 1rem;
-    line-height: 2.5rem;
+    line-height: 3rem;
 }
 
 #quiz-rules h1 {
@@ -40,6 +40,9 @@ body {
 
 #quiz-box .question-text {
     font-weight: bold;
+    line-height: normal;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 .answers-area {
@@ -50,11 +53,21 @@ body {
     /*display: none;*/
     font-style: oblique;
     color: brown;
+    text-decoration: wavy;
 }
 
-/* Style count down timer */
-.countdown-div {
+#questions-counter .questions-tracker-text {
+    font-style: italic;
+    font-weight: bold;
+}
+
+/* Style count down timer and question tracker*/
+.countdown-tracker-div {
     display: flex;
+    justify-content: space-between;
+}
+
+.countdown-div {
     flex-direction: row-reverse;
 }
 
