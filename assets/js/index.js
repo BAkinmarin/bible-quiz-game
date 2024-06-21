@@ -87,7 +87,7 @@ getNewQuestion = () => {
 
     //Select answer options from questions array in questions.js file and display in corresponding HTML element
     choices.forEach(choice => {
-        //Assign number as dataset options defined in HTML file
+        //Assign number as dataset options defined in HTML file and display choice options
         const number = choice.dataset['number'];
         choice.innerText = currentQuestion['choice' + number];
     });
@@ -97,8 +97,38 @@ getNewQuestion = () => {
     acceptingAnswers = true;
 }
 
-//Check if user answer is correct or incorrect and apply defined styles
+/**
+ * This function checks user answers by listening for a click event denoted as 'e'.
+ * It then checks against answer defined in questions array and adds class from CSS if correct or incorrect.
+ * Concept used here isinspired by Brian Design - YouTube tutorial.
+ */
+choices.forEach(choice => {
+    choice.addEventListener('click', e => {
+        if (!acceptingAnswers) return
 
+        acceptingAnswers = false;
+        const selectedChoice = e.target;
+        const selectedAnswer = selectedChoice.dataset['number'];
+
+        let classToApply = selectedAnswer === currentQuestion.answer ? 'correct' : 'incorrect';
+
+        if (classToApply === 'correct') {
+            incrementScore(MAX_SCORE);
+        }
+
+        selectedChoice.parentElement.classList.add(classToApply);
+
+        setTimeout(() => {
+            selectedChoice.parentElement.classList.remove(classToApply);
+            getNewQuestion();
+        }, 1000);
+    })
+})
+
+incrementScore = num => {
+    score += num;
+    scoreText.innerText = score;
+}
 
 //Define nextQuestion function to allow user move to next question when ready
 nextQuestion = () => {
