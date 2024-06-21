@@ -65,12 +65,13 @@
         <!--JavaScript will be used to target these elements to display questions and options-->
         <p class="question-text" id="question">Question</p>
         <div class="answers-area">
-            <p class="answer-div choice-text" data-number="1" onclick="e(event)">Option 1</p>
-            <p class="answer-div choice-text" data-number="2" onclick="e(event)">Option 2</p>
-            <p class="answer-div choice-text" data-number="3" onclick="e(event)">Option 3</p>
-            <p class="answer-div choice-text" data-number="4" onclick="e(event)">Option 4</p>
+            <p class="answer-div choice-text" data-number="1">Option 1</p>
+            <p class="answer-div choice-text" data-number="2">Option 2</p>
+            <p class="answer-div choice-text" data-number="3">Option 3</p>
+            <p class="answer-div choice-text" data-number="4">Option 4</p>
         </div>
-        <p class="hidden-text" id="hidden-verse">Full verse goes here</p>
+        <p class="correct-answer-text" id="correct-answer">Correct Answer: </p>
+        <p class="hidden-verse-text" id="hidden-verse">Verse: </p>
 
         <div class="next-btn-div">
             <button onclick="nextQuestion()" class="next-btn">Next <i class="fa-solid fa-forward-step"></i></button>
@@ -81,9 +82,9 @@
     <!--Results box-->
     <!--JavaScript will be used to target this div to display the score-->
     <div id="results-box">
-        <h1>Congratulations!</h1>
+        <h1>Congratulations, you have completed the quiz!</h1>
         <div class="quiz-complete">
-            <p class="final-score-text" id="final-score">Your score is: 0</p>
+            <p class="final-score-text" id="final-score"></p>
         </div>
 
         <div class="buttons-div">

@@ -13,6 +13,7 @@ const questionsTracker = document.getElementById('questions-tracker');
 const timerDisplay = document.getElementById('timer-display');
 const scoreText = document.getElementById('score-text');
 const finalScore = document.getElementById('final-score');
+const correctAnswer = document.getElementById('correct-answer');
 
 //Initialise score and question counter, create empty array for questions and empty object for current question
 let availableQuestions = [];
@@ -22,11 +23,17 @@ let currentQuestion = {};
 let acceptingAnswers = true;
 
 //Define fixed variables for max score and max number of questions
-const MAX_SCORE = 100;
 const MAX_QUESTIONS = 5;
 
 //Define timer variable
 let timerInterval;
+
+//Function to reset local storage
+const resetLocalStorage = () => {
+    for (i=0; i < MAX_QUESTIONS; i++) {
+        localStorage.removeItem(`selectedAnswer_${i}`);
+    }
+};
 
 /**
  * Functions defined throughout this project will be defined using 'Arrow Function' syntax to simplify code.
@@ -39,11 +46,12 @@ startQuiz = () => {
     resultsBox.style.display = "none";
     quizBox.style.display = "block";
     hiddenVerse.style.display = "none";
+    correctAnswer.style.display = "none";
     questionsCounter = 0;
     score = 0;
     availableQuestions = [...questions];
     getNewQuestion();
-}
+};
 
 /**
  * The getNewQuestion function retrieves and displays questions and answer options at random from the array in questions.js file.
@@ -96,60 +104,89 @@ getNewQuestion = () => {
     //Remove randomly displayed question from array and allow user to select answer
     availableQuestions.splice(questionsIndex, 1);
     acceptingAnswers = true;
-}
+};
 
 /**
  * This function checks user answers by listening for a click event denoted as 'e'.
  * It then checks against answer defined in questions array and adds class from CSS if correct or incorrect.
- * Concept used here isinspired by Brian Design - YouTube tutorial.
+ * Concept used here is inspired by my mentor's steer to James Quick - YouTube tutorial.
  */
-choices.forEach(choice => {
-    choice.addEventListener('click', e => {
-        if (!acceptingAnswers) return
+choices.forEach((choice) => {
+    /* For each choice, add event listener notated as 'e'.*/
+    choice.addEventListener("click", e =>{
+        if (!acceptingAnswers) return;
 
-        acceptingAnswers = false;
-        const selectedChoice = e.target;
-        const selectedAnswer = selectedChoice.dataset['number'];
+    acceptingAnswers = false;
+    /* Setting the users choice as the event*/
+    const selectedChoice = e.target;
+    /* Getting the number associated with the data-number,
+     to return the choice of the user*/
+    const selectedAnswer = selectedChoice.dataset['number'];
+    if (currentQuestion.answer === 1) {
+        correctAnswer.innerText =
+        `Correct Answer: ${currentQuestion.choice1}`;
+        hiddenVerse.innerText = 
+        `Verse: ${currentQuestion.verse}`;
+        finalScore.innerText = 
+        `Your Final Score: ${score + 1} / ${MAX_QUESTIONS}!`;
+    } else if (currentQuestion.answer === 2) {
+        correctAnswer.innerText =
+        `Correct Answer: ${currentQuestion.choice2}`;
+        hiddenVerse.innerText = 
+        `Verse: ${currentQuestion.verse}`;
+        finalScore.innerText = 
+        `Your Final Score: ${score + 1} / ${MAX_QUESTIONS}!`;
+    } else if (currentQuestion.answer === 3) {
+        correctAnswer.innerText =
+        `Correct Answer: ${currentQuestion.choice3}`;
+        hiddenVerse.innerText = 
+        `Verse: ${currentQuestion.verse}`;
+        finalScore.innerText = 
+        `Your Final Score: ${score + 1} / ${MAX_QUESTIONS}!`;
+    } else if (currentQuestion.answer === 4) {
+        correctAnswer.innerText =
+        `Correct Answer: ${currentQuestion.choice4}`;
+        hiddenVerse.innerText = 
+        `Verse: ${currentQuestion.verse}`;
+        finalScore.innerText = 
+        `Your Final Score: ${score + 1} / ${MAX_QUESTIONS}!`;
+    }
 
-        let classToApply = selectedAnswer === currentQuestion.answer ? 'correct' : 'incorrect';
+    let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
 
-        if (classToApply === 'correct') {
-            incrementScore(MAX_SCORE);
-        } else {
-            selectedChoice.parentElement.classList.add(classToApply);
-        }
+    if (classToApply === 'correct') {
+        e.target.classList.add('correct');
+        score++;
+        scoreText.innerText = `Score: ${score}`;
+        correctAnswer.style.display = "block";
+        hiddenVerse.style.display = "block";
+        clearInterval(timerInterval);
+        getNewQuestion();
+    } else if (classToApply === 'incorrect') {
+        e.target.classList.add('incorrect');
+        correctAnswer.style.display = "block";
+        hiddenVerse.style.display = "block";
+        clearInterval(timerInterval);
+        getNewQuestion();
+    }
 
-        //selectedChoice.parentElement.classList.add(classToApply);
+    correctAnswer.style.display = "none";
+    hiddenVerse.style.display = "none";
+    e.target.classList.remove(classToApply);
 
-        setTimeout(() => {
-            selectedChoice.parentElement.classList.remove(classToApply);
-            getNewQuestion();
-        }, 1000);
-    });
+  });
 });
-
-for (i = 0; i < choices.length; i++) {
-    choices[i].setAttribute("onclick", "choiceSelected(this)")
-}
-
-incrementScore = num => {
-    score += num;
-    scoreText.innerText = score;
-}
 
 //Define nextQuestion function to allow user move to next question when ready
 nextQuestion = () => {
     getNewQuestion();
-}
+};
 
 //Define exitQuiz function to leave game and return to quiz rules page  
 exitQuiz = () => {
     quizBox.style.display = "none";
     quizRules.style.display = "none";
     resultsBox.style.display = "block";
-}
+};
 
 //Define restartQuiz function
-restartQuiz = () => {
-    startQuiz();
-}

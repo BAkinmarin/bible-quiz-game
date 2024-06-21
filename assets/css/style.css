@@ -67,11 +67,11 @@ body {
 /* Styles to be applied using JavaScript depending on user selection */
 /* Change color to green if selected option is correct and red if incorrect */
 .correct {
-    background: green;
+    border-color: green;
 }    
 
 .incorrect {
-    background: red;
+    border-color: red;
 }
 
 /* Hide answer description prior to selecting option */
