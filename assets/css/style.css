@@ -30,12 +30,18 @@ body {
     text-align: start;
     font-size: 1.25rem;
     padding: 1rem;
-    line-height: 3rem;
+    line-height: 2rem;
 }
 
 #quiz-rules h1 {
     text-align: center;
     font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+#quiz-box h1,
+#results-box h1 {
+    margin-bottom: 1rem;
 }
 
 #quiz-box .question-text {
@@ -61,11 +67,11 @@ body {
 /* Styles to be applied using JavaScript depending on user selection */
 /* Change color to green if selected option is correct and red if incorrect */
 .correct {
-    color: green;
+    background: green;
 }    
 
 .incorrect {
-    color: red;
+    background: red;
 }
 
 /* Hide answer description prior to selecting option */
@@ -73,6 +79,11 @@ body {
     font-style: oblique;
     color: brown;
     text-decoration: wavy;
+}
+
+/* Classes to be called using JavaScript during Game play */
+.hidden {
+    display: none;
 }
 
 .btn[disabled]:hover {

@@ -11,7 +11,8 @@ const question = document.getElementById('question');
 const choices = Array.from(document.getElementsByClassName('choice-text'));
 const questionsTracker = document.getElementById('questions-tracker');
 const timerDisplay = document.getElementById('timer-display');
-const scoreText = document.getElementsByClassName('score-text');
+const scoreText = document.getElementById('score-text');
+const finalScore = document.getElementById('final-score');
 
 //Initialise score and question counter, create empty array for questions and empty object for current question
 let availableQuestions = [];
@@ -114,16 +115,22 @@ choices.forEach(choice => {
 
         if (classToApply === 'correct') {
             incrementScore(MAX_SCORE);
+        } else {
+            selectedChoice.parentElement.classList.add(classToApply);
         }
 
-        selectedChoice.parentElement.classList.add(classToApply);
+        //selectedChoice.parentElement.classList.add(classToApply);
 
         setTimeout(() => {
             selectedChoice.parentElement.classList.remove(classToApply);
             getNewQuestion();
         }, 1000);
-    })
-})
+    });
+});
+
+for (i = 0; i < choices.length; i++) {
+    choices[i].setAttribute("onclick", "choiceSelected(this)")
+}
 
 incrementScore = num => {
     score += num;
