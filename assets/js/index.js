@@ -28,16 +28,9 @@ const MAX_QUESTIONS = 5;
 //Define timer variable
 let timerInterval;
 
-//Function to reset local storage
-const resetLocalStorage = () => {
-    for (i=0; i < MAX_QUESTIONS; i++) {
-        localStorage.removeItem(`selectedAnswer_${i}`);
-    }
-};
-
 /**
- * Functions defined throughout this project will be defined using 'Arrow Function' syntax to simplify code.
- * This idea was inspired by Brians Designs YouTube video tutorials.
+ * Some functions defined using 'Arrow Function' syntax to simplify code.
+ * This idea was inspired by Brian Design YouTube video tutorials.
  */
 
 //Define startQuiz function to hide quiz rules, display quiz box and initialise score and questions counter
@@ -112,15 +105,13 @@ getNewQuestion = () => {
  * Concept used here is inspired by my mentor's steer to James Quick - YouTube tutorial.
  */
 choices.forEach((choice) => {
-    /* For each choice, add event listener notated as 'e'.*/
-    choice.addEventListener("click", e =>{
+    choice.addEventListener("click", e => {
         if (!acceptingAnswers) return;
 
     acceptingAnswers = false;
-    /* Setting the users choice as the event*/
+    /* Set user selection as event*/
     const selectedChoice = e.target;
-    /* Getting the number associated with the data-number,
-     to return the choice of the user*/
+    /* Look through questions array to select corresponding answer */
     const selectedAnswer = selectedChoice.dataset['number'];
     if (currentQuestion.answer === 1) {
         correctAnswer.innerText =
@@ -128,52 +119,52 @@ choices.forEach((choice) => {
         hiddenVerse.innerText = 
         `Verse: ${currentQuestion.verse}`;
         finalScore.innerText = 
-        `Your Final Score: ${score + 1} / ${MAX_QUESTIONS}!`;
+        `Your Final Score: ${score + 1} / ${MAX_QUESTIONS}`;
     } else if (currentQuestion.answer === 2) {
         correctAnswer.innerText =
         `Correct Answer: ${currentQuestion.choice2}`;
         hiddenVerse.innerText = 
         `Verse: ${currentQuestion.verse}`;
         finalScore.innerText = 
-        `Your Final Score: ${score + 1} / ${MAX_QUESTIONS}!`;
+        `Your Final Score: ${score + 1} / ${MAX_QUESTIONS}`;
     } else if (currentQuestion.answer === 3) {
         correctAnswer.innerText =
         `Correct Answer: ${currentQuestion.choice3}`;
         hiddenVerse.innerText = 
         `Verse: ${currentQuestion.verse}`;
         finalScore.innerText = 
-        `Your Final Score: ${score + 1} / ${MAX_QUESTIONS}!`;
+        `Your Final Score: ${score + 1} / ${MAX_QUESTIONS}`;
     } else if (currentQuestion.answer === 4) {
         correctAnswer.innerText =
         `Correct Answer: ${currentQuestion.choice4}`;
         hiddenVerse.innerText = 
         `Verse: ${currentQuestion.verse}`;
         finalScore.innerText = 
-        `Your Final Score: ${score + 1} / ${MAX_QUESTIONS}!`;
+        `Your Final Score: ${score + 1} / ${MAX_QUESTIONS}`;
     }
 
-    let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
+    /* Assign new classes to user selection and call getNewQuestion() */
+     let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
 
-    if (classToApply === 'correct') {
-        e.target.classList.add('correct');
-        score++;
-        scoreText.innerText = `Score: ${score}`;
-        correctAnswer.style.display = "block";
-        hiddenVerse.style.display = "block";
-        clearInterval(timerInterval);
-        getNewQuestion();
-    } else if (classToApply === 'incorrect') {
-        e.target.classList.add('incorrect');
-        correctAnswer.style.display = "block";
-        hiddenVerse.style.display = "block";
-        clearInterval(timerInterval);
-        getNewQuestion();
-    }
-
-    correctAnswer.style.display = "none";
-    hiddenVerse.style.display = "none";
-    e.target.classList.remove(classToApply);
-
+     if (classToApply === 'correct') {
+         //e.target.classList.add('correct');
+         score++;
+         scoreText.innerText = `Score: ${score}`;
+         //correctAnswer.style.display = "block";
+         //hiddenVerse.style.display = "block";
+         clearInterval(timerInterval);
+         getNewQuestion();
+     } else if (classToApply === 'incorrect') {
+         //e.target.classList.add('incorrect');
+         //correctAnswer.style.display = "block";
+         //hiddenVerse.style.display = "block";
+         clearInterval(timerInterval);
+         getNewQuestion();
+     }
+     //correctAnswer.style.display = "none";
+     //hiddenVerse.style.display = "none";
+     //e.target.classList.remove('correct');
+     //e.target.classList.remove();
   });
 });
 
