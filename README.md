@@ -3,19 +3,22 @@
 ![am I responsive screenshot]()
 
 ## A Bible Quiz based Website
-> Bible Quiz is an interactive knowledge based quiz game that centers around the Bible. 
+> The Bible Quiz is an interactive and educative knowledge-based quiz game centered on the Bible.
 
-> The user is given an opportunity to play against a clock to select the correct answer from 4 options and earn more points.
+> Questions are on topics from both the Old and New Testaments - with a focus on showcasing some of the weird and wonderful stories told in scripture.
 
->The user is shown a list of instructions to better understand the rules of the game prior to starting the game.
+> On loading the game, the user is shown a list of instructions to better understand the rules of the game and must then commence game mode by clicking on the 'Start' button.
 
-### - By Bola Akinmarin
+> The user must play against a clock, and then select the correct answer from four options and is awarded 100 points for each correct answer.
 
-## **[Live site]()**
+#### - Designed and Developed by Bola Akinmarin
+
+## **[Live site](https://bakinmarin.github.io/bible-quiz-game/)**
 
 ------------------------------------------------------------------
 
-## **[Repository]()**
+## **[Repository](https://github.com/BAkinmarin/bible-quiz-game/tree/main)**
+
 ------------------------------------------------------------------
   
 ## Table of contents
@@ -37,44 +40,37 @@
 <a name="ux"></a>
 ### Pre-project Planning
 
-> For project 2 I decided early on I wanted to create a quiz game that I would like to play. I have a love of travelling and find Geography incredibly interesting so I decided on this as my theme.
+> For my project portfolio 2 I decided early on that I wanted to create a scripture based quiz game that would be interactive, educational and based on interesting stories. As a Christian, this theme is close to my heart and a means of creating awareness on how interesting and intriguing the Bible is.
 
-> Rather than just making a generic quiz site I wanted to add some extra elements that I felt would have given the typical quiz site a fun spin.
+> When deciding on the type of questions to include in the quiz, I went with both Old and New Testament, leaning heavily on the Old Testament to highlight some of the descriptions of people around in those times that led interesting lives or had distinguishing features.
 
->I decided I wanted to give the user a couple of options on which game they would like to play. I wanted to keep the overarching theme the same while giving clear differences to the types of questions that would be asked.
-
-> From here I decided on:
-
- - Interesting Facts
- - Flags
-
-> I also wanted to add a countdown timer to create urgency and a scoring system that was more relative to how quickly you answered the question rather than if you just got it correct or not.
+> I also wanted to include a countdown timer to truly test the knowledge base of the user and a scoring system that told the user how many questions they got right. I also wanted to add in the educational piece by revealing the scripture from whence each question was inspired. 
 
 
 # UX design
 
 ##### Color
-As my first project was a minimalistic black & white themed site I decided this project should have plenty of color.
-To start I decided on a nice vibrant linear gradient background ranging from a nice Pink(rgba(233, 30, 99, .8)) to Blue (rgba(33, 150, 243, .8))
+I did not want to detract too much from the educative purpose of The Bible Quiz but I also wanted it to be engaging and interactive for the user so much so that they would be willing to play multiple times.
 
-As this is a single page game the background is constant across the experience except for pop up modals which are the above Blue and the final score modal which covers the entirety of the screen in the same Blue.
+For this reason, I kept the color scheme clean and instead focused more on responsiveness and animating responses to user game activity.
 
 ##### Font
-As the goal of the site was to provide users with clear instructions and questions, I decided I wanted a clear legible font that would not distort or delay the readability. The base font selected Courier New.
+In keeping with a physical Bible - as well as most digital versions - I wanted to provide users with a clean interface and a clear legible font that would not impact on readability. This inspired the decision to go with Lato : sans-serif.
 
 ##### Images
-The images on this site are used to convey logic to the users when they select the quiz type they might want to try or even the questions themselves. 
+The images chosen for this site are intended to make the stories come to life to the user and bring their imaginations to life somewhat. 
 **All the images selected for this project came from pixabay.com and pexels.com.**
 
 
 ## User Stories
 
 ### User
-> As a user I want to be able to play a fun and interesting game  
-> As a user I want have a choice of what type of game I would like to play
-> As a user I want to get a score from the quiz to mark my progress 
-> As a user I want to be able to see the rules for the quiz before I start  
-> As a user I want to play again when I complete the quiz
+> As a user, I want to be able to play an interactive and educative game.
+> As a user, I want to be able to learn about the Bible in a fun way.
+> As a user, I want to be aware of the rules of the game before I play.
+> As a user, I want to be rewarded for every right answers provided. 
+> As a user, I want to be able to play without being interupted by advertisements.
+> As a user, I want to be able to replay the game and beat my previous score.
 
 
 ## Wireframes
@@ -87,14 +83,14 @@ The images on this site are used to convey logic to the users when they select t
 <a name="features"></a>
 ### index.html
 
-#### Welcome Area
-![Welcome Message]()
+#### Welcome Page
+![Welcome Page]()
 
-#### Game Category Area
-![Game Category]()
+#### Game Area
+![Game Box]()
 
-#### Rules Modal
-![Rules Modal]()
+#### Game Rules
+![Rules]()
 
 Throughout the design process my initial approach was to have a landing page where the user would select their quiz type and be taken to the Quiz Dashboard.
 
@@ -131,7 +127,7 @@ By utilizing display properties effectively I was able to reduce the two / three
 
 #### End Game Function
 
-![End Game Modal]()
+![End Game]()
 The end game function is called when there are either no questions left in the list or if the user reaches the max-question count. 
 Once this happens the endGame function calls and it displays a final score modal that presents users with their score, ranking and a little message depending on how they did.
 The user can also see a record of the questions, images, correct answer and their answer so they can learn and get feedback from their experience.
@@ -139,27 +135,42 @@ The user can also see a record of the questions, images, correct answer and thei
 
 <a name="left"></a>
 # Features Left to implement
-> Add a high score tracker for the user
-> Add a highscores modal for each seperate game
-> Be able to input username to push to a leaderboard
+> Add a high score tracker for the user so they know what score to beat each time they play the game.
+
+> Option for user to input username to scoreboard for future reference and comparison with other users.
 
 ### Additional ideas
+> Create and add option for user to choose quiz game based on one of the 66 Books of The Bible.
 
-> 
+> Separate Sections for Old and New Testament, giving user the option to play quiz game based on preference. 
+
+> Create and add Parable of Jesus Section, giving user the option to play quiz based on this otpion.
+
+> Create and add Creation Story Section, giving user the option to play quiz based on this option.
+
+> Create and add Easy, Medium and Hard levels, giving user the option to select difficulty. 
+
+> Create and add a Rewards Section where users are awarded tokens named after the Fruits of The Holy Spirit - based on number of points collected as they move through the 66 Books of THe Bible Quiz option.
 
 <a name="tech"></a>
 # Technology Used
 ### HTML
-> Used to structure my webpages and the bones of any web project.
+> The backbone of website design and function; used to provide structure to the website.
 
 ### CSS
-> Used to style the layout of my project.
+> Used to style the layout of each web page.
 
 ### Javascript
 > Used to make the site dynamic and to present, select and store the users answers and then provide a score based on the time it took them to answer.
 
 ### Font Awesome
-> Used for the home icon and the github icon used in this project.
+> Source of all the icons used in this project.
+
+### Google Fonts
+> Used to define the fonts used in the project. Also used to compare and pair font-styles.
+
+### Favicon.io
+> Used to generate a favicon for the existing logo.
 
 <a name="testing"></a>
 # Testing
@@ -202,7 +213,7 @@ The user can also see a record of the questions, images, correct answer and thei
 |Test|Result  |
 |--|--|
 |Read the rules to understand the game|100%|
-| Navigate to the Flags Quiz and complete the game |100%  |
+|Navigate to the Flags Quiz and complete the game |100%  |
 |Navigate to the Random Facts Quiz and complete the game|100%|
 |Provide your rank and score to me after completing quiz|100%|
 
@@ -230,28 +241,36 @@ The user can also see a record of the questions, images, correct answer and thei
 
 <a name="bugs"></a>
 ## **Bugs**
-> 
+> Unable to get user selection to turn green when correct and red when incorrect.
+
+> Unable to display 'Hidden Verse' description to highlight the corresponding scripture which inspired question.
 
 <a name="deployment"></a>
 ## Deployment
 
-> To deploy the project I followed these steps starting from the main project repository [here]().
+> To deploy the project I followed these steps starting from the main project repository linked above.
 
  1. Clicked on `Settings` on the navigation menu in the repository
  2. I then selected the `Pages` menu on the side bar.
  3. In the first dropdown menu labeled `Source` I selected the branch of the name `main` from the dropdown.
  4. In the next dropdown labeled `/root` I left as the default option.
- 5. Selected Save
+ 5. Selected Save.
  
-> I then received a notification from GitHub that my project is being deployed and after about 1 minute and a couple of refreshes of the page it was ready and live.
+> I then received a notification from GitHub that my project is being deployed and after about 2 minutes and a couple of refreshes of the page it was ready and live.
 
 <a name="credits"></a>
 ## Credits
 
 ### [Brian Design](https://www.youtube.com/watch?v=f4fB9Xg2JEY&t=352s) - YouTube
-> Step-by-step tutorial on creating a quiz using HTML, CSS and JavaScript utilising local storage.
+> Step-by-step tutorial on creating a quiz using HTML, CSS and JavaScript. Inspired the use of Arrow syntax in some function definitions.
 
 ### [PRAROZ](https://www.youtube.com/watch?v=1ydfKDwsYbU) - YouTube
+> Step-by-step tutorial on creating a quiz using HTML, CSS and JavaScript. 
+
+### [James Quick](https://www.youtube.com/watch?v=rFWbAj40JrQ&list=PLB6wlEeCDJ5Yyh6P2N6Q_9JijB6v4UejF) - YouTube
+> Step-by-step tutorial used for inspiration on checking user answers.
+
+### [LIVE BLOGGER](https://www.youtube.com/watch?v=J3VxEGcc7Zw) - YouTube
 > Another step-by-step tutorial on creating a quiz using HTML, CSS and JavaScript.
 
 <a name="content"></a>
@@ -277,7 +296,7 @@ The user can also see a record of the questions, images, correct answer and thei
 > Also helped understand manipulating the DOM more effetively.
 
 ### Code Institute
-> Project created in line with course content and within project 2 scope.
+> Project created in line with course content, walkthrough project and and within project 2 scope.
 
 <a name="acknowlegements"></a>
 ## Acknowledgements
