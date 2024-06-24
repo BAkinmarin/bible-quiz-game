@@ -242,9 +242,11 @@ The user can also see a record of the questions, images, correct answer and thei
 <a name="bugs"></a>
 ## **Bugs**
 
-> Unable to get user selection to turn green when correct and red when incorrect. **Fixed - 24 Jun 2024**
+> Unable to get user selection to turn green when correct and red when incorrect. **Fixed**
 
-> Unable to display 'Hidden Verse' description to highlight the corresponding scripture which inspired question.
+> Unable to display 'Hidden Verse' description to highlight the corresponding scripture which inspired question. **Fixed**
+
+> Unable to get Next Question Function to work properly.
 
 <a name="deployment"></a>
 ## Deployment
