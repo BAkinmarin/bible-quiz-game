@@ -79,7 +79,7 @@ getNewQuestion = () => {
 
     //Check if any questions available to display or if counter has reached max question limit set
     if (availableQuestions.length === 0 || questionsCounter >= MAX_QUESTIONS) {
-        exitQuiz();
+        endGame();
         quizBox.style.display = "none";
     }
 
@@ -169,16 +169,20 @@ choices.forEach((choice) => {
         //Increment score
         score += SCORE_POINTS;
         scoreText.innerText = `Score: ${score}`;
-        //clearInterval(timerInterval);
      } else if (classToApply == 'incorrect') {
         alert("Oh No! That's the wrong answer!" + "\n" + feedback + "\n" + info);
         score += 0;
-        //clearInterval(timerInterval);
      }
   });
 });
 
 //Define nextQuestion function to allow user move to next question when ready
+
+
+//Define endGame function
+endGame = () => {
+    resultsBox.style.display = "block";
+}
 
 
 /**

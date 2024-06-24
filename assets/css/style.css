@@ -115,7 +115,8 @@ body {
 .start-btn,
 .next-btn,
 .restart-btn,
-.exit-btn {
+.exit-btn,
+.home-btn {
    font-size: 1.25rem;
    letter-spacing: 1px;
    border-style: ridge;
@@ -138,7 +139,8 @@ body {
 .start-btn:hover,
 .next-btn:hover,
 .restart-btn:hover,
-.exit-btn:hover {
+.exit-btn:hover,
+.home-btn:hover {
     transform: scale(1.15);
     transition: all 0.3s ease-in-out;
     cursor: pointer;
