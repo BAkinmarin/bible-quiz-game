@@ -89,15 +89,19 @@
         
         <!--Functionality for user to submit and save high score in local storage-->
         <!--Code inspired by James Quick - YouTube Tutorial-->
-        <form>
-            <input type="text" name="username" id="username" placeholder="username">
-            <button type="submit" class="btn" id="save-btn" onclick="saveHighScore()">Submit <i class="fa-solid fa-thumbs-up"></i></button>
-        </form>
-
-        <div class="end-game-div">
+        <div class="form-box">
+            <form>
+                <input type="text" name="username" id="username" placeholder="username">
+                <button type="submit" class="save-score-btn" id="save-score" onclick="saveHighScore()">Save <i class="fa-solid fa-thumbs-up"></i></button>
+            </form>
             <button onclick="replayQuiz()" class="replay-btn">Replay <i class="fa-solid fa-repeat"></i></button>
             <button onclick="endGame()" class="end-btn">Home <i class="fa-solid fa-house"></i></button>
         </div>
+
+        <!--<div class="end-game-div">
+            <button onclick="replayQuiz()" class="replay-btn">Replay <i class="fa-solid fa-repeat"></i></button>
+            <button onclick="endGame()" class="end-btn">Home <i class="fa-solid fa-house"></i></button>
+        </div>-->
     </div>
 
     <footer></footer>
