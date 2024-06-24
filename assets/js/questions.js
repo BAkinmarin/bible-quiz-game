@@ -49,4 +49,24 @@ let questions = [
         answer: 4,
         verse: "John's clothes were made of camel's hair, and he had a leather belt around his waist. His food was locusts and wild honey. - Matthew 3:4 (NIV)",
     },
+
+    {
+        question: 'After Jesus fed 5000 people from just five loaves and two fishes, how many basketfuls of broken pieces did the disciples gather?',
+        choice1: 'A. 12 Baskets',
+        choice2: 'B. 40 Baskets',
+        choice3: 'C. 70 Baskets',
+        choice4: 'D. There were no leftovers',
+        answer: 1,
+        verse: "They all ate and were satisfied, and the disciples picked up twelve basketfuls of broken pieces that were left over. - Matthew 14:20 (NIV)",
+    },
+
+    {
+        question: 'Genesis 6:3 says: "Then the Lord said, "My Spirit will not contend with humans forever, for they are mortal; their days will be ________."" How many?',
+        choice1: 'A. 70 years',
+        choice2: 'B. 120 years',
+        choice3: 'C. 500 years',
+        choice4: 'D. Not very long',
+        answer: 2,
+        verse: '"Then the Lord said, "My Spirit will not contend with humans forever, for they are mortal; their days will be a hundred and twenty years."" - Genesis 6:3 (NIV)',
+    },
 ];

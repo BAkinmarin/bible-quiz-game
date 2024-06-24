@@ -167,20 +167,20 @@ choices.forEach((choice) => {
         //Increment score
         score += SCORE_POINTS;
         scoreText.innerText = `Score: ${score}`;
+        //clearInterval(timerInterval);
      } else if (classToApply == 'incorrect') {
         //Display both 'Correct Answer' and 'Hidden Verse' in window alert
-        let message = hiddenVerse.innerText;
         let feedback = correctAnswer.innerText;
+        let message = hiddenVerse.innerText;
         alert("Oh No! That's the wrong answer!" + "\n" + feedback + "\n" + message);
-        score += 0;
+        //score += 0;
+        //clearInterval(timerInterval);
      }
   });
 });
 
 //Define nextQuestion function to allow user move to next question when ready
-nextQuestion = () => {
-    getNewQuestion();
-};
+
 
 /**
  * This exitQuiz function qill throwout a window alert asking the user if they want to leave the game.
