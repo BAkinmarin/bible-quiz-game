@@ -159,21 +159,20 @@ choices.forEach((choice) => {
         `Your Final Score: ${score} / ${MAX_QUESTIONS}`;
     }
 
+    //Retrieve innerText elements for 'Correct Answer' and 'Hidden Verse' and display in window
+    const info = hiddenVerse.innerText;
+    const feedback = correctAnswer.innerText;
+
     /* Call getNewQuestion Function while there are questions remaining in MAX_QUESTIONS array */
-     if (classToApply == 'correct') {
-        //Display 'Hidden Verse' in window alert
-        let message = hiddenVerse.innerText;
-        alert("Yes! That's right!" + "\n" + message);
+    if (classToApply == 'correct') {
+        alert("Yes! That's right!" + "\n" + info);
         //Increment score
         score += SCORE_POINTS;
         scoreText.innerText = `Score: ${score}`;
         //clearInterval(timerInterval);
      } else if (classToApply == 'incorrect') {
-        //Display both 'Correct Answer' and 'Hidden Verse' in window alert
-        let feedback = correctAnswer.innerText;
-        let message = hiddenVerse.innerText;
-        alert("Oh No! That's the wrong answer!" + "\n" + feedback + "\n" + message);
-        //score += 0;
+        alert("Oh No! That's the wrong answer!" + "\n" + feedback + "\n" + info);
+        score += 0;
         //clearInterval(timerInterval);
      }
   });
