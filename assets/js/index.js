@@ -135,28 +135,28 @@ choices.forEach((choice) => {
         hiddenVerse.innerText = 
         `Verse: ${currentQuestion.verse}`;
         finalScore.innerText = 
-        `Your Final Score: ${score + 1} / ${MAX_QUESTIONS}`;
+        `Your Final Score: ${score} / ${MAX_QUESTIONS}`;
     } else if (currentQuestion.answer === 2) {
         correctAnswer.innerText =
         `Correct Answer: ${currentQuestion.choice2}`;
         hiddenVerse.innerText = 
         `Verse: ${currentQuestion.verse}`;
         finalScore.innerText = 
-        `Your Final Score: ${score + 1} / ${MAX_QUESTIONS}`;
+        `Your Final Score: ${score} / ${MAX_QUESTIONS}`;
     } else if (currentQuestion.answer === 3) {
         correctAnswer.innerText =
         `Correct Answer: ${currentQuestion.choice3}`;
         hiddenVerse.innerText = 
         `Verse: ${currentQuestion.verse}`;
         finalScore.innerText = 
-        `Your Final Score: ${score + 1} / ${MAX_QUESTIONS}`;
+        `Your Final Score: ${score} / ${MAX_QUESTIONS}`;
     } else if (currentQuestion.answer === 4) {
         correctAnswer.innerText =
         `Correct Answer: ${currentQuestion.choice4}`;
         hiddenVerse.innerText = 
         `Verse: ${currentQuestion.verse}`;
         finalScore.innerText = 
-        `Your Final Score: ${score + 1} / ${MAX_QUESTIONS}`;
+        `Your Final Score: ${score} / ${MAX_QUESTIONS}`;
     }
 
     /* Call getNewQuestion Function while there are questions remaining in MAX_QUESTIONS array */
@@ -165,12 +165,14 @@ choices.forEach((choice) => {
         let message = hiddenVerse.innerText;
         alert("Yes! That's right!" + "\n" + message);
         //Increment score
-        score++;
+        score += SCORE_POINTS;
         scoreText.innerText = `Score: ${score}`;
      } else if (classToApply == 'incorrect') {
         //Display both 'Correct Answer' and 'Hidden Verse' in window alert
+        let message = hiddenVerse.innerText;
         let feedback = correctAnswer.innerText;
         alert("Oh No! That's the wrong answer!" + "\n" + feedback + "\n" + message);
+        score += 0;
      }
   });
 });
