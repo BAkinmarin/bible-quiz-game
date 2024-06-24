@@ -122,7 +122,7 @@ choices.forEach((choice) => {
     const classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
     selectedChoice.classList.add(classToApply);
 
-    //Use in-built JavaScript to set delay to addition and removal of classes
+    //Use in-built JavaScript to set delay to removal of incorrect / correct class
     setTimeout ( () => {
         selectedChoice.classList.remove(classToApply);
         getNewQuestion();
@@ -174,14 +174,21 @@ choices.forEach((choice) => {
 
 //Define nextQuestion function to allow user move to next question when ready
 nextQuestion = () => {
-    getNewQuestion();
+    setTimeout(getNewQuestion(), 1000);
 };
 
-//Define exitQuiz function to leave game and return to quiz rules page  
+/**
+ * This exitQuiz function qill throwout a window alert asking the user if they want to leave the game.
+ * It will also inform the user that all progress will be lost.
+ * If user agrees to continue, they will be redirected to game rules page.  
+ */
 exitQuiz = () => {
-    quizBox.style.display = "none";
-    quizRules.style.display = "none";
-    resultsBox.style.display = "block";
+    //Check if user wants to exit game and lose all progress
+    if (confirm("Are you sure you want to exit game? All progress will be lost!")) {
+        return window.location.assign('index.html');
+    } else {
+        return;
+    }
 };
 
 //Define restartQuiz function
