@@ -20,9 +20,10 @@ let availableQuestions = [];
 let questionsCounter = 0;
 let score = 0;
 let currentQuestion = {};
-let acceptingAnswers = true;
+let acceptingAnswers = false;
 
 //Define fixed variables for max score and max number of questions
+const SCORE_POINTS = 100;
 const MAX_QUESTIONS = 5;
 
 //Define timer variable
@@ -54,6 +55,10 @@ getNewQuestion = () => {
 
     //Code to initialise timer
     clearInterval(timerInterval);
+
+    //Ensure 'Correct Answer' and 'Hidden Verse' are hidden
+    correctAnswer.style.display = "none";
+    hiddenVerse.style.display = "none";
 
     //Set timer value and innerText
     let timeLeft = 15;
@@ -111,8 +116,19 @@ choices.forEach((choice) => {
     acceptingAnswers = false;
     /* Set user selection as event*/
     const selectedChoice = e.target;
-    /* Look through questions array to select corresponding answer */
     const selectedAnswer = selectedChoice.dataset['number'];
+
+    /* Apply appropriate class based on correct / incorrect answer */
+    const classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
+    selectedChoice.classList.add(classToApply);
+
+    //Use in-built JavaScript to set delay to addition and removal of classes
+    setTimeout ( () => {
+        selectedChoice.classList.remove(classToApply);
+        getNewQuestion();
+    }, 9000);
+
+    /* Look through questions array to select corresponding answer */
     if (currentQuestion.answer === 1) {
         correctAnswer.innerText =
         `Correct Answer: ${currentQuestion.choice1}`;
@@ -143,28 +159,16 @@ choices.forEach((choice) => {
         `Your Final Score: ${score + 1} / ${MAX_QUESTIONS}`;
     }
 
-    /* Assign new classes to user selection and call getNewQuestion() */
-     let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
-
-     if (classToApply === 'correct') {
-         //e.target.classList.add('correct');
-         score++;
-         scoreText.innerText = `Score: ${score}`;
-         //correctAnswer.style.display = "block";
-         //hiddenVerse.style.display = "block";
-         clearInterval(timerInterval);
-         getNewQuestion();
-     } else if (classToApply === 'incorrect') {
-         //e.target.classList.add('incorrect');
-         //correctAnswer.style.display = "block";
-         //hiddenVerse.style.display = "block";
-         clearInterval(timerInterval);
-         getNewQuestion();
+    /* Call getNewQuestion Function while there are questions remaining in MAX_QUESTIONS array */
+     if (classToApply == 'correct') {
+        window.alert("Correct!");
+        score++;
+        scoreText.innerText = `Score: ${score}`;
+        hiddenVerse.style.display = "block";
+     } else if (classToApply == 'incorrect') {
+        correctAnswer.style.display = "block";
+        hiddenVerse.style.display = "block";
      }
-     //correctAnswer.style.display = "none";
-     //hiddenVerse.style.display = "none";
-     //e.target.classList.remove('correct');
-     //e.target.classList.remove();
   });
 });
 
