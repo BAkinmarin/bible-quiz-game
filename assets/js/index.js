@@ -38,9 +38,9 @@ let timerInterval;
 startQuiz = () => {
     quizRules.style.display = "none";
     resultsBox.style.display = "none";
-    quizBox.style.display = "block";
     hiddenVerse.style.display = "none";
     correctAnswer.style.display = "none";
+    quizBox.style.display = "block";
     questionsCounter = 0;
     score = 0;
     availableQuestions = [...questions];
@@ -126,7 +126,7 @@ choices.forEach((choice) => {
     setTimeout ( () => {
         selectedChoice.classList.remove(classToApply);
         getNewQuestion();
-    }, 9000);
+    }, 5000);
 
     /* Look through questions array to select corresponding answer */
     if (currentQuestion.answer === 1) {
@@ -161,20 +161,23 @@ choices.forEach((choice) => {
 
     /* Call getNewQuestion Function while there are questions remaining in MAX_QUESTIONS array */
      if (classToApply == 'correct') {
-        window.alert("Correct!");
+        //Display 'Hidden Verse' in window alert
+        let message = hiddenVerse.innerText;
+        alert("Yes! That's right!" + "\n" + message);
+        //Increment score
         score++;
         scoreText.innerText = `Score: ${score}`;
-        hiddenVerse.style.display = "block";
      } else if (classToApply == 'incorrect') {
-        correctAnswer.style.display = "block";
-        hiddenVerse.style.display = "block";
+        //Display both 'Correct Answer' and 'Hidden Verse' in window alert
+        let feedback = correctAnswer.innerText;
+        alert("Oh No! That's the wrong answer!" + "\n" + feedback + "\n" + message);
      }
   });
 });
 
 //Define nextQuestion function to allow user move to next question when ready
 nextQuestion = () => {
-    setTimeout(getNewQuestion(), 1000);
+    getNewQuestion();
 };
 
 /**
