@@ -126,7 +126,7 @@ choices.forEach((choice) => {
     setTimeout ( () => {
         selectedChoice.classList.remove(classToApply);
         getNewQuestion();
-    }, 5000);
+    }, 1000);
 
     /* Look through questions array to select corresponding answer */
     if (currentQuestion.answer === 1) {
@@ -135,54 +135,53 @@ choices.forEach((choice) => {
         hiddenVerse.innerText = 
         `Verse: ${currentQuestion.verse}`;
         finalScore.innerText = 
-        `Your Final Score: ${score} / ${MAX_QUESTIONS}`;
+        `You scored: ${score} out of 500 points`;
     } else if (currentQuestion.answer === 2) {
         correctAnswer.innerText =
         `Correct Answer: ${currentQuestion.choice2}`;
         hiddenVerse.innerText = 
         `Verse: ${currentQuestion.verse}`;
         finalScore.innerText = 
-        `Your Final Score: ${score} / ${MAX_QUESTIONS}`;
+        `You scored: ${score} out of 500 points`;
     } else if (currentQuestion.answer === 3) {
         correctAnswer.innerText =
         `Correct Answer: ${currentQuestion.choice3}`;
         hiddenVerse.innerText = 
         `Verse: ${currentQuestion.verse}`;
         finalScore.innerText = 
-        `Your Final Score: ${score} / ${MAX_QUESTIONS}`;
+        `You scored: ${score} out of 500 points`;
     } else if (currentQuestion.answer === 4) {
         correctAnswer.innerText =
         `Correct Answer: ${currentQuestion.choice4}`;
         hiddenVerse.innerText = 
         `Verse: ${currentQuestion.verse}`;
         finalScore.innerText = 
-        `Your Final Score: ${score} / ${MAX_QUESTIONS}`;
+        `You scored: ${score} out of 500 points`;
     }
 
-    //Retrieve innerText elements for 'Correct Answer' and 'Hidden Verse' and display in window
-    const info = hiddenVerse.innerText;
-    const feedback = correctAnswer.innerText;
-
-    /* Call getNewQuestion Function while there are questions remaining in MAX_QUESTIONS array */
-    if (classToApply == 'correct') {
-        alert("Yes! That's right!" + "\n" + info);
-        //Increment score
-        score += SCORE_POINTS;
-        scoreText.innerText = `Score: ${score}`;
-     } else if (classToApply == 'incorrect') {
-        alert("Oh No! That's the wrong answer!" + "\n" + feedback + "\n" + info);
-        score += 0;
-     }
+      //Retrieve innerText elements for 'Correct Answer' and 'Hidden Verse' and display in window
+      const info = hiddenVerse.innerText;
+      const feedback = correctAnswer.innerText;
+  
+      /* Call getNewQuestion Function while there are questions remaining in MAX_QUESTIONS array */
+      if (classToApply == 'correct') {
+          alert("Yes! That's right!\n" + info);
+          //Increment score
+          incrementScore(SCORE_POINTS);
+          //scoreText.innerText = `Score: ${score}`;
+       } else if (classToApply == 'incorrect') {
+          alert("Oh No! That's the wrong answer!\n" + feedback + "\n" + info);
+       }  
   });
 });
 
-//Define nextQuestion function to allow user move to next question when ready
-
-
-//Define endGame function
-endGame = () => {
-    resultsBox.style.display = "block";
+//Increment Score function
+incrementScore = num => {
+    score += num;
+    scoreText.innerText = `Score: ${score}`;
 }
+
+//Define nextQuestion function to allow user move to next question when ready
 
 
 /**
@@ -200,3 +199,9 @@ exitQuiz = () => {
 };
 
 //Define restartQuiz function
+
+
+//Define endGame function
+endGame = () => {
+    resultsBox.style.display = "block";
+}
