@@ -126,7 +126,7 @@ choices.forEach((choice) => {
     setTimeout ( () => {
         selectedChoice.classList.remove(classToApply);
         getNewQuestion();
-    }, 1000);
+    }, 2000);
 
     /* Look through questions array to select corresponding answer */
     if (currentQuestion.answer === 1) {
@@ -165,12 +165,12 @@ choices.forEach((choice) => {
   
       /* Call getNewQuestion Function while there are questions remaining in MAX_QUESTIONS array */
       if (classToApply == 'correct') {
-          alert("Yes! That's right!\n" + info);
+          alert("Yes! That's right!\u{1F4AF}\n" + info);
           //Increment score
           incrementScore(SCORE_POINTS);
           //scoreText.innerText = `Score: ${score}`;
        } else if (classToApply == 'incorrect') {
-          alert("Oh No! That's the wrong answer!\n" + feedback + "\n" + info);
+          alert("Oh No! That's the wrong answer!\u{1F61E}\n" + feedback + "\n" + info);
        }  
   });
 });

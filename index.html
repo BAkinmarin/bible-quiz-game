@@ -26,8 +26,8 @@
     <!--Game Introduction and Rules-->
     <div id="quiz-rules">
         <div>
-            <h1>Welcome to the Bible Quiz</h1>
-            <p>Instructions:</p>
+            <h1>Hi, there! <i class="fa-brands fa-ello"></i></h1>
+            <h3>How to play The Bible Quiz:</h3>
             <div>
                 <p>1. You have 15 seconds to answer each question.</p>
                 <p>2. You must select an answer before the timer runs out.</p>
@@ -37,7 +37,7 @@
             </div>
             <!--Game Start Button-->
             <div class="start-btn-div">
-                <button onclick="startQuiz()" class="start-btn">Start Quiz <i class="fa-solid fa-play"></i></button>
+                <button onclick="startQuiz()" class="start-btn">Play Quiz <i class="fa-solid fa-play"></i></button>
             </div>
         </div>
     </div>
@@ -82,14 +82,21 @@
     <!--Results box-->
     <!--JavaScript will be used to target this div to display the score-->
     <div id="results-box">
-        <h1>Congratulations, you have completed the quiz!</h1>
-        <div class="quiz-complete">
+        <h1>Congratulations!</h1>
+        <div class="final-score-area">
             <p class="final-score-text" id="final-score"></p>
         </div>
+        
+        <!--Functionality for user to submit and save high score in local storage-->
+        <!--Code inspired by James Quick - YouTube Tutorial-->
+        <form>
+            <input type="text" name="username" id="username" placeholder="username">
+            <button type="submit" class="btn" id="save-btn" onclick="saveHighScore()">Submit <i class="fa-solid fa-thumbs-up"></i></button>
+        </form>
 
-        <div class="buttons-div">
-            <button onclick="restartQuiz()" class="restart-btn">Retake Quiz <i class="fa-solid fa-repeat"></i></button>
-            <button onclick="endGame()" class="home-btn">Home <i class="fa-solid fa-house"></i></button>
+        <div class="end-game-div">
+            <button onclick="replayQuiz()" class="replay-btn">Replay <i class="fa-solid fa-repeat"></i></button>
+            <button onclick="endGame()" class="end-btn">Home <i class="fa-solid fa-house"></i></button>
         </div>
     </div>
 
