@@ -167,7 +167,7 @@ incrementScore = num => {
 
 //Show answers in a modal
 answerModal = () => {
-    feedbackText.style.display = "block";
+    feedbackMsg.style.display = "block";
     correctAnswer.style.display = "block";
     hiddenVerse.style.display = "block";
 }
