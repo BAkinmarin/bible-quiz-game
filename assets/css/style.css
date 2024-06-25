@@ -17,14 +17,22 @@ body {
 /* Styles for Font Awesome Icons */
 .fa-solid,
 .fa-regular {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
+    font-weight: 400;
 }
 
 /* Styles for quiz rules and quiz box area */
 #quiz-rules,
-#quiz-box,
-#results-box {
+#quiz-box {
     width: 70%;
+    margin: auto;
+    margin-top: 15%;
+    font-size: 1.25rem;
+    padding: 0.5rem;
+    line-height: 2rem;
+}
+
+#results-box {
     margin: auto;
     margin-top: 15%;
     font-size: 1.25rem;

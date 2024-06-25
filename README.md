@@ -141,6 +141,8 @@ The user can also see a record of the questions, images, correct answer and thei
 
 > Option for user to input username to scoreboard for future reference and comparison with other users.
 
+> Audio feedback corresponding to user interaction to enhance user experience.
+
 ### Additional ideas
 > Create and add option for user to choose quiz game based on one of the 66 Books of The Bible.
 
@@ -206,7 +208,7 @@ The user can also see a record of the questions, images, correct answer and thei
 #### Peer Code Review
 > Project submitted for peer code review on Code Institute among other students.
 
-> Only noticable issue reported was a typo on one of the answers in the Quiz
+> Only noticable issue reported was a typo on one of the answers in the Quiz.
 
 #### User tests
 
@@ -214,10 +216,11 @@ The user can also see a record of the questions, images, correct answer and thei
  
 |Test|Result  |
 |--|--|
-|Read the rules to understand the game|100%|
-|Navigate to the Flags Quiz and complete the game |100%  |
-|Navigate to the Random Facts Quiz and complete the game|100%|
-|Provide your rank and score to me after completing quiz|100%|
+|Read the rules to understand the game |100%|
+|Check time is appropriate for user to read correct answer description |100%|
+|Check user can navigate to next question when previous question has been answered |100%|
+|Check user can exit game as and when they want |100%|
+|Provide your rank and score to me after completing quiz |100%|
 
 ## Google Lighthouse Testing
 

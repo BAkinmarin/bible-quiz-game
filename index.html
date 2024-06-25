@@ -45,7 +45,7 @@
     <!--Quiz area-->
     <main></main>
     <div id="quiz-box">
-        <h1 id="score-text">Current Score: 0</h1>
+        <h1 id="score-text">Live Score: 0</h1>
         <!--Question Tracker and Countdown area-->
         <div class="countdown-tracker-div">
             <!--Question tracker area-->
@@ -98,7 +98,7 @@
     <!--Results box-->
     <!--JavaScript will be used to target this div to display the score-->
     <div id="results-box">
-        <h1>Congratulations!</h1>
+        <h1>Congratulations! <i class="fa-solid fa-hands-clapping"></i></h1>
         <div class="final-score-area">
             <p class="final-score-text" id="final-score"></p>
         </div>
@@ -108,7 +108,7 @@
         <div class="form-box">
             <form>
                 <input type="text" name="username" id="username" placeholder="username">
-                <button type="submit" class="save-score-btn" id="save-score" onclick="saveScore()" disabled>Save <i class="fa-solid fa-thumbs-up"></i></button>
+                <button onclick="saveScore()" type="submit" class="save-score-btn" id="save-score" disabled>Save <i class="fa-solid fa-thumbs-up"></i></button>
                 <button onclick="replayQuiz()" class="replay-btn">Replay <i class="fa-solid fa-repeat"></i></button>
                 <button onclick="endGame()" class="end-game-btn">Home <i class="fa-solid fa-house"></i></button>
             </form>

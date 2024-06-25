@@ -4,7 +4,7 @@ const quizBox = document.getElementById('quiz-box');
 const resultsBox = document.getElementById('results-box');
 const startBtn = document.getElementById('start-btn');
 const exitBtn = document.getElementsByClassName('exit-btn');
-const restartBtn = document.getElementsByClassName('restart-btn');
+const replayBtn = document.getElementsByClassName('replay-btn');
 const nextBtn = document.getElementsByClassName('next-btn');
 const answerModal = document.getElementById('answer-modal');
 const modalDisplay = document.getElementById('modal-display');
@@ -17,6 +17,7 @@ const questionsTracker = document.getElementById('questions-tracker');
 const timerDisplay = document.getElementById('timer-display');
 const scoreText = document.getElementById('score-text');
 const finalScore = document.getElementById('final-score');
+const saveScoreBtn = document.getElementById('save-score');
 const username = document.getElementById('username');
 
 //Initialise score and question counter, create empty array for questions and empty object for current question
@@ -198,7 +199,7 @@ exitQuiz = () => {
     }
 }
 
-//Define restartQuiz function
+//Define replayQuiz function
 
 
 //Define endGame function
@@ -209,6 +210,9 @@ endGame = () => {
 
 //Define 'Save High Score' function
 //Inspired by James Quick - YouTube Tutorial
-saveHighScore = () => {
+saveScore = (e) => {
+    username.addEventListener('keyup', () => {
+        saveScoreBtn.disabled = !username.value;
+    })
     e.preventDefault();
 }
