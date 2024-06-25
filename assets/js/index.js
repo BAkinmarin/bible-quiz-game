@@ -141,7 +141,7 @@ choices.forEach((choice) => {
           incrementScore(SCORE_POINTS);
           myAnswerModal();
           clearInterval(timerInterval);
-          scoreText.innerText = `Score: ${score}`;
+          scoreText.innerText = `Current Score: ${score}`;
        } else if (classToApply == 'incorrect') {
           //feedbackMsgWrong.style.display = "block";
           feedbackMsg.innerText = `Oh No! That's the wrong answer!\u{1F61E}`;
@@ -160,7 +160,7 @@ choices.forEach((choice) => {
 //Increment Score function
 incrementScore = num => {
     score += num;
-    scoreText.innerText = `Score: ${score}`;
+    scoreText.innerText = `Current Score: ${score}`;
 }
 
 //Define nextQuestion function to allow user move to next question when ready
