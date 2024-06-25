@@ -49,6 +49,9 @@
 
 # UX design
 
+##### Favicon
+I used a Bible emoji for the favicon as I felt this would be appropriate for the theme.
+
 ##### Color
 I did not want to detract too much from the educative purpose of The Bible Quiz but I also wanted it to be engaging and interactive for the user so much so that they would be willing to play multiple times.
 
@@ -57,9 +60,8 @@ For this reason, I kept the color scheme clean and instead focused more on respo
 ##### Font
 In keeping with a physical Bible - as well as most digital versions - I wanted to provide users with a clean interface and a clear legible font that would not impact on readability. This inspired the decision to go with Lato : sans-serif.
 
-##### Images
-The images chosen for this site are intended to make the stories come to life to the user and bring their imaginations to life somewhat. 
-**All the images selected for this project came from pixabay.com and pexels.com.**
+##### Emojis
+In this project, and in keeping with the clean theme, I opted for the use of two emojis which are used in a modal display relative to if the user gets the question right or wrong.
 
 ##### Audio
 
@@ -141,7 +143,9 @@ The user can also see a record of the questions, images, correct answer and thei
 
 > Option for user to input username to scoreboard for future reference and comparison with other users.
 
-> Audio feedback corresponding to user interaction to enhance user experience.
+> Audio feedback corresponding to user interaction for an enhanced user experience.
+
+> High Scores saved in local storage for users to refer to previous user scores.
 
 ### Additional ideas
 > Create and add option for user to choose quiz game based on one of the 66 Books of The Bible.
@@ -253,7 +257,9 @@ The user can also see a record of the questions, images, correct answer and thei
 
 > Unable to get Next Question Function to work properly.
 
-> Unable to get user selected to turn green / red relative to answer prior to window alert.
+> Unable to get user selection to turn green / red relative to answer prior to window alert. **Fixed**
+
+> Unable to get High Scores to save in local storage.
 
 <a name="deployment"></a>
 ## Deployment
@@ -277,20 +283,20 @@ The user can also see a record of the questions, images, correct answer and thei
 ### [PRAROZ](https://www.youtube.com/watch?v=1ydfKDwsYbU) - YouTube
 > Step-by-step tutorial on creating a quiz using HTML, CSS and JavaScript. 
 
-### [James Quick](https://www.youtube.com/watch?v=rFWbAj40JrQ&list=PLB6wlEeCDJ5Yyh6P2N6Q_9JijB6v4UejF) - YouTube
+### [James Q Quick](https://www.youtube.com/watch?v=rFWbAj40JrQ&list=PLB6wlEeCDJ5Yyh6P2N6Q_9JijB6v4UejF) - YouTube
 > Step-by-step tutorial used for inspiration on checking user answers.
 
 ### [LIVE BLOGGER](https://www.youtube.com/watch?v=J3VxEGcc7Zw) - YouTube
 > Another step-by-step tutorial on creating a quiz using HTML, CSS and JavaScript.
 
+### [Web Dev Simplified](https://www.youtube.com/watch?v=riDzcEQbX6k) - YouTube
+> Detailed step-by-step tutorial on creating a quiz game using HTML, CSS and JavaScript.
+
 <a name="content"></a>
 ## Content & Resources
 
-### Pexels.com
-> Images used in this project.
-
 ### NotSoBoringBible.com
-> Used for quiz questions used in project.
+> Used for quiz questions included in project.
 
 ### w3 schools
 > Used for general lookup JS dom related queries and general styling css using js.
@@ -301,9 +307,9 @@ The user can also see a record of the questions, images, correct answer and thei
 > Used to query issues relating programming issues relating to injecting html with JS.
 
 ### Youtube.com
-> Channels like **Coding Nepal** & **Brian Design** helped understand different JS concepts throughout this project.
+> Channels like **Coding Nepal**, **Brian Design** and **James Q Quick** helped understand different JS concepts throughout this project.
 
-> Also helped understand manipulating the DOM more effetively.
+> Also helped broaden my understanding of manipulating the DOM more effetively.
 
 ### Code Institute
 > Project created in line with course content, walkthrough project and and within project 2 scope.
@@ -312,4 +318,4 @@ The user can also see a record of the questions, images, correct answer and thei
 ## Acknowledgements
 
 ### Alan Bushell
-> My mentor who provided me with constructive feedback and positive reinforcement where applicable.
+> My mentor who helped keep me on track when overthinking things and provided positive reinforcement where applicable.

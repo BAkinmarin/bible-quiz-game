@@ -179,11 +179,11 @@ body {
 
 /* Hide quiz and results boxes until user clicks start or exit */
 #quiz-box {
-    /* display: none; */
+    display: none;
 }
 
 #results-box {
-    /*display: none;*/
+    display: none;
 }
 
 /* Style form area and elements */

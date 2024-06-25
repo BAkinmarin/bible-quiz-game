@@ -29,7 +29,7 @@ const SCORE_POINTS = 100;
 const MAX_QUESTIONS = 5;
 
 //Define timer variable
-let timerInterval;
+let counter;
 
 /**
  * Some functions defined using 'Arrow Function' syntax to simplify code.
@@ -88,21 +88,21 @@ getNewQuestion = () => {
     acceptingAnswers = true;
 
     //Code to initialise timer
-    clearInterval(timerInterval);
+    clearInterval(counter);
 
     //Set timer value and innerText
     let timeLeft = 15;
     timerDisplay.innerText = `Time Left: 15s`;
 
     //Set timer to run every 1000 milliseconds (1 second)
-    timerInterval = setInterval(() => {
+    counter = setInterval(() => {
         timerDisplay.innerText = `Time Left: ${timeLeft}s`;
         //Decrement seconds by 1
         timeLeft--;
 
         //Stop timer counting down when at 0 and move to next question
         if (timeLeft < 0) {
-            clearInterval(timerInterval);
+            clearInterval(counter);
             getNewQuestion();
         }
     }, 1000);
@@ -138,20 +138,20 @@ choices.forEach((choice) => {
         //Increment score
         incrementScore(SCORE_POINTS);
         myAnswerModal();
-        clearInterval(timerInterval);
+        clearInterval(counter);
         scoreText.innerText = `Points: ${score}`;
     } else if (classToApply == 'incorrect') {
         //feedbackMsgWrong.style.display = "block";
         feedbackMsg.innerText = `Oh No! That's the wrong answer!\u{1F61E}`;
         myAnswerModal();
-        clearInterval(timerInterval);
+        clearInterval(counter);
     }
 
     //Use in-built JavaScript to set delay to removal of incorrect / correct class
     setTimeout ( () => {
         selectedChoice.classList.remove(classToApply);
         getNewQuestion();
-    }, 3000);
+    }, 6000);
   });
 });
 
@@ -180,9 +180,20 @@ hideAnswerModal = () => {
 }
 
 //Define nextQuestion function so user can skip to next question without waiting for timer to countdown
-function nextQuestion() {
-    //Add relevant event listener to next button
-    document.getElementById('next-button').addEventListener('click', nextQuestion, getNewQuestion);
+const nextButton = document.querySelector(".next-btn");
+nextButton.onclick = () => {
+    if (availableQuestions.length === 0 || questionsCounter >= MAX_QUESTIONS) {
+        questionsCounter++;
+        questionsTracker.innerText = `Question ${questionsCounter} of ${MAX_QUESTIONS}`;
+        hideAnswerModal();
+        getNewQuestion();
+        clearInterval(counter);
+        timerDisplay.innerText = `Time Left: ${timeLeft}s`;
+    } else {
+        clearInterval(counter);
+        hideAnswerModal();
+        endGame();
+    }
 }
 
 /**
