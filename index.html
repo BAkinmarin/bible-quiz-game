@@ -70,14 +70,28 @@
             <p class="answer-div choice-text" data-number="3">Option 3</p>
             <p class="answer-div choice-text" data-number="4">Option 4</p>
         </div>
-        <div id="answerModal">
-            <p class="feedback-msg-right feedback-msg-wrong" id="feedback-msg"></p>
-            <p class="correct-answer-text" id="correct-answer"></p>
-            <p class="hidden-verse-text" id="hidden-verse"></p>
+        <!--Answer modal concept inspired by Mentor, Alan Bushell-->
+        <div id="answer-modal" class="answer-modal-div">
+        <!--Content-->
+        <div class="modal-content-div" id="modal-content">
+            <p class="modal-text" id="feedback-message"></p>
+            <p class="modal-text" id="correct-answer"></p>
+            <p class="modal-text" id="hidden-verse"></p>
+        </div>
         </div>
         <div class="next-btn-div">
             <button onclick="nextQuestion()" class="next-btn">Next <i class="fa-solid fa-forward-step"></i></button>
             <button onclick="exitQuiz()" class="exit-btn">Exit <i class="fa-solid fa-circle-xmark"></i></button>
+        </div>
+    </div> 
+
+    <!--Answer modal concept inspired by Mentor, Alan Bushell-->
+    <div id="answer-modal" class="answer-modal-div">
+        <!--Content-->
+        <div class="modal-content" id="modal-display">
+            <p class="modal-text" id="feedback-message"></p>
+            <p class="modal-text" id="correct-answer"></p>
+            <p class="modal-text" id="hidden-verse"></p>
         </div>
     </div>
 

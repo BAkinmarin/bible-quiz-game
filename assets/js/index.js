@@ -6,11 +6,11 @@ const startBtn = document.getElementById('start-btn');
 const exitBtn = document.getElementsByClassName('exit-btn');
 const restartBtn = document.getElementsByClassName('restart-btn');
 const nextBtn = document.getElementsByClassName('next-btn');
+const answerModal = document.getElementById('answer-modal');
+const modalDisplay = document.getElementById('modal-display');
 const correctAnswer = document.getElementById('correct-answer');
 const hiddenVerse = document.getElementById('hidden-verse');
-const feedbackMsg = document.getElementById('feedback-msg');
-const feedbackMsgRight = document.getElementsByClassName('feedback-msg-right');
-const feedbackMsgWrong = document.getElementsByClassName('feedback-msg-wrong');
+const feedbackMsg = document.getElementById('feedback-message');
 const question = document.getElementById('question');
 const choices = Array.from(document.getElementsByClassName('choice-text'));
 const questionsTracker = document.getElementById('questions-tracker');
@@ -42,6 +42,8 @@ let timerInterval;
 startQuiz = () => {
     quizRules.style.display = "none";
     resultsBox.style.display = "none";
+    answerModal.style.display = "none";
+    modalDisplay.style.display = "none";
     hiddenVerse.style.display = "none";
     correctAnswer.style.display = "none";
     feedbackMsg.style.display = "none";
@@ -57,6 +59,9 @@ startQuiz = () => {
  * It also includes a timer feature inspired by Live Blogger - YouTube tutorial
  */
 getNewQuestion = () => {
+
+    //Hide answer modal from previous question
+    hideAnswerModal();
 
     //Check if any questions available to display or if counter has reached max question limit set
     if (availableQuestions.length === 0 || questionsCounter >= MAX_QUESTIONS) {
@@ -86,10 +91,6 @@ getNewQuestion = () => {
 
     //Code to initialise timer
     clearInterval(timerInterval);
-
-    //Ensure 'Correct Answer' and 'Hidden Verse' are hidden
-    correctAnswer.style.display = "none";
-    hiddenVerse.style.display = "none";
 
     //Set timer value and innerText
     let timeLeft = 15;
@@ -131,21 +132,21 @@ choices.forEach((choice) => {
       correctAnswer.innerText = `Correct Answer: ${currentQuestion.answer}`;
       hiddenVerse.innerText = `Verse: ${currentQuestion.verse}`;
       finalScore.innerText = `You scored: ${score} out of 500 points! Enter your username to track your high score or try again!`;
-      //feedbackMsgRight.innerText = `Yes! That's right!\u{1F4AF}`;
-      //feedbackMsgWrong.innerText = `Oh No! That's the wrong answer!\u{1F61E}`;
 
       /* Call getNewQuestion Function while there are questions remaining in MAX_QUESTIONS array */
       if (classToApply == 'correct') {
           //feedbackMsgRight.style.display = "block";
-          feedbackMsgRight.innerText = `Yes! That's right!\u{1F4AF}`;
+          feedbackMsg.innerText = `Yes! That's right!\u{1F4AF}`;
           //Increment score
           incrementScore(SCORE_POINTS);
-          answerModal();
+          myAnswerModal();
+          clearInterval(timerInterval);
           scoreText.innerText = `Score: ${score}`;
        } else if (classToApply == 'incorrect') {
           //feedbackMsgWrong.style.display = "block";
-          feedbackMsgWrong.innerText = `Oh No! That's the wrong answer!\u{1F61E}`;
-          answerModal();
+          feedbackMsg.innerText = `Oh No! That's the wrong answer!\u{1F61E}`;
+          myAnswerModal();
+          clearInterval(timerInterval);
        }
 
     //Use in-built JavaScript to set delay to removal of incorrect / correct class
@@ -166,10 +167,21 @@ incrementScore = num => {
 
 
 //Show answers in a modal
-answerModal = () => {
+myAnswerModal = () => {
+    answerModal.style.display = "block";
+    modalDisplay.style.display = "block";
     feedbackMsg.style.display = "block";
     correctAnswer.style.display = "block";
     hiddenVerse.style.display = "block";
+}
+
+//Hide modal before displaying next question
+hideAnswerModal = () => {
+    answerModal.style.display = "none";
+    modalDisplay.style.display = "none";
+    feedbackMsg.style.display = "none";
+    correctAnswer.style.display = "none";
+    hiddenVerse.style.display = "none";
 }
 
 /**
