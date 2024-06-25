@@ -151,7 +151,7 @@ choices.forEach((choice) => {
     setTimeout ( () => {
         selectedChoice.classList.remove(classToApply);
         getNewQuestion();
-    }, 6000);
+    }, 3000);
   });
 });
 

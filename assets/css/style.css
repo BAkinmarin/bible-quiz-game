@@ -238,3 +238,11 @@ input {
     cursor: pointer;
     opacity: 0.5;
 }
+
+/* Final Score on results page */
+p#final-score.final-score-text {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bolder;
+    font-style: oblique;
+}
