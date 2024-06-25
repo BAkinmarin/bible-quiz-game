@@ -250,6 +250,8 @@ The user can also see a record of the questions, images, correct answer and thei
 
 > Unable to get Next Question Function to work properly.
 
+> Unable to get user selected to turn green / red relative to answer prior to window alert.
+
 <a name="deployment"></a>
 ## Deployment
 

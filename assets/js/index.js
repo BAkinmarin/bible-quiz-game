@@ -54,6 +54,32 @@ startQuiz = () => {
  */
 getNewQuestion = () => {
 
+     //Check if any questions available to display or if counter has reached max question limit set
+     if (availableQuestions.length === 0 || questionsCounter >= MAX_QUESTIONS) {
+        endGame();
+        quizBox.style.display = "none";
+    }
+
+    //Increment questionCounter and display current question to user in corresponding HTML element
+    questionsCounter++;
+    questionsTracker.innerText = `Question ${questionsCounter} of ${MAX_QUESTIONS}`;
+
+    //Select question at random from questions array in questions.js file and display in corresponding HTML element
+    const questionsIndex = Math.floor(Math.random() * availableQuestions.length);
+    currentQuestion = availableQuestions[questionsIndex];
+    question.innerText = currentQuestion.question;
+
+    //Select answer options from questions array in questions.js file and display in corresponding HTML element
+    choices.forEach(choice => {
+        //Assign number as dataset options defined in HTML file and display choice options
+        const number = choice.dataset['number'];
+        choice.innerText = currentQuestion['choice' + number];
+    });
+
+    //Remove randomly displayed question from array and allow user to select answer
+    availableQuestions.splice(questionsIndex, 1);
+    acceptingAnswers = true;
+
     //Code to initialise timer
     clearInterval(timerInterval);
 
@@ -78,7 +104,7 @@ getNewQuestion = () => {
         }
     }, 1000);
 
-    //Check if any questions available to display or if counter has reached max question limit set
+    /*//Check if any questions available to display or if counter has reached max question limit set
     if (availableQuestions.length === 0 || questionsCounter >= MAX_QUESTIONS) {
         endGame();
         quizBox.style.display = "none";
@@ -102,7 +128,7 @@ getNewQuestion = () => {
 
     //Remove randomly displayed question from array and allow user to select answer
     availableQuestions.splice(questionsIndex, 1);
-    acceptingAnswers = true;
+    acceptingAnswers = true;*/
 };
 
 /**
@@ -124,43 +150,47 @@ choices.forEach((choice) => {
     selectedChoice.classList.add(classToApply);
 
     //Use in-built JavaScript to set delay to removal of incorrect / correct class
-    setTimeout ( () => {
+    /*setTimeout ( () => {
         selectedChoice.classList.remove(classToApply);
         getNewQuestion();
-    }, 2000);
+    }, 3000);*/
 
     /* Look through questions array to select corresponding answer */
-    if (currentQuestion.answer === 1) {
+    /*if (currentQuestion.answer === 1) {
         correctAnswer.innerText =
         `Correct Answer: ${currentQuestion.choice1}`;
         hiddenVerse.innerText = 
         `Verse: ${currentQuestion.verse}`;
         finalScore.innerText = 
-        `You scored: ${score} out of 500 points`;
+        `You scored: ${score} out of 500 points! Enter your username to track your high score or try again!`;
     } else if (currentQuestion.answer === 2) {
         correctAnswer.innerText =
         `Correct Answer: ${currentQuestion.choice2}`;
         hiddenVerse.innerText = 
         `Verse: ${currentQuestion.verse}`;
         finalScore.innerText = 
-        `You scored: ${score} out of 500 points`;
+        `You scored: ${score} out of 500 points! Enter your username to track your high score or try again!`;
     } else if (currentQuestion.answer === 3) {
         correctAnswer.innerText =
         `Correct Answer: ${currentQuestion.choice3}`;
         hiddenVerse.innerText = 
         `Verse: ${currentQuestion.verse}`;
         finalScore.innerText = 
-        `You scored: ${score} out of 500 points`;
+        `You scored: ${score} out of 500 points! Enter your username to track your high score or try again!`;
     } else if (currentQuestion.answer === 4) {
         correctAnswer.innerText =
         `Correct Answer: ${currentQuestion.choice4}`;
         hiddenVerse.innerText = 
         `Verse: ${currentQuestion.verse}`;
         finalScore.innerText = 
-        `You scored: ${score} out of 500 points`;
-    }
+        `You scored: ${score} out of 500 points! Enter your username to track your high score or try again!`;
+    }*/
 
       //Retrieve innerText elements for 'Correct Answer' and 'Hidden Verse' and display in window
+      correctAnswer.innerText = `Correct Answer: ${currentQuestion.choice1}`;
+      hiddenVerse.innerText = `Verse: ${currentQuestion.verse}`;
+      finalScore.innerText = `You scored: ${score} out of 500 points! Enter your username to track your high score or try again!`;
+
       const info = hiddenVerse.innerText;
       const feedback = correctAnswer.innerText;
   
@@ -173,6 +203,12 @@ choices.forEach((choice) => {
        } else if (classToApply == 'incorrect') {
           alert("Oh No! That's the wrong answer!\u{1F61E}\n" + feedback + "\n" + info);
        }  
+
+    //Use in-built JavaScript to set delay to removal of incorrect / correct class
+    setTimeout ( () => {
+        selectedChoice.classList.remove(classToApply);
+        getNewQuestion();
+    }, 2000);
   });
 });
 
@@ -205,6 +241,7 @@ exitQuiz = () => {
 //Define endGame function
 endGame = () => {
     resultsBox.style.display = "block";
+    finalScore.innerText = `You scored: ${score} out of 500 points! Enter your username to track your high score or try again!`;
 }
 
 //Define 'Save High Score' function

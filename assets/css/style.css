@@ -186,3 +186,9 @@ input {
     cursor: pointer;
     opacity: 0.5;
 }
+
+.final {
+    font-size: 1.25rem;
+    font-style: oblique;
+    color: brown;
+}
