@@ -128,7 +128,7 @@ choices.forEach((choice) => {
     selectedChoice.classList.add(classToApply);
 
       //Retrieve innerText elements for 'Correct Answer' and 'Hidden Verse' and display in window
-      correctAnswer.innerText = `Correct Answer: ${currentQuestion.choice1}`;
+      correctAnswer.innerText = `Correct Answer: ${currentQuestion.answer}`;
       hiddenVerse.innerText = `Verse: ${currentQuestion.verse}`;
       finalScore.innerText = `You scored: ${score} out of 500 points! Enter your username to track your high score or try again!`;
       //feedbackMsgRight.innerText = `Yes! That's right!\u{1F4AF}`;
