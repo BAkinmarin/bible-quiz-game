@@ -27,7 +27,6 @@ body {
     width: 85%;
     margin: auto;
     margin-top: 15%;
-    text-align: start;
     font-size: 1.25rem;
     padding: 0.5rem;
     line-height: 2rem;
@@ -109,9 +108,10 @@ body {
 }
 
 /* Style Start, Restart, Exit and Next Buttons */
-.start-btn-div {
+.start-btn-div,
+.next-btn-div {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .start-btn,
@@ -125,38 +125,9 @@ body {
    margin-top: 1rem;
 }
 
-.next-btn,
-.exit-btn,
-.replay-btn,
-.end-btn,
-.save-score-btn {
-    width: 40%;
-    align-items: center;
-}
-
-.next-btn-div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-right: 1rem;
-    align-items: center;
-}
-
-.replay-btn,
-.end-btn {
-    font-size: 1.25rem;
-    border-style: ridge;
-    padding: 1.25rem;
-    margin-top: 1rem;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
-
 .start-btn:hover,
 .next-btn:hover,
-.exit-btn:hover,
-.replay-btn:hover,
-.save-score-btn:hover {
+.exit-btn:hover {
     transform: scale(1.15);
     transition: all 0.3s ease-in-out;
     cursor: pointer;
@@ -170,31 +141,48 @@ body {
 }
 
 /* Style form area and elements */
-form {
-    width: 100%;
+/*form {
+    width: 85%;
     display: flex;
     flex-direction: column;
     align-items: center;
-}
+}*/
 
 .form-box {
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    font-size: 1.25rem;
+    padding: 0.5rem;
+    line-height: 2rem;
+}
+
+form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-evenly;
 }
 
 input {
-    width: 40%;
-    height: 20%;
-    font-size: 2rem;
-    margin: 1rem;
+    width: 50%;
+    font-size: 1.5rem;
 }
 
-.save-score-btn {
+.save-score-btn,
+.replay-btn,
+.end-game-btn {
     font-size: 1.25rem;
     padding: 1.25rem;
     border-style: ridge;
     margin-top: 1rem;
     font-weight: bold;
     letter-spacing: 1px;
+    width: 50%;
 }
+
+.replay-btn:hover,
+.save-score-btn:hover
