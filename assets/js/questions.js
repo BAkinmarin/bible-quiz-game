@@ -68,5 +68,5 @@ let questions = [
         choice4: 'D. Not very long',
         answer: 2,
         verse: 'Then the Lord said, "My Spirit will not contend with humans forever, for they are mortal; their days will be a hundred and twenty years." - Genesis 6:3 (NIV)',
-    }
+    },
 ];

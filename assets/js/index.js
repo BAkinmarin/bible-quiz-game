@@ -6,14 +6,17 @@ const startBtn = document.getElementById('start-btn');
 const exitBtn = document.getElementsByClassName('exit-btn');
 const restartBtn = document.getElementsByClassName('restart-btn');
 const nextBtn = document.getElementsByClassName('next-btn');
+const correctAnswer = document.getElementById('correct-answer');
 const hiddenVerse = document.getElementById('hidden-verse');
+const feedbackMsg = document.getElementById('feedback-msg');
+const feedbackMsgRight = document.getElementsByClassName('feedback-msg-right');
+const feedbackMsgWrong = document.getElementsByClassName('feedback-msg-wrong');
 const question = document.getElementById('question');
 const choices = Array.from(document.getElementsByClassName('choice-text'));
 const questionsTracker = document.getElementById('questions-tracker');
 const timerDisplay = document.getElementById('timer-display');
 const scoreText = document.getElementById('score-text');
 const finalScore = document.getElementById('final-score');
-const correctAnswer = document.getElementById('correct-answer');
 const username = document.getElementById('username');
 
 //Initialise score and question counter, create empty array for questions and empty object for current question
@@ -41,6 +44,7 @@ startQuiz = () => {
     resultsBox.style.display = "none";
     hiddenVerse.style.display = "none";
     correctAnswer.style.display = "none";
+    feedbackMsg.style.display = "none";
     quizBox.style.display = "block";
     questionsCounter = 0;
     score = 0;
@@ -54,8 +58,8 @@ startQuiz = () => {
  */
 getNewQuestion = () => {
 
-     //Check if any questions available to display or if counter has reached max question limit set
-     if (availableQuestions.length === 0 || questionsCounter >= MAX_QUESTIONS) {
+    //Check if any questions available to display or if counter has reached max question limit set
+    if (availableQuestions.length === 0 || questionsCounter >= MAX_QUESTIONS) {
         endGame();
         quizBox.style.display = "none";
     }
@@ -103,32 +107,6 @@ getNewQuestion = () => {
             getNewQuestion();
         }
     }, 1000);
-
-    /*//Check if any questions available to display or if counter has reached max question limit set
-    if (availableQuestions.length === 0 || questionsCounter >= MAX_QUESTIONS) {
-        endGame();
-        quizBox.style.display = "none";
-    }
-
-    //Increment questionCounter and display current question to user in corresponding HTML element
-    questionsCounter++;
-    questionsTracker.innerText = `Question ${questionsCounter} of ${MAX_QUESTIONS}`;
-
-    //Select question at random from questions array in questions.js file and display in corresponding HTML element
-    const questionsIndex = Math.floor(Math.random() * availableQuestions.length);
-    currentQuestion = availableQuestions[questionsIndex];
-    question.innerText = currentQuestion.question;
-
-    //Select answer options from questions array in questions.js file and display in corresponding HTML element
-    choices.forEach(choice => {
-        //Assign number as dataset options defined in HTML file and display choice options
-        const number = choice.dataset['number'];
-        choice.innerText = currentQuestion['choice' + number];
-    });
-
-    //Remove randomly displayed question from array and allow user to select answer
-    availableQuestions.splice(questionsIndex, 1);
-    acceptingAnswers = true;*/
 };
 
 /**
@@ -149,66 +127,32 @@ choices.forEach((choice) => {
     const classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
     selectedChoice.classList.add(classToApply);
 
-    //Use in-built JavaScript to set delay to removal of incorrect / correct class
-    /*setTimeout ( () => {
-        selectedChoice.classList.remove(classToApply);
-        getNewQuestion();
-    }, 3000);*/
-
-    /* Look through questions array to select corresponding answer */
-    /*if (currentQuestion.answer === 1) {
-        correctAnswer.innerText =
-        `Correct Answer: ${currentQuestion.choice1}`;
-        hiddenVerse.innerText = 
-        `Verse: ${currentQuestion.verse}`;
-        finalScore.innerText = 
-        `You scored: ${score} out of 500 points! Enter your username to track your high score or try again!`;
-    } else if (currentQuestion.answer === 2) {
-        correctAnswer.innerText =
-        `Correct Answer: ${currentQuestion.choice2}`;
-        hiddenVerse.innerText = 
-        `Verse: ${currentQuestion.verse}`;
-        finalScore.innerText = 
-        `You scored: ${score} out of 500 points! Enter your username to track your high score or try again!`;
-    } else if (currentQuestion.answer === 3) {
-        correctAnswer.innerText =
-        `Correct Answer: ${currentQuestion.choice3}`;
-        hiddenVerse.innerText = 
-        `Verse: ${currentQuestion.verse}`;
-        finalScore.innerText = 
-        `You scored: ${score} out of 500 points! Enter your username to track your high score or try again!`;
-    } else if (currentQuestion.answer === 4) {
-        correctAnswer.innerText =
-        `Correct Answer: ${currentQuestion.choice4}`;
-        hiddenVerse.innerText = 
-        `Verse: ${currentQuestion.verse}`;
-        finalScore.innerText = 
-        `You scored: ${score} out of 500 points! Enter your username to track your high score or try again!`;
-    }*/
-
       //Retrieve innerText elements for 'Correct Answer' and 'Hidden Verse' and display in window
       correctAnswer.innerText = `Correct Answer: ${currentQuestion.choice1}`;
       hiddenVerse.innerText = `Verse: ${currentQuestion.verse}`;
       finalScore.innerText = `You scored: ${score} out of 500 points! Enter your username to track your high score or try again!`;
+      //feedbackMsgRight.innerText = `Yes! That's right!\u{1F4AF}`;
+      //feedbackMsgWrong.innerText = `Oh No! That's the wrong answer!\u{1F61E}`;
 
-      const info = hiddenVerse.innerText;
-      const feedback = correctAnswer.innerText;
-  
       /* Call getNewQuestion Function while there are questions remaining in MAX_QUESTIONS array */
       if (classToApply == 'correct') {
-          alert("Yes! That's right!\u{1F4AF}\n" + info);
+          //feedbackMsgRight.style.display = "block";
+          feedbackMsgRight.innerText = `Yes! That's right!\u{1F4AF}`;
           //Increment score
           incrementScore(SCORE_POINTS);
-          //scoreText.innerText = `Score: ${score}`;
+          answerModal();
+          scoreText.innerText = `Score: ${score}`;
        } else if (classToApply == 'incorrect') {
-          alert("Oh No! That's the wrong answer!\u{1F61E}\n" + feedback + "\n" + info);
-       }  
+          //feedbackMsgWrong.style.display = "block";
+          feedbackMsgWrong.innerText = `Oh No! That's the wrong answer!\u{1F61E}`;
+          answerModal();
+       }
 
     //Use in-built JavaScript to set delay to removal of incorrect / correct class
     setTimeout ( () => {
         selectedChoice.classList.remove(classToApply);
         getNewQuestion();
-    }, 2000);
+    }, 9000);
   });
 });
 
@@ -220,6 +164,13 @@ incrementScore = num => {
 
 //Define nextQuestion function to allow user move to next question when ready
 
+
+//Show answers in a modal
+answerModal = () => {
+    feedbackText.style.display = "block";
+    correctAnswer.style.display = "block";
+    hiddenVerse.style.display = "block";
+}
 
 /**
  * This exitQuiz function qill throwout a window alert asking the user if they want to leave the game.
@@ -233,7 +184,7 @@ exitQuiz = () => {
     } else {
         return;
     }
-};
+}
 
 //Define restartQuiz function
 
