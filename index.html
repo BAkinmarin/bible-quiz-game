@@ -11,9 +11,9 @@
         rel="stylesheet">
 
     <!--Favicon-->
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
 
     <title>Bible Quiz Game</title>
 
@@ -45,7 +45,7 @@
     <!--Quiz area-->
     <main></main>
     <div id="quiz-box">
-        <h1 id="score-text">Live Score: 0</h1>
+        <h1 id="score-text">Points: 0</h1>
         <!--Question Tracker and Countdown area-->
         <div class="countdown-tracker-div">
             <!--Question tracker area-->
@@ -80,8 +80,8 @@
         </div>
         </div>
         <div class="next-btn-div">
-            <button onclick="nextQuestion()" class="next-btn">Next <i class="fa-solid fa-forward-step"></i></button>
-            <button onclick="exitQuiz()" class="exit-btn">Exit <i class="fa-solid fa-circle-xmark"></i></button>
+            <!--<button onclick="nextQuestion()" class="next-btn" id="next-button">Next <i class="fa-solid fa-forward-step"></i></button>-->
+            <button onclick="exitQuiz()" class="exit-btn" id="exit-button">Exit <i class="fa-solid fa-circle-xmark"></i></button>
         </div>
     </div> 
 
@@ -108,9 +108,9 @@
         <div class="form-box">
             <form>
                 <input type="text" name="username" id="username" placeholder="username">
-                <button onclick="saveScore()" type="submit" class="save-score-btn" id="save-score" disabled>Save <i class="fa-solid fa-thumbs-up"></i></button>
-                <button onclick="replayQuiz()" class="replay-btn">Replay <i class="fa-solid fa-repeat"></i></button>
-                <button onclick="endGame()" class="end-game-btn">Home <i class="fa-solid fa-house"></i></button>
+                <button onclick="saveScore()" type="submit" class="save-score-btn" id="save-score-button" disabled>Save <i class="fa-solid fa-thumbs-up"></i></button>
+                <button onclick="replayQuiz()" class="replay-btn" id="replay-button">Replay <i class="fa-solid fa-repeat"></i></button>
+                <button onclick="endGame()" class="end-game-btn" id="end-game-button">Home <i class="fa-solid fa-house"></i></button>
             </form>
         </div>
     </div>

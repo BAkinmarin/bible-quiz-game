@@ -2,10 +2,9 @@
 const quizRules = document.getElementById('quiz-rules');
 const quizBox = document.getElementById('quiz-box');
 const resultsBox = document.getElementById('results-box');
-const startBtn = document.getElementById('start-btn');
-const exitBtn = document.getElementsByClassName('exit-btn');
-const replayBtn = document.getElementsByClassName('replay-btn');
-const nextBtn = document.getElementsByClassName('next-btn');
+const startButton = document.getElementById('start-btn');
+const exitButton = document.getElementById('exit-button');
+const replayButton = document.getElementsByClassName('replay-btn');
 const answerModal = document.getElementById('answer-modal');
 const modalDisplay = document.getElementById('modal-display');
 const correctAnswer = document.getElementById('correct-answer');
@@ -17,8 +16,6 @@ const questionsTracker = document.getElementById('questions-tracker');
 const timerDisplay = document.getElementById('timer-display');
 const scoreText = document.getElementById('score-text');
 const finalScore = document.getElementById('final-score');
-const saveScoreBtn = document.getElementById('save-score');
-const username = document.getElementById('username');
 
 //Initialise score and question counter, create empty array for questions and empty object for current question
 let availableQuestions = [];
@@ -129,43 +126,40 @@ choices.forEach((choice) => {
     const classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
     selectedChoice.classList.add(classToApply);
 
-      //Retrieve innerText elements for 'Correct Answer' and 'Hidden Verse' and display in window
-      correctAnswer.innerText = `Correct Answer: ${currentQuestion.answer}`;
-      hiddenVerse.innerText = `Verse: ${currentQuestion.verse}`;
-      finalScore.innerText = `You scored: ${score} out of 500 points! Enter your username to track your high score or try again!`;
+    //Retrieve innerText elements for 'Correct Answer' and 'Hidden Verse' and display in window
+    correctAnswer.innerText = `Correct Answer: ${currentQuestion.answer}`;
+    hiddenVerse.innerText = `${currentQuestion.verse}`;
+    finalScore.innerText = `You scored: ${score} out of 500 points! Enter your username to track your high score or try again!`;
 
-      /* Call getNewQuestion Function while there are questions remaining in MAX_QUESTIONS array */
-      if (classToApply == 'correct') {
-          //feedbackMsgRight.style.display = "block";
-          feedbackMsg.innerText = `Yes! That's right!\u{1F4AF}`;
-          //Increment score
-          incrementScore(SCORE_POINTS);
-          myAnswerModal();
-          clearInterval(timerInterval);
-          scoreText.innerText = `Current Score: ${score}`;
-       } else if (classToApply == 'incorrect') {
-          //feedbackMsgWrong.style.display = "block";
-          feedbackMsg.innerText = `Oh No! That's the wrong answer!\u{1F61E}`;
-          myAnswerModal();
-          clearInterval(timerInterval);
-       }
+    /* Call getNewQuestion Function while there are questions remaining in MAX_QUESTIONS array */
+    if (classToApply == 'correct') {
+        //feedbackMsgRight.style.display = "block";
+        feedbackMsg.innerText = `Yes! That's right!\u{1F4AF}`;
+        //Increment score
+        incrementScore(SCORE_POINTS);
+        myAnswerModal();
+        clearInterval(timerInterval);
+        scoreText.innerText = `Points: ${score}`;
+    } else if (classToApply == 'incorrect') {
+        //feedbackMsgWrong.style.display = "block";
+        feedbackMsg.innerText = `Oh No! That's the wrong answer!\u{1F61E}`;
+        myAnswerModal();
+        clearInterval(timerInterval);
+    }
 
     //Use in-built JavaScript to set delay to removal of incorrect / correct class
     setTimeout ( () => {
         selectedChoice.classList.remove(classToApply);
         getNewQuestion();
-    }, 9000);
+    }, 6000);
   });
 });
 
 //Increment Score function
 incrementScore = num => {
     score += num;
-    scoreText.innerText = `Current Score: ${score}`;
+    scoreText.innerText = `Points: ${score}`;
 }
-
-//Define nextQuestion function to allow user move to next question when ready
-
 
 //Show answers in a modal
 myAnswerModal = () => {
@@ -183,6 +177,12 @@ hideAnswerModal = () => {
     feedbackMsg.style.display = "none";
     correctAnswer.style.display = "none";
     hiddenVerse.style.display = "none";
+}
+
+//Define nextQuestion function so user can skip to next question without waiting for timer to countdown
+function nextQuestion() {
+    //Add relevant event listener to next button
+    document.getElementById('next-button').addEventListener('click', nextQuestion, getNewQuestion);
 }
 
 /**
@@ -208,11 +208,18 @@ endGame = () => {
     finalScore.innerText = `You scored: ${score} out of 500 points! Enter your username to track your high score or try again!`;
 }
 
-//Define 'Save High Score' function
-//Inspired by James Quick - YouTube Tutorial
+/**
+ * The below saveScore function allows the user save their score to local storage.
+ * This concept is inspired by James Quick - YouTube tutorial.
+ */
+//Retrieve relevant elements from HTML
+const saveScoreBtn = document.getElementById('save-score');
+const username = document.getElementById('username');
+
+//saveScore function take user 
 saveScore = (e) => {
     username.addEventListener('keyup', () => {
         saveScoreBtn.disabled = !username.value;
-    })
-    e.preventDefault();
+        e.preventDefault();
+    });
 }

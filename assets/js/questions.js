@@ -7,7 +7,7 @@ let questions = [
         choice3: '3. Exodus',
         choice4: '4. Revelation',
         answer: 2,
-        verse: '"In still another battle, which took place at Gath, there was a huge man with six fingers on each hand and six toes on each foot-twenty-four in all. He also was descended from Rapha" - 2 Samuel 21:20(NIV)',
+        verse: '"In still another battle, which took place at Gath, there was a huge man with six fingers on each hand and six toes on each foot-twenty-four in all. He also was descended from Rapha" - 2 Samuel 21:20 (NIV)',
     },
 
     {
@@ -68,5 +68,35 @@ let questions = [
         choice4: '4. Not very long',
         answer: 2,
         verse: 'Then the Lord said, "My Spirit will not contend with humans forever, for they are mortal; their days will be a hundred and twenty years." - Genesis 6:3 (NIV)',
+    },
+
+    {
+        question: 'What does the Bible say manna tasted like?',
+        choice1: '1. Wafers made with honey',
+        choice2: '2. Locust and lentils',
+        choice3: '3. Candy',
+        choice4: '4. Broccoli',
+        answer: 1,
+        verse: '"The people of Israel called the bread manna. It was white like coriander seed and tasted like wafers made with honey. - Exodux 16:31 (NIV)"',
+    },
+
+    {
+        question: "How old was Noah's father, Lamech, when he died?",
+        choice1: '1. 77 years old',
+        choice2: '2. 356 years old',
+        choice3: '3. 777 years old',
+        choice4: '4. He did not die',
+        answer: 3,
+        verse: '"Altogether, Lamech lived a total of 777 years, and then he died. - Genesis 5:31 (NIV)"',
+    },
+
+    {
+        question: "What happened to Lot's wife when they were escaping the city's destruction and she turned to look back?",
+        choice1: '1. She started showing up',
+        choice2: '2. She became a pillar of salt',
+        choice3: '3. She saw a ghost',
+        choice4: '4. She stopped to build a snowman',
+        answer: 2,
+        verse: "But Lot's wife looked back, and she became a pillar of salt. - Genesis 19:26 (NIV)",
     },
 ];

@@ -224,8 +224,14 @@ input {
     width: 70%;
 }
 
+.save-score.btn:hover {
+    transform: scale(1.15);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
 .replay-btn:hover,
-.save-score-btn:hover,
 .end-game-btn:hover {
     transform: scale(1.15);
     transition: all 0.3s ease-in-out;
