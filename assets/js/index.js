@@ -14,6 +14,7 @@ const timerDisplay = document.getElementById('timer-display');
 const scoreText = document.getElementById('score-text');
 const finalScore = document.getElementById('final-score');
 const correctAnswer = document.getElementById('correct-answer');
+const username = document.getElementById('username');
 
 //Initialise score and question counter, create empty array for questions and empty object for current question
 let availableQuestions = [];
@@ -204,4 +205,10 @@ exitQuiz = () => {
 //Define endGame function
 endGame = () => {
     resultsBox.style.display = "block";
+}
+
+//Define 'Save High Score' function
+//Inspired by James Quick - YouTube Tutorial
+saveHighScore = () => {
+    e.preventDefault();
 }

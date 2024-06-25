@@ -90,6 +90,7 @@ body {
 .btn[disabled]:hover {
     cursor: not-allowed;
     transform: none;
+    transition: none;
 }
 
 #questions-counter .questions-tracker-text {
@@ -143,10 +144,12 @@ body {
 
 .replay-btn,
 .end-btn {
-    font-size: 1rem;
+    font-size: 1.25rem;
     border-style: ridge;
     padding: 1.25rem;
     margin-top: 1rem;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
 .start-btn:hover,
@@ -188,7 +191,10 @@ input {
 }
 
 .save-score-btn {
-    font-size: 1rem;
+    font-size: 1.25rem;
     padding: 1.25rem;
     border-style: ridge;
+    margin-top: 1rem;
+    font-weight: bold;
+    letter-spacing: 1px;
 }

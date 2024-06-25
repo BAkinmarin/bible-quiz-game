@@ -61,6 +61,8 @@ In keeping with a physical Bible - as well as most digital versions - I wanted t
 The images chosen for this site are intended to make the stories come to life to the user and bring their imaginations to life somewhat. 
 **All the images selected for this project came from pixabay.com and pexels.com.**
 
+##### Audio
+
 
 ## User Stories
 
