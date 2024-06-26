@@ -1,6 +1,6 @@
 # Bible Quiz
 
-![am I responsive screenshot]()
+![am I responsive screenshot](assets/testing/amIResponsive.png)
 
 ## A Bible Quiz based Website
 > The Bible Quiz is an interactive and educative knowledge-based quiz game centered on the Bible.
@@ -237,16 +237,20 @@ The user can also see a record of the questions, images, correct answer and thei
 ## HTML W3 Validation
 
 ### index.html
-![W3 Validation index.html]()
+![W3 Validation index.html](assets/testing/W3C-HTML-Validation.png)
 #### Result: No Errors
 
 ### CSS Validation
-![W3 Validation index.html]()
+![W3 Validation index.html](assets/testing/W3C-CSS-Validation.png)
 #### Result: No Errors
 
 ### JS Hint Checker
-![JS hint Validator]()
-#### Result: No Warnings
+![JS hint Validator](assets/testing/JSHint.png)
+#### Result: 31 warnings (topics shown below) - ignored as code behaves as expected and fully tested by myself and others:
+> 'arrow function syntax (=>)' is only available in ES6 (use ''esversion: 6')
+> 'spread operator' is only available in ES6 (use 'esversion: 6')
+> 'template literal syntax' is only available in ES6 (use 'esversion: 6')
+> Warning to do with emoji
 
 <a name="bugs"></a>
 ## **Bugs**
@@ -255,7 +259,7 @@ The user can also see a record of the questions, images, correct answer and thei
 
 > Unable to display 'Hidden Verse' description to highlight the corresponding scripture which inspired question. **Fixed**
 
-> Unable to get Next Question Function to work properly. **Excluded**
+> Unable to get Next Question option to work properly. **Fixed**
 
 > Unable to get user selection to turn green / red relative to answer prior to window alert. **Fixed**
 
