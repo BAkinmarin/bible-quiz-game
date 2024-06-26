@@ -141,7 +141,7 @@ body {
 /* The Close Modal Button */
 #closeModal {
     color: black;
-    float: center;
+    /*float: center;*/
     font-weight: bold;
     border-radius: 1px;
     border-style: groove;
@@ -160,10 +160,6 @@ body {
     font-style: oblique;
     text-decoration: wavy;
     font-weight: bold;
-}
-
-#feedback-message {
-    text-transform: normalcase;
 }
 
 /* Style count down timer and question tracker*/
@@ -236,9 +232,7 @@ input {
     font-size: 1.25rem;
 }
 
-.save-score-btn,
-.replay-btn,
-.end-game-btn {
+.replay-btn {
     font-size: 1.25rem;
     padding: 1.25rem;
     border-style: ridge;
@@ -248,15 +242,7 @@ input {
     width: 70%;
 }
 
-.save-score.btn:hover {
-    transform: scale(1.15);
-    transition: all 0.3s ease-in-out;
-    cursor: pointer;
-    opacity: 0.5;
-}
-
-.replay-btn:hover,
-.end-game-btn:hover {
+.replay-btn:hover {
     transform: scale(1.15);
     transition: all 0.3s ease-in-out;
     cursor: pointer;

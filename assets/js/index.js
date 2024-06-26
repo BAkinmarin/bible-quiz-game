@@ -63,7 +63,7 @@ getNewQuestion = () => {
     if (availableQuestions.length === 0 || questionsCounter >= MAX_QUESTIONS) {
         endGame();
         quizBox.style.display = "none";
-    }
+    };
 
     //Increment questionCounter and display current question to user in corresponding HTML element
     questionsCounter++;
@@ -131,17 +131,17 @@ choices.forEach((choice) => {
 
     /* Call getNewQuestion Function while there are questions remaining in MAX_QUESTIONS array */
     if (classToApply == 'correct') {
-        feedbackMsg.innerText = `Yes! That's right!\u{1F4AF}`;
+        feedbackMsg.innerText = `\u{1F3AF} Yes, that's spot on! \u{1F3AF}`;
         //Increment score
         incrementScore(SCORE_POINTS);
         myAnswerModal();
         clearInterval(counter);
         scoreText.innerText = `Points: ${score}`;
     } else {
-        feedbackMsg.innerText = `Oh No! That's the wrong answer!\u{1F61E}`;
+        feedbackMsg.innerText = `\u{274C} Oh No, that's wrong! \u{274C}`;
         myAnswerModal();
         clearInterval(counter);
-    }
+    };
 
     //Use in-built JavaScript to set delay to removal of incorrect / correct class
     setTimeout ( () => {
@@ -154,7 +154,7 @@ choices.forEach((choice) => {
 incrementScore = num => {
     score += num;
     scoreText.innerText = `Points: ${score}`;
-}
+};
 
 //Show answers in a modal
 myAnswerModal = () => {
@@ -163,7 +163,7 @@ myAnswerModal = () => {
     feedbackMsg.style.display = "block";
     correctAnswer.style.display = "block";
     hiddenVerse.style.display = "block";
-}
+};
 
 //Hide modal before displaying next question
 hideAnswerModal = () => {
@@ -172,13 +172,13 @@ hideAnswerModal = () => {
     feedbackMsg.style.display = "none";
     correctAnswer.style.display = "none";
     hiddenVerse.style.display = "none";
-}
+};
 
 //Close answerModal when user clicks Next and get call getNextQuestion function
 span.onclick = function() {
     hideAnswerModal();
     getNewQuestion();
-}
+};
 
 /**
  * This exitQuiz function qill throwout a window alert asking the user if they want to leave the game.
@@ -191,16 +191,16 @@ exitQuiz = () => {
         return window.location.assign('index.html');
     } else {
         return;
-    }
-}
+    };
+};
 
 //Define replayQuiz function
 replayQuiz = () => {
     startQuiz();
-}
+};
 
 //Define endGame function
 endGame = () => {
     resultsBox.style.display = "block";
-    finalScore.innerText = `You scored: ${score} out of 500 points!`;
-}
+    finalScore.innerText = `\u{1F3C1} Welldone! You scored: ${score} out of 500 points! \u{1F3C1}`;
+};
