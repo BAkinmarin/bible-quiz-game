@@ -84,7 +84,7 @@ body {
 }
 
 /* Styles to be applied using JavaScript depending on user selection */
-/* Change color to green if selected option is correct and red if incorrect */
+/* User selection turns green if correct and red if incorrect */
 .choice-text.correct {
     background-color: green;
 }    
@@ -173,15 +173,14 @@ body {
     flex-direction: row-reverse;
 }
 
-/* Style Start, Restart, Exit and Next Buttons */
+/* Style Start, Restartand Exit Buttons */
 .start-btn-div,
-.next-btn-div {
+.exit-btn-div {
     display: flex;
     justify-content: space-evenly;
 }
 
 .start-btn,
-.next-btn,
 .exit-btn {
    font-size: 1.25rem;
    letter-spacing: 1px;
@@ -192,7 +191,6 @@ body {
 }
 
 .start-btn:hover,
-.next-btn:hover,
 .exit-btn:hover {
     transform: scale(1.15);
     transition: all 0.3s ease-in-out;

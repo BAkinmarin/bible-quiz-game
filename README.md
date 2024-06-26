@@ -255,7 +255,7 @@ The user can also see a record of the questions, images, correct answer and thei
 
 > Unable to display 'Hidden Verse' description to highlight the corresponding scripture which inspired question. **Fixed**
 
-> Unable to get Next Question Function to work properly.
+> Unable to get Next Question Function to work properly. **Excluded**
 
 > Unable to get user selection to turn green / red relative to answer prior to window alert. **Fixed**
 
@@ -283,6 +283,8 @@ The user can also see a record of the questions, images, correct answer and thei
 ### [PRAROZ](https://www.youtube.com/watch?v=1ydfKDwsYbU) - YouTube
 > Step-by-step tutorial on creating a quiz using HTML, CSS and JavaScript. 
 
+> Particularly useful with understanding the concept of working with countdown timers.
+
 ### [James Q Quick](https://www.youtube.com/watch?v=rFWbAj40JrQ&list=PLB6wlEeCDJ5Yyh6P2N6Q_9JijB6v4UejF) - YouTube
 > Step-by-step tutorial used for inspiration on checking user answers.
 
@@ -299,9 +301,7 @@ The user can also see a record of the questions, images, correct answer and thei
 > Used for quiz questions included in project.
 
 ### w3 schools
-> Used for general lookup JS dom related queries and general styling css using js.
-
-> Also used for trying to clearInterval on countdown clock to make it reset.
+> Used when researching how to use and style a modal.
 
 ### Stack Overflow
 > Used to query issues relating programming issues relating to injecting html with JS.

@@ -2,10 +2,6 @@
 const quizRules = document.getElementById('quiz-rules');
 const quizBox = document.getElementById('quiz-box');
 const resultsBox = document.getElementById('results-box');
-//const startButton = document.getElementById('start-btn');
-//const nextButton = document.getElementById('next-button');
-//const exitButton = document.getElementById('exit-button');
-//const replayButton = document.getElementsByClassName('replay-btn');
 const answerModal = document.getElementById('answer-modal');
 const modalDisplay = document.getElementById('modal-display');
 const span = document.getElementsByClassName('close-modal')[0];
@@ -135,25 +131,22 @@ choices.forEach((choice) => {
 
     /* Call getNewQuestion Function while there are questions remaining in MAX_QUESTIONS array */
     if (classToApply == 'correct') {
-        //feedbackMsgRight.style.display = "block";
         feedbackMsg.innerText = `Yes! That's right!\u{1F4AF}`;
         //Increment score
         incrementScore(SCORE_POINTS);
         myAnswerModal();
         clearInterval(counter);
         scoreText.innerText = `Points: ${score}`;
-    } else if (classToApply == 'incorrect') {
-        //feedbackMsgWrong.style.display = "block";
+    } else {
         feedbackMsg.innerText = `Oh No! That's the wrong answer!\u{1F61E}`;
         myAnswerModal();
         clearInterval(counter);
     }
 
     //Use in-built JavaScript to set delay to removal of incorrect / correct class
-    /*setTimeout ( () => {
+    setTimeout ( () => {
         selectedChoice.classList.remove(classToApply);
-        getNewQuestion();
-    }, 5000);*/
+    }, 2000);
   });
 });
 
@@ -184,7 +177,7 @@ hideAnswerModal = () => {
 //Close answerModal when user clicks on X
 span.onclick = function() {
     hideAnswerModal();
-    clearInterval(counter);
+    getNewQuestion();
 }
 
 /**
