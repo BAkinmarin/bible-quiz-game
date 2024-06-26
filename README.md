@@ -1,6 +1,6 @@
 # Bible Quiz
 
-![am I responsive screenshot](assets/testing/amIResponsive.png)
+![am I responsive screenshot](assets/testing/tbq-amIResponsive.png)
 
 ## A Bible Quiz based Website
 > The Bible Quiz is an interactive and educative knowledge-based quiz game centered on the Bible.
@@ -64,7 +64,7 @@ In keeping with a physical Bible - as well as most digital versions - I wanted t
 In this project, and in keeping with the clean theme, I opted for the use of two emojis which are used in a modal display relative to if the user gets the question right or wrong.
 
 ##### Audio
-
+//////////
 
 ## User Stories
 
@@ -88,27 +88,23 @@ In this project, and in keeping with the clean theme, I opted for the use of two
 ### index.html
 
 #### Welcome Page
-![Welcome Page]()
+![Welcome Page](assets/features/tbq-rules-page.png)
+In my initial design, I envisaged three HTML files and two JavaScript files to keep the questions array separate from the JavaScript code. 
 
-#### Game Area
-![Game Box]()
+However, during the project inception call with my mentor, I discovered that it was possible to execute the entire game in a single HTML file using DOM manipulation.
 
-#### Game Rules
-![Rules]()
+I ran with the concept and ended up with a single index.HTML page incorporating separate sections for Quiz Rules, Quiz Game and Final Score.
 
-Throughout the design process my initial approach was to have a landing page where the user would select their quiz type and be taken to the Quiz Dashboard.
-
-However because this project was going to include Javascript I felt like I could manipulate the DOM to create a single page quiz game app which is what I have done.
-
-By utilizing display properties effectively I was able to reduce the two / three page site down to one and create a seamless experience for my users.
-
- 1. From page load the user will be presented with the welcome message, game choices and the rules modal button.
+ 1. The game starts the user off with a clear set of game rules including how long it would take to answer each question.
  2. Once they select a game the main page dashboard is hidden & the user is presented with a start game button and the rules again to go over.
  3. Once the user clicks start game button the quiz dashboard is then presented with questions, answers and a countdown clock.
  4. Once the final question has been answered, the end game modal will cover the screen and the quiz dashboard will be hidden. This endgame modal will display the users rank, their final score and show them the questions they were asked, the correct answer and their answer.
 
-#### Pregame lobby
-![Pre-Game Lobby]()
+#### Quiz Area
+![Quiz Box](assets/features/tbq-quiz-page.png)
+
+#### User Feedback
+![Rules]()
 
 #### Quiz Dashboard
 ![Quiz Dashboard]()
@@ -131,7 +127,7 @@ By utilizing display properties effectively I was able to reduce the two / three
 
 #### End Game Function
 
-![End Game]()
+![End Game](assets/features/tbq-end-game-page.png)
 The end game function is called when there are either no questions left in the list or if the user reaches the max-question count. 
 Once this happens the endGame function calls and it displays a final score modal that presents users with their score, ranking and a little message depending on how they did.
 The user can also see a record of the questions, images, correct answer and their answer so they can learn and get feedback from their experience.
@@ -229,23 +225,23 @@ The user can also see a record of the questions, images, correct answer and thei
 ## Google Lighthouse Testing
 
 ### Desktop
-![Lighthouse testing index.html]()
+![Lighthouse testing index.html](assets/testing/tbq-GoogleLighthouseTesting-Desktop.png)
 
 ### Mobile
-![Lighthouse testing index.html]()
+![Lighthouse testing index.html](assets/testing/tbq-GoogleLighthouseTesting-Mobile.png)
 
 ## HTML W3 Validation
 
 ### index.html
-![W3 Validation index.html](assets/testing/W3C-HTML-Validation.png)
+![W3 Validation index.html](assets/testing/tbq-W3C-HTML-Validation.png)
 #### Result: No Errors
 
 ### CSS Validation
-![W3 Validation index.html](assets/testing/W3C-CSS-Validation.png)
+![W3 Validation index.html](assets/testing/tbq-W3C-CSS-Validation.png)
 #### Result: No Errors
 
 ### JS Hint Checker
-![JS hint Validator](assets/testing/JSHint.png)
+![JS hint Validator](assets/testing/tbq-JSHint.png)
 #### Result: 31 warnings (topics shown below) - ignored as code behaves as expected and fully tested by myself and others:
 > 'arrow function syntax (=>)' is only available in ES6 (use ''esversion: 6')
 > 'spread operator' is only available in ES6 (use 'esversion: 6')
