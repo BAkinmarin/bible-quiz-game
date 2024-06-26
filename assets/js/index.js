@@ -63,7 +63,7 @@ getNewQuestion = () => {
 
     //Check if any questions available to display or if counter has reached max question limit set
     if (availableQuestions.length === 0 || questionsCounter >= MAX_QUESTIONS) {
-        endGame();
+        goHome();
         quizBox.style.display = "none";
     }
 
@@ -151,7 +151,7 @@ choices.forEach((choice) => {
     setTimeout ( () => {
         selectedChoice.classList.remove(classToApply);
         getNewQuestion();
-    }, 6000);
+    }, 3000);
   });
 });
 
@@ -180,21 +180,21 @@ hideAnswerModal = () => {
 }
 
 //Define nextQuestion function so user can skip to next question without waiting for timer to countdown
-const nextButton = document.querySelector(".next-btn");
+/*const nextButton = document.getElementById('next-button');
 nextButton.onclick = () => {
-    if (availableQuestions.length === 0 || questionsCounter >= MAX_QUESTIONS) {
+    if (questionsCounter < availableQuestions.length) {
         questionsCounter++;
         questionsTracker.innerText = `Question ${questionsCounter} of ${MAX_QUESTIONS}`;
-        hideAnswerModal();
         getNewQuestion();
         clearInterval(counter);
+        //setTimeout(getNewQuestion(), 1000);
+        let timeLeft = 15;
         timerDisplay.innerText = `Time Left: ${timeLeft}s`;
     } else {
         clearInterval(counter);
-        hideAnswerModal();
-        endGame();
+        goHome();
     }
-}
+}*/
 
 /**
  * This exitQuiz function qill throwout a window alert asking the user if they want to leave the game.
@@ -213,8 +213,8 @@ exitQuiz = () => {
 //Define replayQuiz function
 
 
-//Define endGame function
-endGame = () => {
+//Define goHome function
+goHome = () => {
     resultsBox.style.display = "block";
     finalScore.innerText = `You scored: ${score} out of 500 points! Enter your username to track your high score or try again!`;
 }

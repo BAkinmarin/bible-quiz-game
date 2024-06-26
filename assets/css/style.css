@@ -214,7 +214,7 @@ input {
 
 .save-score-btn,
 .replay-btn,
-.end-game-btn {
+.go-home-btn {
     font-size: 1.25rem;
     padding: 1.25rem;
     border-style: ridge;
@@ -232,7 +232,7 @@ input {
 }
 
 .replay-btn:hover,
-.end-game-btn:hover {
+.go-home-btn:hover {
     transform: scale(1.15);
     transition: all 0.3s ease-in-out;
     cursor: pointer;
