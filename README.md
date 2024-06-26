@@ -79,8 +79,8 @@ In this project, and in keeping with the clean theme, I opted for the use of two
 
 ## Wireframes
 
-### Desktop & Mobile Wireframe
-![Wireframe]()
+### Desktop & Mobile Design
+![Handsketched Design](assets/features/tbq-design-sketch.png)
 
 ## Features
 
@@ -122,22 +122,21 @@ I went with this concept, ending with a single index.HTML page incorporating sep
 
 ![End Game](assets/features/tbq-end-game-page.png)
 
-The end game function is called when there are either no questions left in the list or if the user reaches the max-question count. 
-Once this happens the endGame function calls and it displays the users final score.
+The 'End Game' function is called when there are either no questions left in the list or if the user reaches the max-question count. 
+Once this happens, the end game function calls displaying the users final score.
 
 #### Exit Game
 
-![Exit Game]()
+![Exit Game](assets/features/tbq-exit-confirm-message.png)
+
+The 'Exit Game' button calls the exit game function which displays a window alert to the user, giving them the option to confirm their intention to leave the game and lose their progress. If the user selects 'OK' the exit game function promptly terminates the game and displays the final score page to the user otherwise, the user returns to last known position in the game.
 
 <a name="left"></a>
 # Features Left to implement
-> Add a high score tracker for the user so they know what score to beat each time they play the game.
 
-> Option for user to input username to scoreboard for future reference and comparison with other users.
+> Option for user to input username to feed into High Scores dashboard which is saved in local storage so multiple users can compare scores and track progress.
 
 > Audio feedback corresponding to user interaction for an enhanced user experience.
-
-> High Scores saved in local storage for users to refer to previous user scores.
 
 ### Additional ideas
 > Create and add option for user to choose quiz game based on one of the 66 Books of The Bible.
@@ -208,7 +207,7 @@ Once this happens the endGame function calls and it displays the users final sco
 
 #### User tests
 
-> 3 users were asked to attempt the following and their scores were averaged to give the below scores
+> Three users were asked to attempt the following and their scores were averaged to give the below scores
  
 |Test|Result  |
 |--|--|
@@ -238,11 +237,11 @@ Once this happens the endGame function calls and it displays the users final sco
 
 ### JS Hint Checker
 ![JS hint Validator](assets/testing/tbq-JSHint.png)
-#### Result: 31 warnings (topics shown below) - ignored as code behaves as expected and fully tested by myself and others:
+#### Result: 31 warnings (topics shown below) - ignored as code renders and expected and has been fully tested:
 > 'arrow function syntax (=>)' is only available in ES6 (use ''esversion: 6')
 > 'spread operator' is only available in ES6 (use 'esversion: 6')
 > 'template literal syntax' is only available in ES6 (use 'esversion: 6')
-> Warning to do with emoji
+> 'unexpected use of unicode'
 
 <a name="bugs"></a>
 ## **Bugs**
@@ -254,8 +253,6 @@ Once this happens the endGame function calls and it displays the users final sco
 > Unable to get Next Question option to work properly. **Fixed**
 
 > Unable to get user selection to turn green / red relative to answer prior to window alert. **Fixed**
-
-> Unable to get High Scores to save in local storage.
 
 <a name="deployment"></a>
 ## Deployment
