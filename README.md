@@ -93,21 +93,21 @@ In my initial design, I envisaged three HTML files and two JavaScript files to k
 
 However, during the project inception call with my mentor, I discovered that it was possible to execute the entire game in a single HTML file using DOM manipulation.
 
-I ran with the concept and ended up with a single index.HTML page incorporating separate sections for Quiz Rules, Quiz Game and Final Score.
-
- 1. The game starts the user off with a clear set of game rules including how long it would take to answer each question.
- 2. Once they select a game the main page dashboard is hidden & the user is presented with a start game button and the rules again to go over.
- 3. Once the user clicks start game button the quiz dashboard is then presented with questions, answers and a countdown clock.
- 4. Once the final question has been answered, the end game modal will cover the screen and the quiz dashboard will be hidden. This endgame modal will display the users rank, their final score and show them the questions they were asked, the correct answer and their answer.
+I went with this concept, ending with a single index.HTML page incorporating separate sections for Quiz Rules, Quiz Game and Final Score.
 
 #### Quiz Area
 ![Quiz Box](assets/features/tbq-quiz-page.png)
 
-#### User Feedback
-![Rules]()
+ 1. The game starts the user off on the 'Quiz Rules' page displaying a set of game rules and a 'Play Quiz' button to start game.
+ 2. When the user clicks the 'Play Quiz' button, the 'Quiz Rules' page is hidden and the user is presented with the first multiple choice question.
+ 3. When the user selects their answer, the selection turns green if correct or red if incorrect and their score is incremented accordingly.
+ 4. Immediate feedback is provided to the user via a modal after each selection. The modal, which includes a prompt for the user to click 'Next' to move on to the next question - also includes the corresponding Bible verse.
+ 5. Once the final question has been answered, the 'Quiz Page' is replaced with the 'End Game' page which reveals the users final score and a 'Replay Quiz' option.
 
-#### Quiz Dashboard
-![Quiz Dashboard]()
+#### Answer Modal
+![Answer Modal - User Selection Correct](assets/features/tbq-user-selection-correct.png)
+
+![Answer Modal - User Selection Incorrect](assets/features/tbq-user-selection-incorrect.png)
 
 #### Countdown Clock
 > The countdown clock was an essential part of my pre-project planning. I wanted to make dynamic and it actually plays a big part in my quiz.
