@@ -63,7 +63,7 @@ getNewQuestion = () => {
     if (availableQuestions.length === 0 || questionsCounter >= MAX_QUESTIONS) {
         endGame();
         quizBox.style.display = "none";
-    };
+    }
 
     //Increment questionCounter and display current question to user in corresponding HTML element
     questionsCounter++;
@@ -77,7 +77,7 @@ getNewQuestion = () => {
     //Select answer options from questions array in questions.js file and display in corresponding HTML element
     choices.forEach(choice => {
         //Assign number as dataset options defined in HTML file and display choice options
-        const number = choice.dataset['number'];
+        const number = choice.dataset.number;
         choice.innerText = currentQuestion['choice' + number];
     });
 
@@ -118,7 +118,7 @@ choices.forEach((choice) => {
     acceptingAnswers = false;
     /* Set user selection as event*/
     const selectedChoice = e.target;
-    const selectedAnswer = selectedChoice.dataset['number'];
+    const selectedAnswer = selectedChoice.dataset.number;
 
     /* Apply appropriate class based on correct / incorrect answer */
     const classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
@@ -141,7 +141,7 @@ choices.forEach((choice) => {
         feedbackMsg.innerText = `\u{274C} Oh No, that's wrong! \u{274C}`;
         myAnswerModal();
         clearInterval(counter);
-    };
+    }
 
     //Use in-built JavaScript to set delay to removal of incorrect / correct class
     setTimeout ( () => {
@@ -191,7 +191,7 @@ exitQuiz = () => {
         return window.location.assign('index.html');
     } else {
         return;
-    };
+    }
 };
 
 //Define replayQuiz function
