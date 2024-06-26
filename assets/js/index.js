@@ -2,10 +2,10 @@
 const quizRules = document.getElementById('quiz-rules');
 const quizBox = document.getElementById('quiz-box');
 const resultsBox = document.getElementById('results-box');
-const startButton = document.getElementById('start-btn');
-const nextButton = document.getElementById('next-button');
-const exitButton = document.getElementById('exit-button');
-const replayButton = document.getElementsByClassName('replay-btn');
+//const startButton = document.getElementById('start-btn');
+//const nextButton = document.getElementById('next-button');
+//const exitButton = document.getElementById('exit-button');
+//const replayButton = document.getElementsByClassName('replay-btn');
 const answerModal = document.getElementById('answer-modal');
 const modalDisplay = document.getElementById('modal-display');
 const span = document.getElementsByClassName('close-modal')[0];
@@ -185,7 +185,6 @@ hideAnswerModal = () => {
 span.onclick = function() {
     hideAnswerModal();
     clearInterval(counter);
-    getNewQuestion();
 }
 
 /**
