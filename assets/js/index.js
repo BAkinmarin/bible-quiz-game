@@ -3,10 +3,12 @@ const quizRules = document.getElementById('quiz-rules');
 const quizBox = document.getElementById('quiz-box');
 const resultsBox = document.getElementById('results-box');
 const startButton = document.getElementById('start-btn');
+const nextButton = document.getElementById('next-button');
 const exitButton = document.getElementById('exit-button');
 const replayButton = document.getElementsByClassName('replay-btn');
 const answerModal = document.getElementById('answer-modal');
 const modalDisplay = document.getElementById('modal-display');
+const span = document.getElementsByClassName('close-modal')[0];
 const correctAnswer = document.getElementById('correct-answer');
 const hiddenVerse = document.getElementById('hidden-verse');
 const feedbackMsg = document.getElementById('feedback-message');
@@ -63,7 +65,7 @@ getNewQuestion = () => {
 
     //Check if any questions available to display or if counter has reached max question limit set
     if (availableQuestions.length === 0 || questionsCounter >= MAX_QUESTIONS) {
-        goHome();
+        endGame();
         quizBox.style.display = "none";
     }
 
@@ -148,10 +150,10 @@ choices.forEach((choice) => {
     }
 
     //Use in-built JavaScript to set delay to removal of incorrect / correct class
-    setTimeout ( () => {
+    /*setTimeout ( () => {
         selectedChoice.classList.remove(classToApply);
         getNewQuestion();
-    }, 3000);
+    }, 5000);*/
   });
 });
 
@@ -179,22 +181,12 @@ hideAnswerModal = () => {
     hiddenVerse.style.display = "none";
 }
 
-//Define nextQuestion function so user can skip to next question without waiting for timer to countdown
-/*const nextButton = document.getElementById('next-button');
-nextButton.onclick = () => {
-    if (questionsCounter < availableQuestions.length) {
-        questionsCounter++;
-        questionsTracker.innerText = `Question ${questionsCounter} of ${MAX_QUESTIONS}`;
-        getNewQuestion();
-        clearInterval(counter);
-        //setTimeout(getNewQuestion(), 1000);
-        let timeLeft = 15;
-        timerDisplay.innerText = `Time Left: ${timeLeft}s`;
-    } else {
-        clearInterval(counter);
-        goHome();
-    }
-}*/
+//Close answerModal when user clicks on X
+span.onclick = function() {
+    hideAnswerModal();
+    clearInterval(counter);
+    getNewQuestion();
+}
 
 /**
  * This exitQuiz function qill throwout a window alert asking the user if they want to leave the game.
@@ -213,8 +205,8 @@ exitQuiz = () => {
 //Define replayQuiz function
 
 
-//Define goHome function
-goHome = () => {
+//Define endGame function
+endGame = () => {
     resultsBox.style.display = "block";
     finalScore.innerText = `You scored: ${score} out of 500 points! Enter your username to track your high score or try again!`;
 }

@@ -130,6 +130,21 @@ body {
     font-family: "Lato", sans-serif;
 }
 
+/* The Close Modal Button */
+#closeModal {
+    color: black;
+    float: right;
+    font-size: 3rem;
+    font-weight: bold;
+}
+  
+#closeModal:hover,
+#closeModal:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 #hidden-verse {
     font-style: oblique;
     text-decoration: wavy;
@@ -214,7 +229,7 @@ input {
 
 .save-score-btn,
 .replay-btn,
-.go-home-btn {
+.end-game-btn {
     font-size: 1.25rem;
     padding: 1.25rem;
     border-style: ridge;
@@ -232,7 +247,7 @@ input {
 }
 
 .replay-btn:hover,
-.go-home-btn:hover {
+.end-game-btn:hover {
     transform: scale(1.15);
     transition: all 0.3s ease-in-out;
     cursor: pointer;
