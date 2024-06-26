@@ -32,8 +32,8 @@
                 <p><i class="fa-solid fa-dice-one"></i> You have 15 seconds to answer each question.</p>
                 <p><i class="fa-solid fa-dice-two"></i> You must select an answer before the timer runs out.</p>
                 <p><i class="fa-solid fa-dice-three"></i> You will not be able to change your answer once selected.</p>
-                <p><i class="fa-solid fa-dice-four"></i> You will be asked questions from both Old and New Testaments.</p>
-                <p><i class="fa-solid fa-dice-five"></i> You may exit the game at any time however all progress will be lost.</p>
+                <p><i class="fa-solid fa-dice-four"></i> You may exit the game at any time however all progress will be lost.</p>
+                <p><i class="fa-solid fa-dice-five"></i> You will be shown the correct answer before moving on to the next question.</p>
             </div>
             <!--Game Start Button-->
             <div class="start-btn-div">
@@ -73,13 +73,13 @@
         </div>
         <!--Answer modal concept inspired by Mentor, Alan Bushell-->
         <div id="answer-modal" class="answer-modal-div">
-        <!--Content-->
-        <div class="modal-content" id="modal-display">
-            <span class="close-modal" id="closeModal">&times;</span>
-            <p class="modal-text" id="feedback-message"></p>
-            <p class="modal-text" id="correct-answer"></p>
-            <p class="modal-text" id="hidden-verse"></p>
-        </div>
+            <!--Content-->
+            <div class="modal-content" id="modal-display">
+                <p class="modal-text" id="feedback-message"></p>
+                <p class="modal-text" id="correct-answer"></p>
+                <p class="modal-text" id="hidden-verse"></p>
+                <span class="close-modal" id="closeModal">Next <i class="fa-solid fa-arrow-right-long"></i></span>
+            </div>
         </div>
         <div class="exit-btn-div">
             <button onclick="exitQuiz()" class="exit-btn" id="exit-button">Exit <i class="fa-solid fa-circle-xmark"></i></button>
@@ -98,8 +98,8 @@
         <!--Code inspired by James Quick - YouTube Tutorial-->
         <div class="form-box">
             <form>
-                <input type="text" name="username" id="username" placeholder="username">
-                <button onclick="saveScore()" type="submit" class="save-score-btn" id="save-score-button" disabled>Save <i class="fa-solid fa-thumbs-up"></i></button>
+                <!--<input type="text" name="username" id="username" placeholder="username">
+                <button onclick="saveScore()" type="submit" class="save-score-btn" id="save-score-button" disabled>Save <i class="fa-solid fa-thumbs-up"></i></button>-->
                 <button onclick="replayQuiz()" class="replay-btn" id="replay-button">Replay <i class="fa-solid fa-repeat"></i></button>
                 <button onclick="endGame()" class="end-game-btn" id="end-game-button">Home <i class="fa-solid fa-house"></i></button>
             </form>

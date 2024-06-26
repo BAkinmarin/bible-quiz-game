@@ -174,7 +174,7 @@ hideAnswerModal = () => {
     hiddenVerse.style.display = "none";
 }
 
-//Close answerModal when user clicks on X
+//Close answerModal when user clicks Next and get call getNextQuestion function
 span.onclick = function() {
     hideAnswerModal();
     getNewQuestion();
@@ -195,26 +195,12 @@ exitQuiz = () => {
 }
 
 //Define replayQuiz function
-
+replayQuiz = () => {
+    startQuiz();
+}
 
 //Define endGame function
 endGame = () => {
     resultsBox.style.display = "block";
-    finalScore.innerText = `You scored: ${score} out of 500 points! Enter your username to track your high score or try again!`;
-}
-
-/**
- * The below saveScore function allows the user save their score to local storage.
- * This concept is inspired by James Quick - YouTube tutorial.
- */
-//Retrieve relevant elements from HTML
-const saveScoreBtn = document.getElementById('save-score');
-const username = document.getElementById('username');
-
-//saveScore function take user 
-saveScore = (e) => {
-    username.addEventListener('keyup', () => {
-        saveScoreBtn.disabled = !username.value;
-        e.preventDefault();
-    });
+    finalScore.innerText = `You scored: ${score} out of 500 points!`;
 }

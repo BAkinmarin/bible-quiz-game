@@ -122,13 +122,13 @@ body {
 
 .answer-modal-div {
     margin: auto;
-    padding: 1.25rem;
-    border: 2px ridge wheat;
+    padding: 1rem;
+    border: 3px ridge;
     display: none;
     justify-content: start;
     flex-direction: column;
     text-align: center;
-    border-radius: 10px;
+    background-color: rgb(227, 227, 230);
 }
 
 .modal-text {
@@ -141,16 +141,19 @@ body {
 /* The Close Modal Button */
 #closeModal {
     color: black;
-    float: right;
-    font-size: 3rem;
+    float: center;
     font-weight: bold;
+    border-radius: 1px;
+    border-style: groove;
+    text-transform: uppercase;
 }
   
 #closeModal:hover,
 #closeModal:focus {
-    color: black;
+    color: white;
     text-decoration: none;
     cursor: pointer;
+    background-color: blue;
 }
 
 #hidden-verse {
