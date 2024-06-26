@@ -109,29 +109,25 @@ I went with this concept, ending with a single index.HTML page incorporating sep
 
 ![Answer Modal - User Selection Incorrect](assets/features/tbq-user-selection-incorrect.png)
 
-#### Countdown Clock
-> The countdown clock was an essential part of my pre-project planning. I wanted to make dynamic and it actually plays a big part in my quiz.
+#### Countdown TImer
+> I decided to include a countdown timer as I wanted users to have an effective way of evaluating their Bible knowledge.
 
- - The countdown clock Starts when a question is presented to the user to display how long they have left to answer the question.
- - If the user does not answer in time the clock will state "Times Up" to the user briefly before moving on to the next question.
- - As the clock counts down it changes color.
-	 - From 15 seconds to 10 seconds it is a nice safe Green Color
-	 - From 10 seconds to 5 seconds it is a warning orange / amber color
-	 - From 5 seconds to 1 second it is a danger red color and includes a shaking motion to add urgency to the user
-	 - When it reaches 0 the clock then changes to "Times Up" and either pulls the next question or calls the end game function which brings up the end game modal.
- - The clock also is part of the scoring system in the quiz games. If your answer is correct we check and see how much time you have left and it is factored into your score. 
-	 - If you have over 10 seconds left you score 100 points.
-	 - If you have between 6-10 seconds left you score 75 points.
-	 - If you have less than 10 seconds left you score 50 points.
-	 - If you answer incorrectly or if you run out of time then you score 0 points.
+>The countdown timer begins counting down when a question is presented to the user, displaying how long they have left to answer the question.
 
-#### End Game Function
+> If the user does not answer in time defined, the clock will state "Times Up" to the user briefly before moving on to the next question.
+
+> If the user has not answered the maximum number of questions assigned, the next question is presented to the user, alternatively, the 'End Game' function is called and the user is shown their final score. 
+
+#### End Game
 
 ![End Game](assets/features/tbq-end-game-page.png)
-The end game function is called when there are either no questions left in the list or if the user reaches the max-question count. 
-Once this happens the endGame function calls and it displays a final score modal that presents users with their score, ranking and a little message depending on how they did.
-The user can also see a record of the questions, images, correct answer and their answer so they can learn and get feedback from their experience.
 
+The end game function is called when there are either no questions left in the list or if the user reaches the max-question count. 
+Once this happens the endGame function calls and it displays the users final score.
+
+#### Exit Game
+
+![Exit Game]()
 
 <a name="left"></a>
 # Features Left to implement
