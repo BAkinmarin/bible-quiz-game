@@ -77,7 +77,7 @@ let questions = [
         choice3: '3. Candy',
         choice4: '4. Broccoli',
         answer: 1,
-        verse: '"The people of Israel called the bread manna. It was white like coriander seed and tasted like wafers made with honey. - Exodux 16:31 (NIV)"',
+        verse: '"The people of Israel called the bread manna. It was white like coriander seed and tasted like wafers made with honey. - Exodus 16:31 (NIV)"',
     },
 
     {

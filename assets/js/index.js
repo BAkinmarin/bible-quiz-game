@@ -22,6 +22,12 @@ let score = 0;
 let currentQuestion = {};
 let acceptingAnswers = false;
 
+//Get game audio files
+let myCorrectSound = new Audio('assets/audio/tada.mp3');
+let myWrongSound = new Audio('assets/audio/nope.mp3');
+let myGameSound = new Audio('assets/audio/heartbeat.mp3');
+let myTimeUpSound = new Audio('assets/audio/timeup.mp3');
+
 //Define fixed variables for max score and max number of questions
 const SCORE_POINTS = 100;
 const MAX_QUESTIONS = 5;
@@ -49,6 +55,26 @@ startQuiz = () => {
     availableQuestions = [...questions];
     getNewQuestion();
 };
+
+//Game audio play and pause functions
+function playCorrectSound() {
+    myGameSound.pause();
+    myCorrectSound.play();
+}
+
+function playWrongSound() {
+    myGameSound.pause();
+    myWrongSound.play();
+}
+
+function playGameSound() {
+    myTimeUpSound.pause();
+    myGameSound.play();
+}
+
+function playTimeUpSound() {
+    myTimeUpSound.play();
+}
 
 /**
  * The getNewQuestion function retrieves and displays questions and answer options at random from the array in questions.js file.
@@ -92,6 +118,9 @@ getNewQuestion = () => {
     let timeLeft = 15;
     timerDisplay.innerText = `Time Left: 15s`;
 
+    //Play game sound
+    playGameSound();
+
     //Set timer to run every 1000 milliseconds (1 second)
     counter = setInterval(() => {
         timerDisplay.innerText = `Time Left: ${timeLeft}s`;
@@ -99,7 +128,9 @@ getNewQuestion = () => {
         timeLeft--;
 
         //Stop timer counting down when at 0 and move to next question
-        if (timeLeft < 0) {
+        if (timeLeft === 1) {
+            playTimeUpSound();
+        } else if (timeLeft < 0)  {
             clearInterval(counter);
             getNewQuestion();
         }
@@ -131,6 +162,7 @@ choices.forEach((choice) => {
 
     /* Call getNewQuestion Function while there are questions remaining in MAX_QUESTIONS array */
     if (classToApply == 'correct') {
+        playCorrectSound();
         feedbackMsg.innerText = `\u{1F3AF} Yes, that's spot on! \u{1F3AF}`;
         //Increment score
         incrementScore(SCORE_POINTS);
@@ -138,6 +170,7 @@ choices.forEach((choice) => {
         clearInterval(counter);
         scoreText.innerText = `Points: ${score}`;
     } else {
+        playWrongSound();
         feedbackMsg.innerText = `\u{274C} Oh No, that's wrong! \u{274C}`;
         myAnswerModal();
         clearInterval(counter);

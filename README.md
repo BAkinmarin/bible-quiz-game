@@ -70,10 +70,15 @@ In this project, and in keeping with the clean theme, I opted for the use of two
 
 ### User
 > As a user, I want to be able to play an interactive and educative game.
+
 > As a user, I want to be able to learn about the Bible in a fun way.
+
 > As a user, I want to be aware of the rules of the game before I play.
+
 > As a user, I want to be rewarded for every right answers provided. 
+
 > As a user, I want to be able to play without being interupted by advertisements.
+
 > As a user, I want to be able to replay the game and beat my previous score.
 
 
@@ -114,7 +119,7 @@ I went with this concept, ending with a single index.HTML page incorporating sep
 
 >The countdown timer begins counting down when a question is presented to the user, displaying how long they have left to answer the question.
 
-> If the user does not answer in time defined, the clock will state "Times Up" to the user briefly before moving on to the next question.
+> If the user does not answer in time defined, they will receive a feedback response briefly before moving on to the next question.
 
 > If the user has not answered the maximum number of questions assigned, the next question is presented to the user, alternatively, the 'End Game' function is called and the user is shown their final score. 
 
@@ -143,7 +148,7 @@ The 'Exit Game' button calls the exit game function which displays a window aler
 
 > Separate Sections for Old and New Testament, giving user the option to play quiz game based on preference. 
 
-> Create and add Parable of Jesus Section, giving user the option to play quiz based on this otpion.
+> Create and add Parable of Jesus Section, giving user the option to play quiz based on this option.
 
 > Create and add Creation Story Section, giving user the option to play quiz based on this option.
 
@@ -306,6 +311,21 @@ The 'Exit Game' button calls the exit game function which displays a window aler
 
 ### Code Institute
 > Project created in line with course content, walkthrough project and and within project 2 scope.
+
+
+### [Game Sound](https://www.freesoundslibrary.com/heartbeat-sound-effect/) - Game Mode
+> Used in game mode.
+
+### [User Feedback](https://www.freesoundslibrary.com/?s=tada) - Correct
+> Feedback sound when user gets a question right.
+
+### [User Feedback](https://www.freesoundslibrary.com/nope-sound-effect/) - Incorrect
+> Feedback sound when user gets a question wrong.
+
+### [User Feedback](https://www.freesoundslibrary.com/buzzer-sound/) - Time Up
+> Feedback sound when user runs out of time.
+
+### [End Game]()
 
 <a name="acknowlegements"></a>
 ## Acknowledgements
