@@ -125,6 +125,8 @@ I went with this concept, ending with a single index.HTML page incorporating sep
 
 #### End Game
 
+![End Game](assets/features/tbq-end-game-highscore.png)
+
 ![End Game](assets/features/tbq-end-game-lowscore.png)
 
 The 'End Game' function is called when there are either no questions left in the list or if the user reaches the max-question count. 
