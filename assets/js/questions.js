@@ -99,4 +99,24 @@ let questions = [
         answer: 2,
         verse: "But Lot's wife looked back, and she became a pillar of salt. - Genesis 19:26 (NIV)",
     },
+
+    {
+        question: "In Matthew's Gospel, how were the wise men warned not to go back to Herod after visiting Jesus?",
+        choice1: '1. In a dream',
+        choice2: '2. By an Angel',
+        choice3: '3. They were led by the Spirit',
+        choice4: '4. Jesus told them',
+        answer: 2,
+        verse: "And being warned in a dream not to return to Herod, they departed to their own country by another way. - Matthew 2:12 (ESV)",
+    },
+
+    {
+        question: "According to Luke's Gospel, about how old was Jesus when he began his ministry?",
+        choice1: '1. 21',
+        choice2: '2. About 25',
+        choice3: '3. About 30',
+        choice4: '4. 30',
+        answer: 3,
+        verse: "Now Jesus himself was about thirty years old when he began his ministry. He was the son, so it was thought, of Joseph, the son of Heli. - Luke 3:23 (NIV)",
+    },
 ];

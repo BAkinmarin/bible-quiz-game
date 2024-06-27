@@ -75,9 +75,9 @@ In this project, to add to the user experience, I have included audio feedback f
 
 > As a user, I want to be aware of the rules of the game before I play.
 
-> As a user, I want to be rewarded for every right answers provided. 
+> As a user, I want to be rewarded for every right answer provided. 
 
-> As a user, I want to be able to play without being interupted by advertisements.
+> As a user, I want to be able to play without being interrupted by advertisements.
 
 > As a user, I want to be able to replay the game and beat my previous score.
 
@@ -241,7 +241,7 @@ The 'Exit Game' button calls the exit game function which displays a window aler
 
 ### JS Hint Checker
 ![JS hint Validator](assets/testing/tbq-JSHint.png)
-#### Result: 31 warnings (topics shown below) - ignored as code renders and expected and has been fully tested:
+#### Result: 34 warnings (topics shown below) - ignored as code renders and expected and has been fully tested:
 > 'arrow function syntax (=>)' is only available in ES6 (use ''esversion: 6')
 > 'spread operator' is only available in ES6 (use 'esversion: 6')
 > 'template literal syntax' is only available in ES6 (use 'esversion: 6')

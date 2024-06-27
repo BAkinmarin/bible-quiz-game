@@ -223,7 +223,7 @@ replayQuiz = () => {
 endGame = () => {
     //Display results page and pause audio
     pauseAudio();
-    resultsBox.style.display = "block"
+    resultsBox.style.display = "block";
     //Check score and display appropriate message
     if (score <= 200) {
         finalScore.innerText = `\u{1F61E} Better Luck Next Time! You scored: ${score} out of 500 points! \u{1F61E}`;
