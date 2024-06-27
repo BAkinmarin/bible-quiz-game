@@ -22,11 +22,9 @@ let score = 0;
 let currentQuestion = {};
 let acceptingAnswers = false;
 
-//Get game audio files
+//Get audio feedback files
 let myCorrectSound = new Audio('assets/audio/tada.mp3');
 let myWrongSound = new Audio('assets/audio/nope.mp3');
-let myGameSound = new Audio('assets/audio/heartbeat.mp3');
-let myTimeUpSound = new Audio('assets/audio/timeup.mp3');
 
 //Define fixed variables for max score and max number of questions
 const SCORE_POINTS = 100;
@@ -56,24 +54,18 @@ startQuiz = () => {
     getNewQuestion();
 };
 
-//Game audio play and pause functions
+//Audio feedback play and pause functions
 function playCorrectSound() {
-    myGameSound.pause();
     myCorrectSound.play();
 }
 
 function playWrongSound() {
-    myGameSound.pause();
     myWrongSound.play();
 }
 
-function playGameSound() {
-    myTimeUpSound.pause();
-    myGameSound.play();
-}
-
-function playTimeUpSound() {
-    myTimeUpSound.play();
+function pauseAudio() {
+    myCorrectSound.pause();
+    myWrongSound.pause();
 }
 
 /**
@@ -118,9 +110,6 @@ getNewQuestion = () => {
     let timeLeft = 15;
     timerDisplay.innerText = `Time Left: 15s`;
 
-    //Play game sound
-    playGameSound();
-
     //Set timer to run every 1000 milliseconds (1 second)
     counter = setInterval(() => {
         timerDisplay.innerText = `Time Left: ${timeLeft}s`;
@@ -128,9 +117,7 @@ getNewQuestion = () => {
         timeLeft--;
 
         //Stop timer counting down when at 0 and move to next question
-        if (timeLeft === 1) {
-            playTimeUpSound();
-        } else if (timeLeft < 0)  {
+        if (timeLeft < 0)  {
             clearInterval(counter);
             getNewQuestion();
         }
@@ -234,6 +221,12 @@ replayQuiz = () => {
 
 //Define endGame function
 endGame = () => {
-    resultsBox.style.display = "block";
-    finalScore.innerText = `\u{1F3C1} Welldone! You scored: ${score} out of 500 points! \u{1F3C1}`;
+    //Display results page and pause audio
+    pauseAudio();
+    resultsBox.style.display = "block"
+    //Check score and display appropriate message
+    if (score <= 200) {
+        finalScore.innerText = `\u{1F61E} Better Luck Next Time! You scored: ${score} out of 500 points! \u{1F61E}`;
+    } else if (score >= 300)
+        finalScore.innerText = `\u{1F3C1} Welldone! You scored: ${score} out of 500 points! \u{1F3C1}`;
 };

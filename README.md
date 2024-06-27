@@ -64,7 +64,7 @@ In keeping with a physical Bible - as well as most digital versions - I wanted t
 In this project, and in keeping with the clean theme, I opted for the use of two emojis which are used in a modal display relative to if the user gets the question right or wrong.
 
 ##### Audio
-//////////
+In this project, to add to the user experience, I have included audio feedback for when the user gets the answer right and when the user gets the answer wrong.
 
 ## User Stories
 
@@ -125,7 +125,7 @@ I went with this concept, ending with a single index.HTML page incorporating sep
 
 #### End Game
 
-![End Game](assets/features/tbq-end-game-page.png)
+![End Game](assets/features/tbq-end-game-lowscore.png)
 
 The 'End Game' function is called when there are either no questions left in the list or if the user reaches the max-question count. 
 Once this happens, the end game function calls displaying the users final score.
@@ -141,7 +141,7 @@ The 'Exit Game' button calls the exit game function which displays a window aler
 
 > Option for user to input username to feed into High Scores dashboard which is saved in local storage so multiple users can compare scores and track progress.
 
-> Audio feedback corresponding to user interaction for an enhanced user experience.
+> Audio feedback corresponding to other user game interactions for an enhanced user experience.
 
 ### Additional ideas
 > Create and add option for user to choose quiz game based on one of the 66 Books of The Bible.
@@ -158,6 +158,7 @@ The 'Exit Game' button calls the exit game function which displays a window aler
 
 <a name="tech"></a>
 # Technology Used
+
 ### HTML
 > The backbone of website design and function; used to provide structure to the website.
 
@@ -176,6 +177,9 @@ The 'Exit Game' button calls the exit game function which displays a window aler
 ### Favicon.io
 > Used to generate a favicon for the existing logo.
 
+### JavaScript Audio Function
+> Used to provide audio feedback to user corresponding to right or wrong asnwer.
+
 <a name="testing"></a>
 # Testing
 
@@ -186,27 +190,22 @@ The 'Exit Game' button calls the exit game function which displays a window aler
 
 | Test | Result |
 |--|--|
-|When flags game is selected correct game runs| Pass |
-|When random facts game is selected correct game runs|Pass|
-|When the rules button is clicked the modal pops up|Pass|
-|The rules modal closes when user clicks the close button|Pass|
-|The rules modal closes when the user clicks outside of the modal|Pass|
-|When game starts question, answers and images load correctly|Pass|
+|Rules are comprehendable|Pass|
+|When Play Quiz is selected, game starts| Pass |
+|When user selects an answer, answer modal comes pops up with description|Pass|
+|The answer modal closes and user is presented with next question when user clicks the next button|Pass|
 |When game starts clock begins countdown|Pass|
 |When user selects answer, new question and answers are pulled|Pass|
 |When new question is called the clock restarts|Pass|
 |The correct answers appear with the correct questions|Pass|
-|The correct image appears for the correct question|Pass|
-|When the user answers a question the counter increases|Pass|
-|When the user answers the final question the game directs to the end game modal|Pass|
-|The end game modal displays the users final score & rank|Pass|
-|The end game modal displays the questions and answers the user provided and correct answer|Pass|
-|When the user clicks Play Again the page reloads back to the start|Pass|
+|When the user answers a question the question counter increases|Pass|
+|When the user answers the final question the game directs to the end game|Pass|
+|The end game page displays the users final score|Pass|
+|When the user clicks Replay they are redirected to the rules page|Pass|
 
 ### User testing
 
-#### Peer Code Review
-> Project submitted for peer code review on Code Institute among other students.
+#### Third Party Review
 
 > Only noticable issue reported was a typo on one of the answers in the Quiz.
 
@@ -220,7 +219,7 @@ The 'Exit Game' button calls the exit game function which displays a window aler
 |Check time is appropriate for user to read correct answer description |100%|
 |Check user can navigate to next question when previous question has been answered |100%|
 |Check user can exit game as and when they want |100%|
-|Provide your rank and score to me after completing quiz |100%|
+|Check user can replay the game |100%|
 
 ## Google Lighthouse Testing
 
@@ -313,19 +312,12 @@ The 'Exit Game' button calls the exit game function which displays a window aler
 > Project created in line with course content, walkthrough project and and within project 2 scope.
 
 
-### [Game Sound](https://www.freesoundslibrary.com/heartbeat-sound-effect/) - Game Mode
-> Used in game mode.
-
 ### [User Feedback](https://www.freesoundslibrary.com/?s=tada) - Correct
 > Feedback sound when user gets a question right.
 
 ### [User Feedback](https://www.freesoundslibrary.com/nope-sound-effect/) - Incorrect
 > Feedback sound when user gets a question wrong.
 
-### [User Feedback](https://www.freesoundslibrary.com/buzzer-sound/) - Time Up
-> Feedback sound when user runs out of time.
-
-### [End Game]()
 
 <a name="acknowlegements"></a>
 ## Acknowledgements
